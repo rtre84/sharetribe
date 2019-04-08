@@ -317,7 +317,7 @@ class PaymentSettingsController < ApplicationController
           bank_account_number: parse_bank_account_number,
           bank_routing_number: parse_bank_routing_number,
           bank_routing_1: form_params[:bank_routing_1],
-          bank_routing_2: form_params[:bank_routing_2],
+          bank_routing_2: form_params[:bank_routing_2]
         })
       end
       result
@@ -406,7 +406,7 @@ class PaymentSettingsController < ApplicationController
         email: entity[:email],
         phone: entity[:phone],
         mcc: account.try(:business_profile).try(:[], :mcc),
-        url: account.try(:business_profile).try(:[], :url),
+        url: account.try(:business_profile).try(:[], :url)
       })
     end
 
@@ -416,7 +416,7 @@ class PaymentSettingsController < ApplicationController
         address_state: entity.address.state,
         address_country: entity.address.country,
         address_line1: entity.address.line1,
-        address_postal_code: entity.address.postal_code,
+        address_postal_code: entity.address.postal_code
       })
     elsif entity.respond_to?(:address_kana) # supposed to be Japan
       result.merge!({
@@ -437,7 +437,7 @@ class PaymentSettingsController < ApplicationController
         address_kanji_city: entity.address_kanji.city,
         address_kanji_town: entity.address_kanji.town,
         address_kanji_line1: entity.address_kanji.line1,
-        phone: entity[:phone],
+        phone: entity[:phone]
       })
     end
     mask_us_pr_as_puerto_rico(result)

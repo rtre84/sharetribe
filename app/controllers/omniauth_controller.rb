@@ -15,7 +15,7 @@ class OmniauthController < ApplicationController
   def auth_setup
     service = Person::OmniauthService::SetupPhase.new(community: @current_community, params: params, request: request)
     service.run
-    render :plain => "Setup complete.", :status => 404 #This notifies the ominauth to continue
+    render :plain => "Setup complete.", :status => :not_found #This notifies the ominauth to continue
   end
 
   # Callback from Omniauth failures
@@ -29,7 +29,7 @@ class OmniauthController < ApplicationController
   end
 
   def passthru
-    render status: 404, plain: "Not found. Authentication passthru."
+    render status: :not_found, plain: "Not found. Authentication passthru."
   end
 
   private

@@ -161,7 +161,6 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
       available_currencies: TransactionService::AvailableCurrencies::CURRENCIES,
       currency: @current_community.currency,
       display_knowledge_base_articles: APP_CONFIG.display_knowledge_base_articles,
-      knowledge_base_url: APP_CONFIG.knowledge_base_url,
       support_email: APP_CONFIG.support_email,
       stripe_enabled: @stripe_enabled,
       paypal_enabled: @paypal_enabled,
@@ -295,7 +294,8 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
 
   def parse_preferences(params, currency)
     tx_settings = active_tx_setttings
-    tx_fee =  parse_money_with_default(params[:minimum_transaction_fee], tx_settings[:minimum_transaction_fee_cents], currency)
+    minimum_transaction_fee_cents = PaymentSettings.max_minimum_transaction_fee(@current_community)
+    tx_fee =  parse_money_with_default(params[:minimum_transaction_fee], minimum_transaction_fee_cents, currency)
     tx_commission = params[:commission_from_seller] || tx_settings[:commission_from_seller]
     tx_commission = tx_commission.present? ? tx_commission.to_i : nil
     tx_min_price = parse_money_with_default(params[:minimum_listing_price], tx_settings[:minimum_price_cents], currency)

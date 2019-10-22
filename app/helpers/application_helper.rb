@@ -324,7 +324,8 @@ module ApplicationHelper
         :text => t("admin.left_hand_navigation.help_center"),
         :icon_class => icon_class("help"),
         :path => "#{APP_CONFIG.knowledge_base_url}/?utm_source=marketplaceadminpanel&utm_medium=referral&utm_campaign=leftnavi",
-        :name => "help_center"
+        :name => "help_center",
+        :target => "_blank"
       },
       {
         :id => "admin-academy-link",
@@ -332,7 +333,8 @@ module ApplicationHelper
         :text => t("admin.left_hand_navigation.academy"),
         :icon_class => icon_class("academy"),
         :path => "https://www.sharetribe.com/academy/guide/?utm_source=marketplaceadminpanel&utm_medium=referral&utm_campaign=leftnavi",
-        :name => "academy"
+        :name => "academy",
+        :target => "_blank"
       }
     ]
 
@@ -348,10 +350,20 @@ module ApplicationHelper
 
     links << {
       :topic => :general,
+      :text => t("admin.left_hand_navigation.whats_new"),
+      :icon_class => icon_class("rocket"),
+      :path => "https://www.sharetribe.com/updates.html",
+      :name => "whats_new",
+      :target => "_blank"
+    }
+
+    links << {
+      :topic => :general,
       :text => t("admin.left_hand_navigation.preview"),
       :icon_class => icon_class("eye"),
       :path => homepage_without_locale_path(big_cover_photo: true, locale: nil),
-      :name => "preview"
+      :name => "preview",
+      :target => "_blank"
     }
 
     links += [
@@ -459,7 +471,7 @@ module ApplicationHelper
         :topic => :configure,
         :text => t("admin.landing_page.landing_page"),
         :icon_class => icon_class("home"),
-        :path => admin_landing_page_path,
+        :path => FeatureFlagHelper.feature_enabled?(:clp_editor) ? admin_landing_page_versions_path : admin_landing_page_path,
         :name => "landing_page"
       }
     end

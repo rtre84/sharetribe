@@ -48,6 +48,14 @@ class Listing::ListPresenter
     admin_mode && listing_wait_for_approval?(listing)
   end
 
+  def has_search?
+    @params[:q].present? || @params[:status].present?
+  end
+
+  def show_listings_export?
+    !has_search? && admin_mode
+  end
+
   private
 
   def resource_scope
@@ -63,7 +71,7 @@ class Listing::ListPresenter
 
     if params[:status].present?
       statuses = []
-      statuses.push(Listing.status_open) if params[:status].include?('open')
+      statuses.push(Listing.status_open_active) if params[:status].include?('open')
       statuses.push(Listing.status_closed) if params[:status].include?('closed')
       statuses.push(Listing.status_expired) if params[:status].include?('expired')
       statuses.push(Listing.approval_pending) if params[:status].include?(Listing::APPROVAL_PENDING)

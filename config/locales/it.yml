@@ -80,6 +80,8 @@ it:
         transaction_agreement_checkbox_label_description: ~
         transaction_agreement_text_header: ~
         transaction_agreement_description: ~
+        terms_privacy_policy_and_static_content: ~
+        terms_privacy_policy_and_static_content_infotext: ~
       edit_look_and_feel:
         edit_community_look_and_feel: ~
         community_logo: Logo
@@ -102,6 +104,8 @@ it:
         logo_mobile_icon_instructions_text_with_dimensions: ~
         cover_photo_visibility: ~
         cover_photo_instructions_text_with_dimensions: ~
+        we_have_you_covered: ~
+        cover_photo_ready_made: ~
         small_cover_photo_visibility: ~
         small_cover_photo_instructions_text_with_dimensions: ~
         main_content_width: ~
@@ -203,6 +207,7 @@ it:
         users_can_invite_new_users: ~
         private: ~
         require_verification_to_post_listings: ~
+        allow_free_conversations: ~
         search_preferences: ~
         default_search_type: ~
         keyword_search: ~
@@ -240,6 +245,7 @@ it:
         delete_this_marketplace: ~
         payment_preferences: ~
         pre_approved_listings: ~
+        email_admins_about_new_transactions: ~
       manage_members:
         manage_members: ~
         email: ~
@@ -301,6 +307,7 @@ it:
         twitter_handle_placeholder: "nome utente"
         invalid_twitter_handle: "Il nome utente di Twitter può contenere un massimo di 15 caratteri alfanumerici (lettere A-Z e numero 0-9)."
         facebook_connect: ~
+        facebook_developers_dashboard: ~
         facebook_connect_info_text: ~
         facebook_connect_info_text_with_instructions: ~
         facebook_instructions_link_text: ~
@@ -313,6 +320,7 @@ it:
         add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
+        google_developers_console: ~
         google_connect_info_text_with_instructions: ~
         google_connect_info_text: ~
         enable_google_login: ~
@@ -320,6 +328,7 @@ it:
         google_connect_secret: ~
         linkedin_connect: ~
         linkedin_instructions_link_text: ~
+        linkedin_developers_dashboard: ~
         linkedin_connect_info_text_with_instructions: ~
         linkedin_connect_info_text: ~
         enable_linkedin_login: ~
@@ -433,6 +442,8 @@ it:
           canceled: ~
           preauthorized: ~
           rejected: ~
+          payment_intent_requires_action: ~
+          payment_intent_action_expired: ~
         headers:
           conversation: ~
           listing: Inserzione
@@ -478,6 +489,9 @@ it:
             canceled: ~
             initiated: ~
             pending_ext: ~
+            payment_intent_requires_action: ~
+            payment_intent_action_expired: ~
+            payment_intent_failed: ~
         not_available: "Non disponibile"
       conversations:
         conversations: ~
@@ -533,6 +547,9 @@ it:
           confirm_modify: ~
           deleting_info: ~
           blocking_info: ~
+          unskip: ~
+          if_you_unskip_the_review: ~
+          they_will_not_be_notified_automatically: ~
       invitations:
         invitations: ~
         used:
@@ -549,6 +566,8 @@ it:
         search_by_title_author_category: ~
         search: Cerca
         reset_search: ~
+        export_all_as_csv: ~
+        processing_export: ~
         status:
           all: ~
           selected_js: ~
@@ -611,6 +630,159 @@ it:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: ~
@@ -728,6 +900,7 @@ it:
       emails_title: ~
       subscription: ~
       preview: ~
+      whats_new: ~
     listing_shapes:
       availability_title: Disponibilità
       read_more: "Leggi di più sulla gestione automatica delle disponibilità"
@@ -861,6 +1034,7 @@ it:
       stripe_fee: ~
       stripe_fee_notice: ~
       fee_should_be_less_than_minimum_price: ~
+      the_transaction_fee_must_be_lower_than_100: ~
       confirm_disable: ~
       commission_from_buyer_label: ~
       minimum_buyer_transaction_fee_label: ~
@@ -919,6 +1093,20 @@ it:
         request: ~
         offer: Richiesta
         inquiry: ~
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: "Modifica pagina"
     default_community_slogan: "Presta, vendi, aiuta, condividi"
@@ -1006,8 +1194,8 @@ it:
       total_value: ~
       total_value_paypal: ~
       total_value_stripe: ~
-      paypal_fee_info: "* Esclusi i <a id='%{fee_info_link_id}' href='#'>costi di transazione di PayPal</a>"
-      payment_fee_info: "* Esclusi i <a id='%{fee_info_link_id}' href='#'>costi di transazione</a>"
+      paypal_fee: ~
+      paypal_fee_info: "* Esclusi i %{link}"
       shipping_price_label: "Spedizione:"
       stripe-fee_label: "Tariffe per pagamento processato"
     confirm:
@@ -1350,7 +1538,7 @@ it:
       text_version_text: "Potresti condividere qualcosa di cui gli altri potrebbero avere bisogno? Oppure hai bisogno di qualcosa che altri potrebbero avere? Aggiungi un'offerta o una richiesta o controlla tutto ciò che gli altri stanno offrendo o stanno richiedendo a %{url}"
     reset_password_instructions:
       change_my_password: "Cambia la mia password"
-      reset_password_instructions: "Hai indicato di aver dimenticato o la  tua password o il tuo nome utente per %{service_name}.</p><p>Il tuo nome utente è: %{username}</p><p>Se vuoi resettare la tua password, clicca sul link seguente:%{password_reset_link}</p><br/><p>Se non hai richiesto tutto ciò, ignora pure questa email. La tua password non cambierà finchè non accedi al link sopra e ne crei una nuova."
+      reset_password_instructions: "<p>Hai indicato di aver dimenticato o la  tua password per %{service_name}.</p><p>Se vuoi resettare la tua password, clicca sul link seguente:%{password_reset_link}</p><br/><p>Se non hai richiesto tutto ciò, ignora pure questa email. La tua password non cambierà finchè non accedi al link sopra e ne crei una nuova.</p>"
     testimonial_reminder:
       remember_to_give_feedback_to: "Promemoria: ricordati di lasciare feedback a %{name}"
       you_have_not_given_feedback_yet: "NOn hai ancora lasciato feedback a %{name} per l'evento %{event}. Ricordati di lasciare il feedback su come %{given_name} ha condotto l'evento."
@@ -1379,6 +1567,7 @@ it:
       you_are_receiving_this_because: "Hai ricevuto una notifica perchè segui %{author_name}."
       view_listing: "Mostra annuncio"
     new_member_notification:
+      subject: ~
       new_member_has_joined: ~
       this_is_automatic_message: ~
       person_name: ~
@@ -1401,6 +1590,14 @@ it:
       subject: ~
       there_is_a_edited_listing_to_review: ~
       review_the_listing: ~
+    new_transaction:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
   error_messages:
     booking:
       booking_failed_payment_voided: "La prenotazione è fallita per un errore inaspettato. Per favore riprova più tardi. Nessun trasferimento di denaro è stato eseguito."
@@ -1423,6 +1620,7 @@ it:
       buyer_cannot_pay_error: "Il pagamento è stato rifiutato da PayPal. Si prega di contattare il loro Servizio Clienti per maggiori informazioni: %{customer_service_link}"
       pending_review_error: "Il pagamento è stato presentato, ma è stato contrassegnato da PayPal come 'in revisione'. Quando PayPal completarà la revisione, il pagamento verrà autorizzato automaticamente."
       seller_express_checkout_disabled: "Il pagamento con PayPal non è attivo sul conto PayPal dell'autore dell'inserzione. Per favore contatta l'autore, e mettilo a conoscenza che c'è un problema con il suo conto PayPal. Consigliali per favore di contattare l'Assistenza clienti PayPal."
+      seller_express_checkout_disabled_no_free: ~
       generic_error: "Si è verificato un errore durante la procedura di pagamento. Impossibile finalizzare il pagamento di PayPal."
       cancel_error: "Si è verificato un errore durante la cancellazione. Non è stato possibile completare la cancellazione."
       accept_authorization_error: "Si è verificato un errore durante il tentativo di accettare un pagamento pre autorizzato di Paypal. Per favore, riprova nuovamente."
@@ -1470,6 +1668,9 @@ it:
       on_or_after: "deve essere durante o dopo %{restriction}"
       positive_number: "Inserisci un numero"
       from_must_be_less_than_till: ~
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} ha accettato il prestito di %{listing_title} a %{requester_name} %{time_ago}."
@@ -1693,6 +1894,23 @@ it:
       messages: Messaggi
     logged_in_notifications_icon:
       notifications: Notifiche
+    markdown_help:
+      title: ~
+      description: ~
+      formatting: ~
+      result: ~
+      h1: ~
+      h2: ~
+      h3: ~
+      italic: ~
+      bold: ~
+      underline: ~
+      strikethrough: ~
+      inline_link: ~
+      list: ~
+      one: ~
+      two: ~
+      three: ~
     mobile_logged_in:
       admin: Amministratore
       go_to_your_profile_page: Profilo
@@ -1754,6 +1972,7 @@ it:
       listing_updated_successfully: "L'inserzione è stata aggiornata con successo"
       listing_updated_availability_management_enabled: "Inserzioni aggiornate con successo. Gestione delle disponibilità abilitate con successo."
       listing_updated_availability_management_disabled: ""
+      listing_deleted: ~
       only_kassi_administrators_can_access_this_area: ~
       only_listing_author_can_close_a_listing: "Solo l'autore dell'inserzione può chiudere l'inserzione"
       only_listing_author_can_edit_a_listing: "Solo l'autore dell'inserzione può modificare l'inserzione"
@@ -1820,6 +2039,7 @@ it:
       user_does_not_have_email_to_delete: "Non hai l'indirizzo email che stai cercando di rimuovere"
       email_deleted: "Email rimossa"
       listing_author_payment_details_missing: "Ti preghiamo di contattare l'autore, cliccando sul pulsante 'contatta' che trovi più in basso. Deve aggiornare i dettagli di pagamento per poter ricevere pagamenti."
+      listing_author_payment_details_missing_no_free: ~
       images_are_processing: "Stiamo elaborando le tue immagini. Attendi per favore uno o due minuti e saranno visibili."
       maintenance_mode:
         zero: "Il sito web sarà messo ora offline per manutenzione."
@@ -1856,6 +2076,7 @@ it:
       you_cannot_send_a_new_comment_because_listing_is_closed: "Non puoi aggiungere nuovi commenti perché l'annuncio è chiuso."
       you_must: Devi
       subscribe_to_comments: "Inviami una notifica per ogni nuovo commento o aggiornamento"
+    deleting_a_listing_cannot_be_undone: ~
     edit:
       edit_listing: "Modifica l'inserzione"
     edit_links:
@@ -1871,6 +2092,7 @@ it:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
+      delete_listing: ~
     map:
       open_in_google_maps: "Apri in Google Maps"
     error:
@@ -1893,6 +2115,7 @@ it:
       description:
         detailed_description: "Descrizione dettagliata"
         youtube_info: "Se la tua descrizione contiene dei link di YouTube, i video saranno mostrati in fondo alla descrizione."
+        youtube_info_markdown: ~
       destination:
         destination: Destinazione
       form_content:
@@ -2271,8 +2494,6 @@ it:
       sign_up: "Crea un nuovo account per %{service_name}"
       terms: "Termini e Condizioni"
       privacy: ~
-      username_is_in_use: "Questo nome utente è già in uso"
-      username_is_invalid: "Nome utente non valido. I caratteri ammessi sono lettere, numeri e underscore."
       visible_only_to_you: "visibile solo a te ed all'amministratore della community"
       visible_to_everybody: "visibile a tutti"
       create_account_with_provider: ~
@@ -2447,6 +2668,8 @@ it:
       image_is_processing: "L'immagine di profilo è pronta. Per favore, ricarica tra un po' di tempo la pagina."
       shown_in_your_public_profile: ~
       editing_profile_of: ~
+      format_markdown_link: ~
+      format_markdown: ~
     save_information: "Salva le informazioni"
   shipping_address:
     shipping_address: "Indirizzo di consegna"
@@ -2695,6 +2918,12 @@ it:
     paypal_connected: "L'account PayPal è stato connesso con successo!"
     paypal_can_accept: ~
     paypal_connected_give_permission: ~
+    stripe_account_restricted: ~
+    stripe_account_restricted_info: ~
+    stripe_account_restricted_soon: ~
+    stripe_account_restricted_soon_info: ~
+    stripe_account_pending_verification: ~
+    stripe_account_pending_verification_info: ~
     form_new:
       need_info: "Abbiamo bisogno di alcune informazioni su di te per poterti inviare denaro"
       select_country: "Scegli nazione"
@@ -2734,7 +2963,6 @@ it:
       address_kanji_line1: ~
       male: ~
       female: ~
-      mcc: ~
     form_bank:
       bank_account_number: "Numero conto corrente"
       bank_routing_number: ~
@@ -2789,6 +3017,30 @@ it:
       search_results: ~
       search_results_for: ~
       listing_description: ~
+      listing_description_without_price: ~
       category_description: ~
       profile_title: ~
       profile_description: ~
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

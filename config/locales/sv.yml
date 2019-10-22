@@ -95,6 +95,8 @@ sv:
         transaction_agreement_checkbox_label_description: "Denna text kommer att visas bredvid kryssrutan vid checkout. Användaren behöver kryssa i denna ruta för att gå vidare med betalningen. Ett exempel skulle vara något i stil med \"Genom att bocka i denna ruta så accepterar du användarvillkoren.\""
         transaction_agreement_text_header: Avtalstext
         transaction_agreement_description: "Detta är innehållet av avtalet som användarna måste acceptera. Avtalets innehåll syns när användaren klickar på %{read_more} länken."
+        terms_privacy_policy_and_static_content: ~
+        terms_privacy_policy_and_static_content_infotext: ~
       edit_look_and_feel:
         edit_community_look_and_feel: "Redigera marknadsplatsen \"%{community_name}\""
         community_logo: Logotyp
@@ -117,6 +119,8 @@ sv:
         logo_mobile_icon_instructions_text_with_dimensions: ~
         cover_photo_visibility: "Omslagsbilden visas på startsidan för personer som inte är inloggade."
         cover_photo_instructions_text_with_dimensions: "Bilden kommer att skalas ner till %{width}x%{height} pixlar och större bilder kommer att beskäras i mitten. %{see_how_it_looks_like}."
+        we_have_you_covered: ~
+        cover_photo_ready_made: ~
         small_cover_photo_visibility: "Den lilla omslagsbilden visas på alla sidor förutom på startsidan för de som inte är inloggade."
         small_cover_photo_instructions_text_with_dimensions: "Bilden kommer att skalas ner till %{width}x%{height} pixlar och större bilder kommer att beskäras i mitten."
         main_content_width: "När du väljer en omslagsbild så notera att huvudsidans innehåll är %{main_width} pixlar brett som mest. Kom även ihåg att se hur omslagsbilden ser ut på mindre skärmar (t ex så kan du göra din webbläsares fönster mindre)."
@@ -218,6 +222,7 @@ sv:
         users_can_invite_new_users: "Tillåt alla användare att bjuda in nya användare"
         private: "Tillåt endast registrerade användare att se annonser och användarprofiler (gör marknadsplatsen privat)"
         require_verification_to_post_listings: "Tillåt endast användare som har verifierats av admin att skapa nya annonser"
+        allow_free_conversations: ~
         search_preferences: "Sök inställningar"
         default_search_type: "Söktyp:%{select_search_type}"
         keyword_search: Nyckelordssökning
@@ -255,6 +260,7 @@ sv:
         delete_this_marketplace: "Ta bort denna marknadsplats"
         payment_preferences: Betalningssystem
         pre_approved_listings: ~
+        email_admins_about_new_transactions: ~
       manage_members:
         manage_members: "Hantera användare"
         email: E-post
@@ -316,6 +322,7 @@ sv:
         twitter_handle_placeholder: användarnamn
         invalid_twitter_handle: "Twitternamnet ska innehålla max 15 tecken (siffror 0-9 och bokstäver A-Z)."
         facebook_connect: Facebook
+        facebook_developers_dashboard: ~
         facebook_connect_info_text: "För att aktivera Facebook inloggning, skapa en applikation för din marknadsplats på <a href='https://developers.facebook.com/'>Facebook developers dashboard</a>. Lägg till ID och säkerhetsnyckeln för applikationen här."
         facebook_connect_info_text_with_instructions: "För att aktivera Facebook inloggning, skapa en applikation för din marknadsplats på <a href='https://developers.facebook.com/'>Facebook developers dashboard</a>. Lägg till det genererade ID och säkerhetsnyckeln för applikationen här. %{instructions_link}"
         facebook_instructions_link_text: "Se instruktioner för att konfigurera Facebook Connect."
@@ -328,6 +335,7 @@ sv:
         add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
+        google_developers_console: ~
         google_connect_info_text_with_instructions: ~
         google_connect_info_text: ~
         enable_google_login: ~
@@ -335,6 +343,7 @@ sv:
         google_connect_secret: ~
         linkedin_connect: ~
         linkedin_instructions_link_text: ~
+        linkedin_developers_dashboard: ~
         linkedin_connect_info_text_with_instructions: ~
         linkedin_connect_info_text: ~
         enable_linkedin_login: ~
@@ -448,6 +457,8 @@ sv:
           canceled: Avbruten
           preauthorized: Auktoriserad
           rejected: ~
+          payment_intent_requires_action: ~
+          payment_intent_action_expired: ~
         headers:
           conversation: Konversationstråd
           listing: Annons
@@ -493,6 +504,9 @@ sv:
             canceled: Avbryten
             initiated: "Väntar på Stripe betalning"
             pending_ext: "Väntar på Stripe betalning"
+            payment_intent_requires_action: ~
+            payment_intent_action_expired: ~
+            payment_intent_failed: ~
         not_available: "Inte tillgänglig"
       conversations:
         conversations: "Visa konversationer"
@@ -548,6 +562,9 @@ sv:
           confirm_modify: ~
           deleting_info: ~
           blocking_info: ~
+          unskip: ~
+          if_you_unskip_the_review: ~
+          they_will_not_be_notified_automatically: ~
       invitations:
         invitations: Inbjudningar
         used:
@@ -564,6 +581,8 @@ sv:
         search_by_title_author_category: ~
         search: Sök
         reset_search: "Visa alla"
+        export_all_as_csv: ~
+        processing_export: ~
         status:
           all: ~
           selected_js: ~
@@ -626,6 +645,159 @@ sv:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: "Redigera annonsfält %{field_name}"
@@ -743,6 +915,7 @@ sv:
       emails_title: E-post
       subscription: Prenumeration
       preview: "Förhandsvisa sida"
+      whats_new: ~
     listing_shapes:
       availability_title: Tillgänglighet
       read_more: "Läs mer om automatisk tillgänglighetshantering"
@@ -892,6 +1065,7 @@ sv:
       stripe_fee: "Stripes avgifter"
       stripe_fee_notice: "%{stripe_fee_link} kommer dras av från transaktionsavgiften du tar."
       fee_should_be_less_than_minimum_price: "Lägsta transaktionsavgiften måste vara lägre än lägsta annonspriset"
+      the_transaction_fee_must_be_lower_than_100: ~
       confirm_disable: "Är du säker du vill inaktivera %{gateway}? Om du inaktiverar detta betalningssystem kommer dina försäljare inte kunna ta emot pengar och köpare kommer inte kunna göra köp via detta betalningssystem. Om dina försäljare inte har aktiverat det andra betalsystemet kommer användare inte kunna köpa från dem."
       commission_from_buyer_label: ~
       minimum_buyer_transaction_fee_label: ~
@@ -950,6 +1124,20 @@ sv:
         request: Erbjudande
         offer: Förfrågan
         inquiry: Kontakt
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: "Redigera sida"
     default_community_slogan: "Gemensam marknadsplats"
@@ -1039,8 +1227,8 @@ sv:
       total_value: "%{seller_gets}*"
       total_value_paypal: "%{seller_gets}*"
       total_value_stripe: "%{seller_gets}"
-      paypal_fee_info: "* Inkluderar inte <a id='%{fee_info_link_id}' href='#'>PayPal's betalningshanteringsavgift</a>"
-      payment_fee_info: "* Inkluderar inte <a id='%{fee_info_link_id}' href='#'> betalningshanteringsavgift </a>"
+      paypal_fee: ~
+      paypal_fee_info: "* Inkluderar inte %{link}"
       shipping_price_label: "Frakt:"
       stripe-fee_label: Betalningshanteringsavgift
     confirm:
@@ -1383,7 +1571,7 @@ sv:
       text_version_text: "Kan du dela med dig något som andra kanske behöver? Eller behöver du något som andra har? Lägg ett erbjudande eller förfrågan eller kolla vad de andra har att erbjuda %{url}."
     reset_password_instructions:
       change_my_password: "Ändra mitt lösenord"
-      reset_password_instructions: "<p>Du har angett att du antingen har glömt ditt lösenord eller användarnamn på %{service_name}.</p><p>Ditt användarnamn är: %{username}</p><p>Om du behöver återställa ditt lösenord, klicka här: %{password_reset_link}</p><br/><p>Om du inte begärde detta, vänligen ignorera detta e-postmeddelande. Ditt lösenord kommer ej att bytas om du inte klickar på länken ovan och väljer ett nytt.</p>"
+      reset_password_instructions: "<p>Du har angett att du antingen har glömt ditt lösenord eller användarnamn på %{service_name}.</p><p>Om du behöver återställa ditt lösenord, klicka här: %{password_reset_link}</p><br/><p>Om du inte begärde detta, vänligen ignorera detta e-postmeddelande. Ditt lösenord kommer ej att bytas om du inte klickar på länken ovan och väljer ett nytt.</p>"
     testimonial_reminder:
       remember_to_give_feedback_to: "Kom ihåg att lämna feedback till %{name}"
       you_have_not_given_feedback_yet: "Du har ännu inte lämnat någon feedback till %{name} angående händelsen '%{event}'. Kom ihåg att ge feedback om hur %{given_name} utfört händelsen."
@@ -1414,6 +1602,7 @@ sv:
       you_are_receiving_this_because: "Du har fått ett meddelande eftersom du följer %{author_name}."
       view_listing: "Visa annons"
     new_member_notification:
+      subject: ~
       new_member_has_joined: "En ny användare har gått med i %{community}. De måste kanske ännu bekräfta sin e-postadress."
       this_is_automatic_message: "Detta är ett automatisk meddelande skickat åt administratörerna av %{community}."
       person_name: "Namn:"
@@ -1436,6 +1625,14 @@ sv:
       subject: ~
       there_is_a_edited_listing_to_review: ~
       review_the_listing: ~
+    new_transaction:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
   error_messages:
     booking:
       booking_failed_payment_voided: "Bokningen misslyckades på grund av ett oväntat fel. Vänligen försök igen senare. Du har inte blivit debiterad."
@@ -1458,6 +1655,7 @@ sv:
       buyer_cannot_pay_error: "Betalningen har avslagits av PayPal. Vänligen kontakta deras kundtjänst för mer information: %{customer_service_link}"
       pending_review_error: "Betalningen gick iväg men flaggas av PayPal som \"kräver en översyn\". När PayPal avslutar översynen kommer betalningen bli godkänd."
       seller_express_checkout_disabled: "PayPal Express Checkout har blivit avstängd för annonsörens PayPal konto. Vänligen kontakta annonsören och meddela om problemet samt be dem kontakta PayPals kundtjänst."
+      seller_express_checkout_disabled_no_free: ~
       generic_error: "Ett fel uppstod i betalningsprocessen. Kunde inte slutföra din PayPal betalning."
       cancel_error: "Ett fel inträffade. Det gick ej att slutföra."
       accept_authorization_error: "Ett fel uppstod vid försök att acceptera den förauktoriserade PayPal betalningen. Vänligen försök igen."
@@ -1505,6 +1703,9 @@ sv:
       on_or_after: "måste vara exakt på eller efter %{restriction}"
       positive_number: "Lägg in ett nummer."
       from_must_be_less_than_till: ~
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} gick med på att låna ut %{listing_title} till %{requester_name} %{time_ago}."
@@ -1728,6 +1929,23 @@ sv:
       messages: Meddelanden
     logged_in_notifications_icon:
       notifications: Aviseringar
+    markdown_help:
+      title: ~
+      description: ~
+      formatting: ~
+      result: ~
+      h1: ~
+      h2: ~
+      h3: ~
+      italic: ~
+      bold: ~
+      underline: ~
+      strikethrough: ~
+      inline_link: ~
+      list: ~
+      one: ~
+      two: ~
+      three: ~
     mobile_logged_in:
       admin: Admin
       go_to_your_profile_page: Profil
@@ -1789,6 +2007,7 @@ sv:
       listing_updated_successfully: "Annons uppdaterades"
       listing_updated_availability_management_enabled: "Annonsen uppdaterades framgångsrikt. Tillgänglighetshantering har blivit aktiverat."
       listing_updated_availability_management_disabled: "Annonsen uppdaterades framgångsrikt. Tillgänglighetshantering har blivit inaktiverad."
+      listing_deleted: ~
       only_kassi_administrators_can_access_this_area: ~
       only_listing_author_can_close_a_listing: "Bara ägaren av annonsen kan stänga annonsen"
       only_listing_author_can_edit_a_listing: "Bara ägaren av annonsen kan redigera annonsen"
@@ -1855,6 +2074,7 @@ sv:
       user_does_not_have_email_to_delete: "Du har inte e-postadressen som du försöker ta bort"
       email_deleted: "E-post borttaget"
       listing_author_payment_details_missing: "Vänligen kontakta ägaren genom att klicka på \"Kontakt\" nedan. De måste uppdatera sina betalningsdetaljer för att kunna ta emot betalning."
+      listing_author_payment_details_missing_no_free: ~
       images_are_processing: "Vi prossesserar dina bilder. Ge oss en minut eller två och de kommer vara synliga."
       maintenance_mode:
         zero: "Hemsidan kommer nu gå offline för underhåll"
@@ -1891,6 +2111,7 @@ sv:
       you_cannot_send_a_new_comment_because_listing_is_closed: "Du kan inte skicka nya kommentarer eftersom din annons är avslutad."
       you_must: "Du måste"
       subscribe_to_comments: "Meddela mig om nya kommentarer och uppdateringar"
+    deleting_a_listing_cannot_be_undone: ~
     edit:
       edit_listing: "Redigera annons"
     edit_links:
@@ -1906,6 +2127,7 @@ sv:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
+      delete_listing: ~
     map:
       open_in_google_maps: "Öppna i Google Maps"
     error:
@@ -1928,6 +2150,7 @@ sv:
       description:
         detailed_description: "Detaljerad beskrivning"
         youtube_info: "Om din beskrivning innehåller länkar till YouTube videon kommer de visas under beskrivningen."
+        youtube_info_markdown: ~
       destination:
         destination: Destination
       form_content:
@@ -2306,8 +2529,6 @@ sv:
       sign_up: "Skapa ett nytt %{service_name} konto"
       terms: användarvillkoren
       privacy: Sekretesspolicy
-      username_is_in_use: "Detta användarnamn används redan."
-      username_is_invalid: "Detta användarnamn är ogiltigt. Tillåtna tecken är bokstäver, nummer och understreck."
       visible_only_to_you: "endast synlig för dig och %{service_name} admin"
       visible_to_everybody: "synlig för alla"
       create_account_with_provider: ~
@@ -2480,6 +2701,8 @@ sv:
       image_is_processing: "Din profilbild förbereds. Den kommer vara klar om några minuter."
       shown_in_your_public_profile: "(visas i din offentliga profil)"
       editing_profile_of: "Du redigerar nu %{name}s profil"
+      format_markdown_link: ~
+      format_markdown: ~
     save_information: "Spara information"
   shipping_address:
     shipping_address: Leveransadress
@@ -2751,6 +2974,12 @@ sv:
     paypal_connected: "PayPal kontot är nu anslutet!"
     paypal_can_accept: "Du kan nu ta emot pengar till dit PayPal konto"
     paypal_connected_give_permission: "För att slutföra anslutningen och börja ta emot pengar till ditt PayPal konto <%{email}>, vänligen tillåt att en serviceavgift tas."
+    stripe_account_restricted: ~
+    stripe_account_restricted_info: ~
+    stripe_account_restricted_soon: ~
+    stripe_account_restricted_soon_info: ~
+    stripe_account_pending_verification: ~
+    stripe_account_pending_verification_info: ~
     form_new:
       need_info: "Vi behöver en del information om dig för att kunna skicka dig pengar."
       select_country: "Välj land...."
@@ -2790,7 +3019,6 @@ sv:
       address_kanji_line1: ~
       male: ~
       female: ~
-      mcc: ~
     form_bank:
       bank_account_number: Bankkontonummer
       bank_routing_number: Clearingnummer
@@ -2845,6 +3073,30 @@ sv:
       search_results: ~
       search_results_for: ~
       listing_description: ~
+      listing_description_without_price: ~
       category_description: ~
       profile_title: ~
       profile_description: ~
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

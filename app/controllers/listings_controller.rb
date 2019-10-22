@@ -19,7 +19,7 @@ class ListingsController < ApplicationController
     controller.ensure_current_user_is_listing_author t("layouts.notifications.only_listing_author_can_close_a_listing")
   end
 
-  before_action :only => [:edit, :edit_form_content, :update] do |controller|
+  before_action :only => [:edit, :edit_form_content, :update, :delete] do |controller|
     controller.ensure_current_user_is_listing_author t("layouts.notifications.only_listing_author_can_edit_a_listing")
   end
 
@@ -124,7 +124,9 @@ class ListingsController < ApplicationController
     if new_listing_author != @current_user
       logger.info "ADMIN ACTION: admin='#{@current_user.id}' create listing params=#{params.inspect}"
     end
-    params[:listing].delete("origin_loc_attributes") if params[:listing][:origin_loc_attributes][:address].blank?
+    if show_location? && params[:listing][:origin_loc_attributes][:address].blank?
+      params[:listing].delete("origin_loc_attributes")
+    end
 
     shape = get_shape(Maybe(params)[:listing][:listing_shape_id].to_i.or_else(nil))
     listing_uuid = UUIDUtils.create
@@ -223,7 +225,7 @@ class ListingsController < ApplicationController
       if shape.booking_per_hour? && !@listing.per_hour_ready
         @listing.working_hours_new_set(force_create: true)
       end
-      if @listing.location
+      if show_location? && @listing.location
         location_params = ListingFormViewUtils.permit_location_params(params)
         @listing.location.update(location_params)
       end
@@ -272,6 +274,16 @@ class ListingsController < ApplicationController
 
   def verification_required
 
+  end
+
+  def delete
+    if @listing.update(deleted: true)
+      flash[:notice] = t("layouts.notifications.listing_deleted")
+      redirect_to listings_person_settings_path(@current_user.username)
+    else
+      flash[:error] = @listing.errors.full_messages.join(', ')
+      redirect_to @listing
+    end
   end
 
   def ensure_current_user_is_listing_author(error_message)

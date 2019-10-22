@@ -95,6 +95,8 @@ da-DK:
         transaction_agreement_checkbox_label_description: "Teksten vil blive vist ved siden af en checkbox på betalingssiden. Brugeren skal tjekke denne box for at gennemføre transaktionen. Et exempel til etiketten kunne være \"Ved at klikke på checkboxen acceptere du vores transaktionsaftale\"."
         transaction_agreement_text_header: "Aftale tekst"
         transaction_agreement_description: "Dette er indholdet af din faktiske aftale som brugerne skal acceptere. Denne tekst vises når brugeren klikker på \"%{read_more}\" linket ved siden knappen."
+        terms_privacy_policy_and_static_content: ~
+        terms_privacy_policy_and_static_content_infotext: ~
       edit_look_and_feel:
         edit_community_look_and_feel: "Ret markedspladsens %{community_name} udseende"
         community_logo: "Logo vist på alm. computer"
@@ -117,6 +119,8 @@ da-DK:
         logo_mobile_icon_instructions_text_with_dimensions: ~
         cover_photo_visibility: "Coverbillede bliver vist på startsiden for dem som ikke er logget ind."
         cover_photo_instructions_text_with_dimensions: "Billedet vil blive skalleret til %{width}x%{height}px og større billede vil blive beskåret i midten. %{see_how_it_looks_like}."
+        we_have_you_covered: ~
+        cover_photo_ready_made: ~
         small_cover_photo_visibility: "Det lille coverbillede bliver vist på alle sider undtagen forsiden, for dem som ikke er logget ind."
         small_cover_photo_instructions_text_with_dimensions: "Billedet vil blive skaleret til %{width}x%{height}px og større billede vil blive beskåret i midten."
         main_content_width: "Når du vælger et coverbillede, så læg mærke til at siden hovedindhold er %{main_width} pixels bredde ved største skærm. Husk at tjekke om coverbilledet sær normalt ud på mindre skærme (f.eks ved at gøre browser vinduet mindre)."
@@ -218,6 +222,7 @@ da-DK:
         users_can_invite_new_users: "Alle brugere kan invitere nye brugere til denne markedsplads"
         private: "Denne markedsplads er privat (kun registrerede brugere kan se indhold)"
         require_verification_to_post_listings: "Kun brugere godkendt af administratoren kan oprette nye annoncer"
+        allow_free_conversations: ~
         search_preferences: "Søge præferencer"
         default_search_type: "Søgetype: %{select_search_type}"
         keyword_search: "Nøgleord søgning"
@@ -255,6 +260,7 @@ da-DK:
         delete_this_marketplace: "Slet denne markedsplads"
         payment_preferences: ~
         pre_approved_listings: ~
+        email_admins_about_new_transactions: ~
       manage_members:
         manage_members: "Administrer brugere"
         email: Email
@@ -316,6 +322,7 @@ da-DK:
         twitter_handle_placeholder: "@brugernavn"
         invalid_twitter_handle: "Dit Twitter brugernavn kan max indeholde 15 tegn."
         facebook_connect: Facebook
+        facebook_developers_dashboard: ~
         facebook_connect_info_text: "For at tilknytte Facebook login, skal du oprette en applikation til din markedsplads på <a href='https://developers.facebook.com/'>Facebook's developers dashboard</a>. Tilføj den generede id og secret key til din application her."
         facebook_connect_info_text_with_instructions: "For at tilknytte Facebook login, skal du oprette en applikation til din markedsplads på <a href='https://developers.facebook.com/'>Facebook's developers dashboard</a>. Tilføj den genererede id og secret key til din application her. %{instructions_link}"
         facebook_instructions_link_text: "Se instruktioner for at konfigurere Facebook Connect."
@@ -328,6 +335,7 @@ da-DK:
         add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
+        google_developers_console: ~
         google_connect_info_text_with_instructions: ~
         google_connect_info_text: ~
         enable_google_login: ~
@@ -335,6 +343,7 @@ da-DK:
         google_connect_secret: ~
         linkedin_connect: ~
         linkedin_instructions_link_text: ~
+        linkedin_developers_dashboard: ~
         linkedin_connect_info_text_with_instructions: ~
         linkedin_connect_info_text: ~
         enable_linkedin_login: ~
@@ -448,6 +457,8 @@ da-DK:
           canceled: ~
           preauthorized: ~
           rejected: ~
+          payment_intent_requires_action: ~
+          payment_intent_action_expired: ~
         headers:
           conversation: Samtaletråd
           listing: Annonce
@@ -493,6 +504,9 @@ da-DK:
             canceled: ~
             initiated: ~
             pending_ext: ~
+            payment_intent_requires_action: ~
+            payment_intent_action_expired: ~
+            payment_intent_failed: ~
         not_available: "Ikke tilgængelig"
       conversations:
         conversations: ~
@@ -548,6 +562,9 @@ da-DK:
           confirm_modify: ~
           deleting_info: ~
           blocking_info: ~
+          unskip: ~
+          if_you_unskip_the_review: ~
+          they_will_not_be_notified_automatically: ~
       invitations:
         invitations: ~
         used:
@@ -564,6 +581,8 @@ da-DK:
         search_by_title_author_category: ~
         search: ~
         reset_search: ~
+        export_all_as_csv: ~
+        processing_export: ~
         status:
           all: ~
           selected_js: ~
@@ -626,6 +645,159 @@ da-DK:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: "Rediger annoncefelt '%{field_name}'"
@@ -743,6 +915,7 @@ da-DK:
       emails_title: Emails
       subscription: Abonnement
       preview: "Vis eksempel på min hjemmeside"
+      whats_new: ~
     listing_shapes:
       availability_title: Tilgængelighed
       read_more: "Læs mere om automatisk tilgængelighed."
@@ -888,6 +1061,7 @@ da-DK:
       stripe_fee: ~
       stripe_fee_notice: ~
       fee_should_be_less_than_minimum_price: ~
+      the_transaction_fee_must_be_lower_than_100: ~
       confirm_disable: ~
       commission_from_buyer_label: ~
       minimum_buyer_transaction_fee_label: ~
@@ -946,6 +1120,20 @@ da-DK:
         request: Tilbyd
         offer: Ansøg
         inquiry: Kontakt
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: "Rediger side"
     default_community_slogan: "Fælleskabs markedsplads"
@@ -1031,8 +1219,8 @@ da-DK:
       total_value: "%{seller_gets}*"
       total_value_paypal: "%{seller_gets}*"
       total_value_stripe: "%{seller_gets}"
-      paypal_fee_info: "* Eksklusiv <a id='%{fee_info_link_id}' href='#'>PayPal-gebyr</a>"
-      payment_fee_info: ~
+      paypal_fee: ~
+      paypal_fee_info: "* Eksklusiv %{link}"
       shipping_price_label: "Levering:"
       stripe-fee_label: Betalingsomkostninger
     confirm:
@@ -1375,7 +1563,7 @@ da-DK:
       text_version_text: "Har du noget du kunne dele med andre, som måske ville have brug for det? Eller har du brug for noget andre muligvis har? Tilføj et tilbud eller en forespørgsel, eller tjek alt hvad andre tilbyder lige nu på %{url}"
     reset_password_instructions:
       change_my_password: "Skift min adgangskode"
-      reset_password_instructions: "<p>Vi har modtaget en anmodning om at nulstille adgangskoden til din %{service_name}-konto.</p><p>Dit brugernavn er: %{username}</p><p>Glemt adgangskode? %{password_reset_link}</p><br/><p>Hvis du ikke har bedt om dette, kan du bare se bort fra denne email.</p>"
+      reset_password_instructions: "<p>Vi har modtaget en anmodning om at nulstille adgangskoden til din %{service_name}-konto.</p><p>Glemt adgangskode? %{password_reset_link}</p><br/><p>Hvis du ikke har bedt om dette, kan du bare se bort fra denne email.</p>"
     testimonial_reminder:
       remember_to_give_feedback_to: "Påmindelse: Husk at give feedback til %{name}"
       you_have_not_given_feedback_yet: "Du har endnu ikke givet %{name} feedback på '%{event}'. Husk at give %{given_name} feedback."
@@ -1404,6 +1592,7 @@ da-DK:
       you_are_receiving_this_because: "Du har modtaget denne mail, fordi du følger %{author_name}."
       view_listing: "Vis annonce"
     new_member_notification:
+      subject: ~
       new_member_has_joined: "Et nyt medlem har tilmeldt sig %{community}. Medlemmet skal muligvis bekræfte sin e-mail-adresse først."
       this_is_automatic_message: "Dette er en automatisk meddelelse sendt til administratorer af %{community}."
       person_name: "Navn:"
@@ -1426,6 +1615,14 @@ da-DK:
       subject: ~
       there_is_a_edited_listing_to_review: ~
       review_the_listing: ~
+    new_transaction:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
   error_messages:
     booking:
       booking_failed_payment_voided: |-
@@ -1450,6 +1647,7 @@ da-DK:
       buyer_cannot_pay_error: "Betalingen er blevet afvist af PayPal. Kontakt venligst deres Kundeservice for yderligere information: %{customer_service_link}"
       pending_review_error: "Betalingen er sendt afsted, men PayPal har markeret den som 'behøver gennemgang'. Når gennemgangen har fundet sted, vil betalingen automatisk blive autoriseret."
       seller_express_checkout_disabled: "PayPal Express Checkout er blevet deaktiveret. Kontakt sælger og fortæl dem, at der er et problem med deres PayPal-konto. Opfordr dem evt. til at kontakte PayPal kundeservice."
+      seller_express_checkout_disabled_no_free: ~
       generic_error: "Der skete en teknisk fejl under betalingsprocessen."
       cancel_error: "Der skete en fejl. Vi kunne ikke annullere."
       accept_authorization_error: "Der skete en fejl da vi prøvede at gennemføre din PayPal betaling. Prøv venligst igen."
@@ -1497,6 +1695,9 @@ da-DK:
       on_or_after: "skal være på eller efter %{restriction}"
       positive_number: "Indsæt et tal."
       from_must_be_less_than_till: "\"Starttidspunkt\" skal være tidligere end \"Sluttidspunkt\""
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} indvilligede i at udlåne %{listing_title} til %{requester_name}%{time_ago}"
@@ -1720,6 +1921,23 @@ da-DK:
       messages: Beskeder
     logged_in_notifications_icon:
       notifications: Notifikationer
+    markdown_help:
+      title: ~
+      description: ~
+      formatting: ~
+      result: ~
+      h1: ~
+      h2: ~
+      h3: ~
+      italic: ~
+      bold: ~
+      underline: ~
+      strikethrough: ~
+      inline_link: ~
+      list: ~
+      one: ~
+      two: ~
+      three: ~
     mobile_logged_in:
       admin: Administrator
       go_to_your_profile_page: "Min profil"
@@ -1781,6 +1999,7 @@ da-DK:
       listing_updated_successfully: "Annoncen blev opdateret"
       listing_updated_availability_management_enabled: "Annoncen blev opdateret. Tilgængelighedsstyring er aktiveret."
       listing_updated_availability_management_disabled: "Annoncen blev opdateret. Tilgængelighedsstyring er deaktiveret."
+      listing_deleted: ~
       only_kassi_administrators_can_access_this_area: ~
       only_listing_author_can_close_a_listing: "Kun notering forfatter kan lukke en liste"
       only_listing_author_can_edit_a_listing: "Kun notering forfatter kan redigere en liste"
@@ -1847,6 +2066,7 @@ da-DK:
       user_does_not_have_email_to_delete: "Du har ikke email adressen som du prøver at fjerne"
       email_deleted: "Email fjernet"
       listing_author_payment_details_missing: "Kontakt sælger ved at trykke på knappen 'Kontakt' nedenfor. De skal opdatere deres betalingsoplysninger for at kunne modtage betalinger."
+      listing_author_payment_details_missing_no_free: ~
       images_are_processing: "Vi behandler dine nye billeder, de vil være synlige om et par sekunder."
       maintenance_mode:
         zero: "Dette website vil nu være offline for vedligeholdelse"
@@ -1883,6 +2103,7 @@ da-DK:
       you_cannot_send_a_new_comment_because_listing_is_closed: "Du kan ikke skrive en kommentar, da annoncen er lukket."
       you_must: "Du skal"
       subscribe_to_comments: "Giv mig besked om nye kommentarer og opdateringer"
+    deleting_a_listing_cannot_be_undone: ~
     edit:
       edit_listing: "Ret annoncen"
     edit_links:
@@ -1898,6 +2119,7 @@ da-DK:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
+      delete_listing: ~
     map:
       open_in_google_maps: "Åbn i Google Maps"
     error:
@@ -1920,6 +2142,7 @@ da-DK:
       description:
         detailed_description: "Detaljeret beskrivelse"
         youtube_info: "Hvis din beskrivelse indeholder YouTube links, vil videoerne blive vist under beskrivelsen."
+        youtube_info_markdown: ~
       destination:
         destination: destiantion
       form_content:
@@ -2298,8 +2521,6 @@ da-DK:
       sign_up: "Opret ny %{service_name} konto"
       terms: Brugervilkår
       privacy: Privatlivspolitik
-      username_is_in_use: "Dette brugernavn er allerede i brug."
-      username_is_invalid: "Brugernavn er ugyldig. Tilladte tegn er bogstaver, tal og understregning."
       visible_only_to_you: "kun synlige for dig og markedspladsens admin"
       visible_to_everybody: "Synlig for alle"
       create_account_with_provider: ~
@@ -2472,6 +2693,8 @@ da-DK:
       image_is_processing: "Din profil er ved at blive forberedt. Opdatér venligst siden om et øjeblik."
       shown_in_your_public_profile: "(vises på din profil)"
       editing_profile_of: "Du ændre nu %{name}s profil"
+      format_markdown_link: ~
+      format_markdown: ~
     save_information: Gem
   shipping_address:
     shipping_address: Forsendelsesadresse
@@ -2739,6 +2962,12 @@ da-DK:
     paypal_connected: "PayPal-kontoen blev tilknyttet."
     paypal_can_accept: "Du er nu klar til at modtage betaling på din PayPal konto"
     paypal_connected_give_permission: "For at afslutte opsætningen og begynde at modtage penge på din PayPal-konto <%{email}>, giv venligst tilladelse til at opkræve et transaktionsgebyr."
+    stripe_account_restricted: ~
+    stripe_account_restricted_info: ~
+    stripe_account_restricted_soon: ~
+    stripe_account_restricted_soon_info: ~
+    stripe_account_pending_verification: ~
+    stripe_account_pending_verification_info: ~
     form_new:
       need_info: "Vi har brug for nogle oplysninger om dig for at kunne sende dig penge."
       select_country: "Vælg land"
@@ -2778,7 +3007,6 @@ da-DK:
       address_kanji_line1: ~
       male: Mand
       female: Kvinde
-      mcc: ~
     form_bank:
       bank_account_number: "Bankkonto nummer"
       bank_routing_number: ~
@@ -2833,6 +3061,30 @@ da-DK:
       search_results: ~
       search_results_for: ~
       listing_description: ~
+      listing_description_without_price: ~
       category_description: ~
       profile_title: ~
       profile_description: ~
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

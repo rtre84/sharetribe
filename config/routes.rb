@@ -67,7 +67,7 @@ Rails.application.routes.draw do
 
   # Keep before /:locale/ routes, because there is locale 'vi', which matches '_lp_preview'
   # and regexp anchors are not allowed in routing requirements.
-  get '/_lp_preview' => 'landing_page#preview'
+  get '/_lp_preview' => 'landing_page#preview', as: :landing_page_preview
 
   locale_regex_string = Sharetribe::AVAILABLE_LOCALES.map { |l| l[:ident] }.concat(Sharetribe::REMOVED_LOCALES.to_a).join("|")
   locale_matcher = Regexp.new(locale_regex_string)
@@ -276,15 +276,24 @@ Rails.application.routes.draw do
             get :approve
             get :reject
           end
+          collection do
+            get 'export'
+            get 'export_status'
+          end
         end
-        resources :transactions, controller: :community_transactions, only: :index do
+        resources :transactions, controller: :community_transactions, only: [:index, :show] do
           collection do
             get 'export'
             get 'export_status'
           end
         end
         resources :conversations, controller: :community_conversations, only: [:index, :show]
-        resources :testimonials, controller: :community_testimonials, only: [:index, :edit, :update, :new, :create]
+        resources :testimonials, controller: :community_testimonials, only: [:index, :edit, :update, :new, :create] do
+          collection do
+            get :new_unskip
+            post :unskip
+          end
+        end
         resources :invitations, controller: :community_invitations, only: [:index]
         resources :emails
         resources :community_memberships do
@@ -348,6 +357,12 @@ Rails.application.routes.draw do
       resource :plan, only: [:show]
       resource :domain, only: [:show]
       resource :community_seo_settings, only: [:show, :update]
+      resources :landing_page_versions do
+        member do
+          get :release
+        end
+        resources :sections, controller: 'landing_page_versions/sections'
+      end
     end
 
     resources :invitations, only: [:new, :create ] do
@@ -367,6 +382,7 @@ Rails.application.routes.draw do
       member do
         post :follow
         delete :unfollow
+        delete :delete
       end
       collection do
         get :new_form_content
@@ -382,6 +398,12 @@ Rails.application.routes.draw do
           post :add_from_file
           put :add_from_url
           put :reorder
+        end
+      end
+      resources :preauthorize_transactions, only: [], defaults: { format: :json } do
+        member do
+          post :stripe_confirm_intent
+          post :stripe_failed_intent
         end
       end
     end
@@ -435,7 +457,6 @@ Rails.application.routes.draw do
 
       resources :people, except: [:show] do
         collection do
-          get :check_username_availability
           get :check_email_availability
           get :check_email_availability_and_validity
           get :check_invitation_code
@@ -533,9 +554,4 @@ Rails.application.routes.draw do
   get "(/:locale)/people/:person_id(*path)" => redirect(id_to_username), :constraints => { :locale => locale_matcher, :person_id => /[a-zA-Z0-9_-]{22}/ }
 
   get "(/:locale)/:person_id(*path)" => redirect(id_to_username), :constraints => { :locale => locale_matcher, :person_id => /[a-zA-Z0-9_-]{22}/ }
-
-  #keep this matcher last
-  #catches all non matched routes, shows 404 and logs more reasonably than the alternative RoutingError + stacktrace
-
-  match "*path" => "errors#not_found", via: :all
 end

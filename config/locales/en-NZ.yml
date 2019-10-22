@@ -95,6 +95,8 @@ en-NZ:
         transaction_agreement_checkbox_label_description: "This text will be shown next to a checkbox in the checkout form. The user needs to check the box to proceed with the transaction. An example label would be something like \"By clicking this box I accept the agreement.\""
         transaction_agreement_text_header: "Agreement text"
         transaction_agreement_description: "This is the content of the actual agreement that the user needs to accept. The agreement content is displayed when the user clicks the \"%{read_more}\" link next to the agreement label."
+        terms_privacy_policy_and_static_content: ~
+        terms_privacy_policy_and_static_content_infotext: ~
       edit_look_and_feel:
         edit_community_look_and_feel: "Edit marketplace \"%{community_name}\" look and feel"
         community_logo: Logo
@@ -117,6 +119,8 @@ en-NZ:
         logo_mobile_icon_instructions_text_with_dimensions: ~
         cover_photo_visibility: "Cover photo is shown in the homepage for users who are not logged in."
         cover_photo_instructions_text_with_dimensions: "The photo will be resized to %{width}x%{height} pixel size and taller images will be cut in the middle. %{see_how_it_looks_like}."
+        we_have_you_covered: ~
+        cover_photo_ready_made: ~
         small_cover_photo_visibility: "Small cover photo is shown in all pages except in the homepage for users who are not logged in."
         small_cover_photo_instructions_text_with_dimensions: "The photo will be resized to %{width}x%{height} pixel size and taller images will be cut in the middle."
         main_content_width: "When choosing cover photos please note that the page main content is %{main_width} pixels wide at most. Remember to also check how your cover photo looks on the smaller screens (e.g. by using a more narrow browser window)."
@@ -218,6 +222,7 @@ en-NZ:
         users_can_invite_new_users: "Allow all users to invite new users"
         private: "Allow only registered users to see listings and user profiles (make marketplace private)"
         require_verification_to_post_listings: "Allow only users verified by admin to post new listings"
+        allow_free_conversations: ~
         search_preferences: "Search preferences"
         default_search_type: "Search type: %{select_search_type}"
         keyword_search: "Keyword search"
@@ -255,6 +260,7 @@ en-NZ:
         delete_this_marketplace: "Delete this marketplace"
         payment_preferences: "Payment system"
         pre_approved_listings: ~
+        email_admins_about_new_transactions: ~
       manage_members:
         manage_members: "Manage users"
         email: Email
@@ -316,6 +322,7 @@ en-NZ:
         twitter_handle_placeholder: username
         invalid_twitter_handle: "Twitter handle should contain only at maximum 15 alphanumeric (letters A-Z and numbers 0-9) characters."
         facebook_connect: Facebook
+        facebook_developers_dashboard: ~
         facebook_connect_info_text: "In order to enable Facebook Login, create an application for your marketplace in the <a href='https://developers.facebook.com/'>Facebook developers dashboard</a>. Add the generated id and secret key of the application here."
         facebook_connect_info_text_with_instructions: "In order to enable Facebook Login, create an application for your marketplace in the <a href='https://developers.facebook.com/'>Facebook developers dashboard</a>. Add the generated id and secret key of the application here. %{instructions_link}"
         facebook_instructions_link_text: "See instructions for configuring Facebook Connect."
@@ -328,6 +335,7 @@ en-NZ:
         add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
+        google_developers_console: ~
         google_connect_info_text_with_instructions: ~
         google_connect_info_text: ~
         enable_google_login: ~
@@ -335,6 +343,7 @@ en-NZ:
         google_connect_secret: ~
         linkedin_connect: ~
         linkedin_instructions_link_text: ~
+        linkedin_developers_dashboard: ~
         linkedin_connect_info_text_with_instructions: ~
         linkedin_connect_info_text: ~
         enable_linkedin_login: ~
@@ -448,6 +457,8 @@ en-NZ:
           canceled: ~
           preauthorized: ~
           rejected: ~
+          payment_intent_requires_action: ~
+          payment_intent_action_expired: ~
         headers:
           conversation: "Conversation thread"
           listing: Listing
@@ -493,6 +504,9 @@ en-NZ:
             canceled: Canceled
             initiated: "Waiting Stripe payment"
             pending_ext: "Waiting Stripe payment"
+            payment_intent_requires_action: ~
+            payment_intent_action_expired: ~
+            payment_intent_failed: ~
         not_available: "Not available"
       conversations:
         conversations: "View conversations"
@@ -548,6 +562,9 @@ en-NZ:
           confirm_modify: ~
           deleting_info: ~
           blocking_info: ~
+          unskip: ~
+          if_you_unskip_the_review: ~
+          they_will_not_be_notified_automatically: ~
       invitations:
         invitations: ~
         used:
@@ -564,6 +581,8 @@ en-NZ:
         search_by_title_author_category: ~
         search: ~
         reset_search: ~
+        export_all_as_csv: ~
+        processing_export: ~
         status:
           all: ~
           selected_js: ~
@@ -626,6 +645,159 @@ en-NZ:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: "Edit listing field '%{field_name}'"
@@ -743,6 +915,7 @@ en-NZ:
       emails_title: Emails
       subscription: Subscription
       preview: "Preview site"
+      whats_new: ~
     listing_shapes:
       availability_title: Availability
       read_more: "Read more about automatic availability management."
@@ -892,6 +1065,7 @@ en-NZ:
       stripe_fee: "Stripe's fees"
       stripe_fee_notice: "%{stripe_fee_link} will be deducted from the transaction fee you are charging."
       fee_should_be_less_than_minimum_price: "Minimum transaction fee must be lower than minimum transaction size"
+      the_transaction_fee_must_be_lower_than_100: ~
       confirm_disable: "Are you sure you want to disable %{gateway}? If you disable it, providers will no longer be able to receive money and buyers will no longer be able to pay through this payment method. If providers haven't configured another payment method, buyers will not be able to buy from them."
       commission_from_buyer_label: ~
       minimum_buyer_transaction_fee_label: ~
@@ -950,6 +1124,20 @@ en-NZ:
         request: Offer
         offer: Request
         inquiry: Contact
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: "Edit page"
     default_community_slogan: "Community marketplace"
@@ -1039,8 +1227,8 @@ en-NZ:
       total_value: "%{seller_gets}*"
       total_value_paypal: "%{seller_gets}*"
       total_value_stripe: "%{seller_gets}"
-      paypal_fee_info: "* Excludes <a id='%{fee_info_link_id}' href='#'>PayPal's payment processing fee</a>"
-      payment_fee_info: "* Excludes <a id='%{fee_info_link_id}' href='#'>payment processing fee</a>"
+      paypal_fee: ~
+      paypal_fee_info: "* Excludes %{link}"
       shipping_price_label: "Shipping:"
       stripe-fee_label: "Payment processing fee"
     confirm:
@@ -1383,7 +1571,7 @@ en-NZ:
       text_version_text: "Could you share something that others might need? Or do you need something that others might have? Add an offer or a request or check everything that the others are offering or requesting at %{url}"
     reset_password_instructions:
       change_my_password: "Change my password"
-      reset_password_instructions: "<p>You have indicated that you have forgotten either your password or username in the %{service_name} service.</p><p>Your username is: %{username}</p><p>If you need to reset your password, click the following link: %{password_reset_link}</p><br/><p>If you didn't request this, please ignore this email. Your password won't change until you access the link above and create a new one.</p>"
+      reset_password_instructions: ""
     testimonial_reminder:
       remember_to_give_feedback_to: "Reminder: remember to give feedback to %{name}"
       you_have_not_given_feedback_yet: "You have not yet given feedback to %{name} about event '%{event}'. Remember to give feedback on how %{given_name} performed in the event."
@@ -1412,6 +1600,7 @@ en-NZ:
       you_are_receiving_this_because: "You received this notification because you follow %{author_name}."
       view_listing: "View listing"
     new_member_notification:
+      subject: ~
       new_member_has_joined: "A new member has joined %{community}. They may still have to confirm their email address."
       this_is_automatic_message: "This is an automatic message sent to administrators of %{community}."
       person_name: "Name:"
@@ -1434,6 +1623,14 @@ en-NZ:
       subject: ~
       there_is_a_edited_listing_to_review: ~
       review_the_listing: ~
+    new_transaction:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
   error_messages:
     booking:
       booking_failed_payment_voided: "Booking failed due to an unexpected error. Please try again later. You haven't been charged."
@@ -1456,6 +1653,7 @@ en-NZ:
       buyer_cannot_pay_error: "The payment has been declined by PayPal. Please contact their Customer Service for more information: %{customer_service_link}"
       pending_review_error: "The payment was submitted but was flagged by PayPal as 'requiring a review'. When PayPal completes the review, the payment will be automatically authorized."
       seller_express_checkout_disabled: "PayPal Express Checkout has been disabled for the listing author's PayPal account. Please contact the author and let them know that there's an issue with their PayPal account, and advise them to contact PayPal Customer Service."
+      seller_express_checkout_disabled_no_free: ~
       generic_error: "An error occurred during the payment process. Could not finalize your PayPal payment."
       cancel_error: "An error occurred during cancellation. Could not finalize cancel."
       accept_authorization_error: "An error occurred while trying to accept preauthorized Paypal payment. Please, try again."
@@ -1503,6 +1701,9 @@ en-NZ:
       on_or_after: "must be on or after %{restriction}"
       positive_number: "Insert a number."
       from_must_be_less_than_till: ~
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} agreed to lend %{listing_title} to %{requester_name} %{time_ago}."
@@ -1726,6 +1927,23 @@ en-NZ:
       messages: Messages
     logged_in_notifications_icon:
       notifications: Notifications
+    markdown_help:
+      title: ~
+      description: ~
+      formatting: ~
+      result: ~
+      h1: ~
+      h2: ~
+      h3: ~
+      italic: ~
+      bold: ~
+      underline: ~
+      strikethrough: ~
+      inline_link: ~
+      list: ~
+      one: ~
+      two: ~
+      three: ~
     mobile_logged_in:
       admin: Admin
       go_to_your_profile_page: Profile
@@ -1787,6 +2005,7 @@ en-NZ:
       listing_updated_successfully: "Listing updated successfully"
       listing_updated_availability_management_enabled: "Listing updated successfully. Availability management enabled."
       listing_updated_availability_management_disabled: "Listing updated successfully. Availability management disabled."
+      listing_deleted: ~
       only_kassi_administrators_can_access_this_area: ~
       only_listing_author_can_close_a_listing: "Only listing author can close a listing"
       only_listing_author_can_edit_a_listing: "Only listing author can edit a listing"
@@ -1853,6 +2072,7 @@ en-NZ:
       user_does_not_have_email_to_delete: "You don't have the email address you're trying to remove"
       email_deleted: "Email removed"
       listing_author_payment_details_missing: "Please contact the author by pressing the 'Contact' button below. They need to update their payment details to receive payments."
+      listing_author_payment_details_missing_no_free: ~
       images_are_processing: "We are processing your images. Give us a minute or two and they'll be visible."
       maintenance_mode:
         zero: "The website will now go offline for maintenance"
@@ -1889,6 +2109,7 @@ en-NZ:
       you_cannot_send_a_new_comment_because_listing_is_closed: "You cannot send new comments because this listing is closed."
       you_must: "You must"
       subscribe_to_comments: "Notify me of new comments and updates"
+    deleting_a_listing_cannot_be_undone: ~
     edit:
       edit_listing: "Edit listing"
     edit_links:
@@ -1904,6 +2125,7 @@ en-NZ:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
+      delete_listing: ~
     map:
       open_in_google_maps: "Open in Google Maps"
     error:
@@ -1926,6 +2148,7 @@ en-NZ:
       description:
         detailed_description: "Detailed description"
         youtube_info: "If your description contains YouTube links, the videos will be shown below the description."
+        youtube_info_markdown: ~
       destination:
         destination: Destination
       form_content:
@@ -1972,7 +2195,7 @@ en-NZ:
         after_service_fee_you_will_get: "After %{service_name} and a payment processor fees you will get %{sum_with_currency}"
         no_service_fee_you_will_get_paypal_text: "%{paypal_fee_info_link} will be deducted from the price."
         no_service_fee_you_will_get_payment_text: "%{payment_fee_info_link} will be deducted from the price."
-        after_service_fee_you_will_get_payment_text: "Once someone makes an order, %{service_name} fee (%{sum_with_currency}) and a %{payment_fee_info_link} will be deducted from the price."
+        after_service_fee_you_will_get_payment_text: "Once someone makes an order, you'll receive this amount minus %{payment_fee_info_link}"
         payment_fee_info_link_text: "payment processing fee"
         delivery: "Delivery method"
         shipping: Shipping
@@ -2304,8 +2527,6 @@ en-NZ:
       sign_up: "Create a new %{service_name} account"
       terms: "terms of use"
       privacy: ~
-      username_is_in_use: "This username is already in use."
-      username_is_invalid: "Username is invalid. Allowed characters are letters, numbers and underscore."
       visible_only_to_you: "visible only to you and the %{service_name} team"
       visible_to_everybody: "visible to everybody"
       create_account_with_provider: ~
@@ -2478,6 +2699,8 @@ en-NZ:
       image_is_processing: "Hang on tight. We are processing your profile picture. It will be ready in a minute or two."
       shown_in_your_public_profile: ~
       editing_profile_of: ~
+      format_markdown_link: ~
+      format_markdown: ~
     save_information: "Save information"
   shipping_address:
     shipping_address: "Shipping address"
@@ -2745,6 +2968,12 @@ en-NZ:
     paypal_connected: "PayPal account connected successfully!"
     paypal_can_accept: "You are now all set to receive money to your PayPal account"
     paypal_connected_give_permission: "To complete setup and start receiving funds to your PayPal account <%{email}>, please grant permission to charge a transaction fee."
+    stripe_account_restricted: ~
+    stripe_account_restricted_info: ~
+    stripe_account_restricted_soon: ~
+    stripe_account_restricted_soon_info: ~
+    stripe_account_pending_verification: ~
+    stripe_account_pending_verification_info: ~
     form_new:
       need_info: "We need some information about you to be able to send you money."
       select_country: "Select country..."
@@ -2784,7 +3013,6 @@ en-NZ:
       address_kanji_line1: ~
       male: ~
       female: ~
-      mcc: ~
     form_bank:
       bank_account_number: "Bank account number"
       bank_routing_number: "Routing number"
@@ -2839,6 +3067,30 @@ en-NZ:
       search_results: ~
       search_results_for: ~
       listing_description: ~
+      listing_description_without_price: ~
       category_description: ~
       profile_title: ~
       profile_description: ~
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

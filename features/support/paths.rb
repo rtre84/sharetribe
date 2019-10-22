@@ -46,6 +46,8 @@ module NavigationHelpers
       "/en/signup?code=#{$1}"
     when /^the admin view of community "(.*)"$/i
       admin_details_edit_path(locale: "en")
+    when /^the admin settings view of community "(.*)"$/i
+      admin_setting_path(locale: "en")
     when /the infos page/
       about_infos_path(:locale => "en")
     when /the terms page/
@@ -104,6 +106,12 @@ module NavigationHelpers
       admin_community_listings_path(:community_id => @current_community.id)
     when /the person custom fields admin page/
       admin_person_custom_fields_path(:locale => "en")
+    when /the big cover photo home page/
+      '/?big_cover_photo=true'
+    when /the landing page admin page/
+      admin_landing_page_versions_path(:locale => "en")
+    when /^the landing page section of "(.*)" admin page$/
+      edit_admin_landing_page_version_section_path(locale: 'en', landing_page_version_id: @current_landing_page.id, id: 'hero')
     else
       begin
         page_name =~ /the (.*) page/

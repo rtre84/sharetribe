@@ -95,6 +95,8 @@ de:
         transaction_agreement_checkbox_label_description: "Dieser Text wird neben einer Checkbox beim Checkout angezeigt. Der Nutzer muss mit einem Haken in der Checkbox zustimmen, um die Transaktion abzuschließen. Ein Beispiel wäre etwa \"Mit Klicken dieser Box akzeptiere ich die Vereinbarung.\""
         transaction_agreement_text_header: "Allgemeine Geschäftsbedingungen"
         transaction_agreement_description: "Dies ist der Inhalt der Allgemeinen Geschäftsbedingungen (AGBs), die der Anwender akzeptieren muss. Der Inhalt der AGBs wird angezeigt, wenn der Benutzer den %{read_more} Link neben dem Label der Allgemeinen Geschäftsbedingungen klickt."
+        terms_privacy_policy_and_static_content: "Nutzungsbedingungen, datenschutz, und Inhaltsseiten"
+        terms_privacy_policy_and_static_content_infotext: "Du kannst bis zu vier Inhaltsseiten bearbeiten. Die Benutzer können die Seiten mit hilfe des \"Über\"-links auf dem Top Bar finden."
       edit_look_and_feel:
         edit_community_look_and_feel: "Bearbeite das \"Look & Feel\" des Marktplatzes %{community_name}"
         community_logo: Logo
@@ -117,6 +119,8 @@ de:
         logo_mobile_icon_instructions_text_with_dimensions: "Dieses viereckige Logo wird auf dem Mobil-Startbildschirm von deinen Benutzern angezeigt, wenn sie ein Lesezeichen für deinen Marktplatz auf ihren Mobilgeräten erstellen. Die Größe sollte (zumindest) %{width} x%{height} px betragen."
         cover_photo_visibility: "Das Titelbild wird den nicht angemeldeten Benutzern auf der Startseite angezeigt."
         cover_photo_instructions_text_with_dimensions: "Die Größe des Fotos wird auf %{width}x%{height} Pixel geändert, und größere Bilder werden in der Mitte geteilt. %{see_how_it_looks_like}."
+        we_have_you_covered: "Wir können helfen"
+        cover_photo_ready_made: "Suchst du nach fertige und optimierte Titelbilder? Oder möchtest du inspirert werden und einige Webseiten ansehen, wo man gute Titelbilder finden kann? %{link}!"
         small_cover_photo_visibility: "Das kleine Titelfoto wird nicht angemeldeten Benutzern auf allen Seiten angezeigt, außer auf der Startseite."
         small_cover_photo_instructions_text_with_dimensions: "Die Größe des Fotos wird auf %{width}x%{height} Pixel geändert, und größere Bilder werden in der Mitte geteilt."
         main_content_width: "Wenn du ein Titelfoto aussuchst, beachte bitte, dass die Breite des Inhalts auf der Startseite höchstens %{main_width} Pixel beträgt. Überprüfe außerdem, wie dein Titelfoto auf kleineren Bildschirmen aussieht (z.B wenn du einen schmaleren Browser benutzt)."
@@ -218,6 +222,7 @@ de:
         users_can_invite_new_users: "Alle Mitglieder, nicht nur Admins, können neue Benutzer zu diesem Marktplatz einladen"
         private: "Dieser Marktplatz ist privat (nur registrierte Benutzer können den Inhalt sehen)"
         require_verification_to_post_listings: "Nur von einem Admin verifizierte Benutzer können neue Einträge veröffentlichen"
+        allow_free_conversations: "Erlaube es allen Benutzern, einander frei zu kontaktieren"
         search_preferences: Sucheinstellungen
         default_search_type: "Suchtyp: %{select_search_type}"
         keyword_search: Schlagwortsuche
@@ -229,18 +234,18 @@ de:
         show_only_nearby: "Mit Umgebungssuche nur Einträge in der Nähe zeigen"
         listing_preferences: Eintragseinstellungen
         transaction_preferences: Auftragspräferenzen
-        show_listing_publishing_date: "Datum der Veröffentlichung des Eintrags auf der Artikelseite darstellen"
+        show_listing_publishing_date: "Datum der Veröffentlichung des Eintrags auf der Eintragsseite darstellen"
         show_category_in_listing_list: "Die Art der Kategorien in der Übersicht darstellen"
         listing_comments_in_use: "Benutzern erlauben, Einträge zu kommentieren (für alle anderen Benutzer sichtbar)"
         email_preferences: E-Mail-Einstellungen
         automatic_newsletters: "Automatisch tägliche / wöchentliche Newsletter an alle Benutzer versenden (es sei denn, sie melden sich ab)"
         email_admins_about_new_members: "Den Administratoren eine E-Mail schicken, wenn sich ein neuer Benutzer anmeldet"
         google_analytics_key: "Google Analytics Tracking ID"
-        twitter_handle: "Twittername (wird mit dem Tweet-Button auf der Angebotsseite verwendet)"
+        twitter_handle: "Twittername (wird mit dem Tweet-Button auf der Eintragsseite verwendet)"
         update_settings: "Einstellungen speichern"
         automatically_confirmed_no_escrow: "Der Auftrag wird automatisch als \"erledigt\" %{days_dropdown} Tage nach der Bezahlung markiert."
         automatically_confirmed_no_escrow_stripe_info: "Kreditkartenzahlungen über Stripe werden erst auf das Verkäufer-Bankkonto übertragen, sobald der Käufer die Transaktion als \"erledigt\" gekennzeichnet hat.%{learn_more}."
-        buyer_transaction_fees_are_only_supported_with_stripe: ~
+        buyer_transaction_fees_are_only_supported_with_stripe: "Transaktionsgebühren für die Käufer werden nur mit Stripe unterstützt. Du kannst PayPal nicht verwenden, wenn du Transaktionsgebühren für die Käufer mit Stripe aktivierst."
         automatic_newsletter_frequency: "Newsletter automatisch verschicken: %{frequency_dropdown}"
         newsletter_daily: Täglich
         newsletter_weekly: Wöchentlich
@@ -254,7 +259,8 @@ de:
         you_will_be_redirected_to: "Nachdem Du Deinen Marktplatz gelöscht hast wirst Du zu %{destination} umgeleitet. Du hast dann keinen Zugriff mehr zu Deinem Marktplatz."
         delete_this_marketplace: "Diesen Marktplatz löschen"
         payment_preferences: Zahlungssystem
-        pre_approved_listings: ~
+        pre_approved_listings: "Alle Einträge überprüfen, bevor sie veröffentlicht werden"
+        email_admins_about_new_transactions: "Admins eine Email schicken, sobald eine neue Transaktion stattfindet"
       manage_members:
         manage_members: Benutzer
         email: E-Mail
@@ -310,12 +316,13 @@ de:
         link_for_twitter: "für Twitter"
         social_media_description: "Soziales Netzwerk -Beschreibung"
         twitter_handle: Twittername
-        twitter_handle_info_text: "Der Twitter Nutzername deines Marktplatzes (wenn du einen hast). Er wird genannt, wenn jemand den Tweet Button in einem Angebot nutzt."
-        twitter_handle_info_text_with_instructions: "Der Twitter Nutzername deines Marktplatzes (wenn Du einen hast). Er wird genannt, wenn jemand den Tweet Button auf einer Eintrag-Seite klickt. %{instructions_link}."
+        twitter_handle_info_text: "Der Twitter Nutzername deines Marktplatzes (wenn du einen hast). Er wird genannt, wenn jemand den Tweet Button auf einer Eintragsseite klickt."
+        twitter_handle_info_text_with_instructions: "Der Twitter Nutzername deines Marktplatzes (wenn du einen hast). Er wird genannt, wenn jemand den Tweet Button auf einer Eintragsseite klickt. %{instructions_link}."
         twitter_instructions_link_text: Weiterlesen
         twitter_handle_placeholder: Benutzername
         invalid_twitter_handle: "Ihr Twitter-Nutzername sollte höchstens 15 alphanumerische (Buchstaben A-Z und Nummern 0-9) Zeichen lang sein."
         facebook_connect: "Facebook Login"
+        facebook_developers_dashboard: "Facebook Developers Dashboard"
         facebook_connect_info_text: "Um Facebook Login zu aktivieren, bitte erstellen Sie einen App für Ihren Marktplatz auf dem <a href='https://developers.facebook.com/'>Facebook Entwicklerpanel</a>. Fügen Sie die generierte ID und den Geheimschlüssel der App hier ein."
         facebook_connect_info_text_with_instructions: "Um Facebook Login zu aktivieren, bitte erstelle einen App für Deinen Marktplatz auf dem <a href='https://developers.facebook.com/'>Facebook Entwicklerpanel</a>. Füge die generierte ID und den Geheimschlüssel der App hier ein.%{instructions_link}"
         facebook_instructions_link_text: "Siehe die Anleitung zum Konfigurieren von Facebook Login."
@@ -328,6 +335,7 @@ de:
         add_another_image: "Zusätzliches Bild hinzufügen"
         google_connect: "Google Sign-In"
         google_instructions_link_text: "Siehe die Anleitung zum Konfigurieren von Google Sign-In."
+        google_developers_console: "Google Developers Console"
         google_connect_info_text_with_instructions: "Um Google Sign-In zu aktivieren, bitte erstelle ein Projekt für deinen Marktplatz auf <a href='https://developers.google.com/identity/sign-in/web/sign-in'>Google Developers Console</a>. Füge die generierte ID und Clientschlüssel des Projektes hier ein. %{instructions_link}"
         google_connect_info_text: "Um Google Sign-In zu aktivieren, bitte erstelle ein Projekt für deinen Marktplatz auf <a href='https://developers.google.com/identity/sign-in/web/sign-in'>Google Developers Console</a>. Füge die generierte ID und Clientschlüssel des Projektes hier ein."
         enable_google_login: "Google-Anmeldung für deine Benutzer aktivieren"
@@ -335,6 +343,7 @@ de:
         google_connect_secret: "Google Clientschlüssel"
         linkedin_connect: "LinkedIn Sign In"
         linkedin_instructions_link_text: "Siehe die Anleitung zum Konfigurieren von LinkedIn Sign In."
+        linkedin_developers_dashboard: "LinkedIn Developers Dashboard"
         linkedin_connect_info_text_with_instructions: "Um LinkedIn Sign-In zu aktivieren, bitte erstelle eine App für deinen Marktplatz auf dem <a href='https://www.linkedin.com/developers/'>Linkedin Developers Dashboard</a>. Füge die generierte ID und Geheimschlüssel des Projektes hier ein. %{instructions_link}"
         linkedin_connect_info_text: "Um LinkedIn Sign-In zu aktivieren, bitte erstelle eine App für deinen Marktplatz auf dem <a href='https://www.linkedin.com/developers/'>Linkedin Developers Dashboard</a>. Füge die generierte ID und Geheimschlüssel des Projektes hier ein."
         enable_linkedin_login: "LinkedIn-Anmeldung für deine Benutzer aktivieren"
@@ -349,34 +358,34 @@ de:
         meta_description_label: "Homepage Beschreibung Meta-Tag"
         meta_description_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und wird unter die blauen Links auf Suchmaschinen-Ergebnissen gezeigt. %{link}."
         meta_description_link_text: "Mehr über Meta-Tags erfahren"
-        search_title: ~
-        search_meta_title_label: ~
-        search_meta_title_info: ~
-        search_meta_title_link_text: ~
-        search_meta_description_label: ~
-        search_meta_description_info: ~
-        search_meta_description_link_text: ~
-        listing_title: ~
-        listing_meta_title_label: ~
-        listing_meta_title_info: ~
-        listing_meta_title_link_text: ~
-        listing_meta_description_label: ~
-        listing_meta_description_info: ~
-        listing_meta_description_link_text: ~
-        category_title: ~
-        category_meta_title_label: ~
-        category_meta_title_info: ~
-        category_meta_title_link_text: ~
-        category_meta_description_label: ~
-        category_meta_description_info: ~
-        category_meta_description_link_text: ~
-        profile_title: ~
-        profile_meta_title_label: ~
-        profile_meta_title_info: ~
-        profile_meta_title_link_text: ~
-        profile_meta_description_label: ~
-        profile_meta_description_info: ~
-        profile_meta_description_link_text: ~
+        search_title: Suchergebnisseite
+        search_meta_title_label: "Meta-Tag für den Titel der Suchergebnisseite"
+        search_meta_title_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten als klickbare Überschrift angezeigt. %{link} %{vars}."
+        search_meta_title_link_text: "Mehr über Meta-Tags erfahren."
+        search_meta_description_label: "Meta-Tag für die Beschreibung der Suchergebnisseite"
+        search_meta_description_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten unter die blauen klickbaren Links angezeigt. %{link} %{vars}."
+        search_meta_description_link_text: "Mehr über Meta-Tags erfahren"
+        listing_title: Eintragsseite
+        listing_meta_title_label: "Meta-Tag für den Titel der Eintragsseite"
+        listing_meta_title_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten als klickbare Überschrift angezeigt. %{link} %{vars}."
+        listing_meta_title_link_text: "Mehr über Meta-Tags erfahren."
+        listing_meta_description_label: "Meta-Tag für die Beschreibung der Eintragsseite"
+        listing_meta_description_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten unter die blauen klickbaren Links angezeigt. %{link} %{vars}."
+        listing_meta_description_link_text: "Mehr über Meta-Tags erfahren."
+        category_title: Kategorienseite
+        category_meta_title_label: "Meta-Tag für den Titel der Kategorienseite"
+        category_meta_title_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten als klickbare Überschrift angezeigt. %{link} %{vars}."
+        category_meta_title_link_text: "Mehr über Meta-Tags erfahren."
+        category_meta_description_label: "Meta-Tag für die Beschreibung der Kategorienseite"
+        category_meta_description_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten unter die blauen klickbaren Links angezeigt. %{link} %{vars}."
+        category_meta_description_link_text: "Mehr über Meta-Tags erfahren."
+        profile_title: Profilseite
+        profile_meta_title_label: "Meta-Tag für den Titel der Profilseite"
+        profile_meta_title_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten als klickbare Überschrift angezeigt. %{link} %{vars}."
+        profile_meta_title_link_text: "Mehr über Meta-Tags erfahren."
+        profile_meta_description_label: "Meta-Tag für die Beschreibung der Profilseite"
+        profile_meta_description_info: "Der Inhalt dieses Tags wird den Suchmaschinen vorgeschlagen, und auf der Ergebnissenseiten unter die blauen klickbaren Links angezeigt. %{link} %{vars}."
+        profile_meta_description_link_text: "Mehr über Meta-Tags erfahren."
         sitemap_label: Sitemap
         sitemap_info: "Sitemaps informieren die Suchmaschinen auf eine einfache Weise über die Seiten auf deiner Website die Verfügbar fürs Durchsuchen (aka Crawling) sind. %{link}."
         sitemap_info_link_text: "Mehr über die XML Sitemap-Datei erfahren"
@@ -424,11 +433,11 @@ de:
         contact_link_title: Kontakt
         invite_link_title: "Neue Mitglieder einladen"
         info: "Links zu den folgenden Seiten werden standardmäßig nicht anderswo auf deinem Marktplatz angezeigt: %{about_link}, %{contact_link}, %{invite_link}."
-        display_about: "Link zu der <i>Über</i>-Seite und anderen statischen Seiten anzeigen"
+        display_about: "Link zu der <i>Info</i>-Seite und anderen statischen Seiten anzeigen"
         display_contact: "Link zu der <i>Kontakt</i>-Seite anzeigen"
         display_invite: "Link zu der <i>neue Mitglieder einladen</i>-Seite anzeigen"
       topbar:
-        topbar: "Top bar"
+        topbar: "Top Bar"
         new_listing_button_label: "Text auf der \"Neuen Eintrag erstellen\" Taste"
         invalid_post_listing_button_label: "Bitte einen gültigen Text für die \"Neuen Eintrag erstellen\" Taste eingeben."
       transactions:
@@ -448,6 +457,8 @@ de:
           canceled: Abgebrochen
           preauthorized: Vorautorisiert
           rejected: Abgelehnt
+          payment_intent_requires_action: Ausstehend
+          payment_intent_action_expired: Abgelaufen
         headers:
           conversation: Unterhaltungsverlauf
           listing: Eintrag
@@ -456,7 +467,7 @@ de:
           started: Gestartet
           last_activity: "Letzte Aktivität"
           initiated_by: Starter
-          other_party: "Anderer Beteiligter"
+          other_party: Anbieter
         status:
           conversation: Unterhaltung
           free: Unterhaltung
@@ -493,6 +504,9 @@ de:
             canceled: Abgebrochen
             initiated: "Warte auf Stripe-Bezahlung"
             pending_ext: "Warte auf Stripe-Bezahlung"
+            payment_intent_requires_action: Ausstehend
+            payment_intent_action_expired: Abgelaufen
+            payment_intent_failed: "Stripe-Zahlung gescheitert"
         not_available: "nicht verfügbar"
       conversations:
         conversations: Unterhaltungen
@@ -502,7 +516,7 @@ de:
           started: Gestartet
           last_activity: "Neueste Aktivität"
           initiated_by: "Begonnen von"
-          other_party: "Anderer Beteiligter"
+          other_party: Anbieter
         participants: "Unterhaltung: %{starter} mit %{author}"
         profile: "%{author}s Profil"
         search_by_keyword: "Nach Name, E-mail oder Schlagwort suchen"
@@ -548,6 +562,9 @@ de:
           confirm_modify: "Bist du sicher, dass du die Bewertung ändern/löschen möchtest? Wenn sie die Bewertung ändern/löschen, ist es danach nicht mehr möglich, die alten Daten wiederherzustellen."
           deleting_info: "Wird die Bewertung gelöscht, kann der/die Käufer/in eine neue Bewertung für dieselbe Transaktion schreiben."
           blocking_info: "Wird die Bewertung gesperrt, kann der/die Käufer/in nicht mehr eine neue Bewertung für dieselbe Transaktion schreiben."
+          unskip: Zurücksetzen
+          if_you_unskip_the_review: "Wenn du den Bewertungsstatus zurücksetzt, kann der Benutzer eine Bewertung schreiben."
+          they_will_not_be_notified_automatically: "Der Benutzer wird nicht automatisch davon benachrichtigt."
       invitations:
         invitations: Einladungen
         used:
@@ -564,14 +581,16 @@ de:
         search_by_title_author_category: "Nach dem Titel oder Autor des Eintrags, oder Kategoriename suchen"
         search: Suchen
         reset_search: "Alle anzeigen"
+        export_all_as_csv: "Alles as CSV exportieren"
+        processing_export: "Exportiere auf CSV..."
         status:
           all: "Alle Status"
           selected_js: "Gewählte Status: "
           open: Geöffnet
           closed: Geschlossen
           expired: Abgelaufen
-          approval_pending: ~
-          approval_rejected: ~
+          approval_pending: Ausstehend
+          approval_rejected: Abgelehnt
         headers:
           title: Titel
           author: Author
@@ -582,14 +601,14 @@ de:
         open: Geöffnet
         closed: Geschlossen
         expired: Abgelaufen
-        approved: ~
-        approval_pending: ~
-        approval_rejected: ~
+        approved: Angenommen
+        approval_pending: Ausstehend
+        approval_rejected: Abgelehnt
         form:
-          this_listing_has_not_not_been_approved_yet: ~
-          approve: ~
-          reject: ~
-          cancel: ~
+          this_listing_has_not_not_been_approved_yet: "Dieser Eintrag wurde noch nicht angenommen. Du kannst jetzt dich entscheiden, ob du den Eintrag annehmen oder ablehnen willst. Wenn du den Eintrag annimst, wird er veröffentlicht und für alle Benutzer sichtbar. Wenn du den Eintrag ablehnst, wird er nicht veröffentlicht."
+          approve: Annehmen
+          reject: Ablehnen
+          cancel: Abbrechen
       user_fields:
         user_fields: "Benutzer Feld"
       footer:
@@ -626,6 +645,159 @@ de:
         contact_us: "Kontaktiere uns"
         you_can_now_use_a_custom_domain: "Mit deinem derzeitigen Plan kannst du eine benutzerdefinierte Domain aktivieren! Fangen wir mit der Einrichtung an. %{contact_us}!"
         would_you_like_to_change_domain: "Möchtest du deine benutzerdefinierte Domain ändern? %{contact_us}!"
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: "Eintragsfeld '%{field_name}' bearbeiten"
@@ -743,6 +915,7 @@ de:
       emails_title: E-Mails
       subscription: Abonnement
       preview: "Seitenvorschau anzeigen"
+      whats_new: "Was ist neu?"
     listing_shapes:
       availability_title: Verfügbarkeit
       read_more: "Mehr über automatische Verfügbarkeitsverwaltung lesen."
@@ -800,8 +973,8 @@ de:
       action_button_label: "Kennzeichnung der Checkout-Taste"
       action_button_placeholder: "Zum Beispiel Kaufen"
       open_listings_warning:
-        one: "Es gibt %{count} offenen Eintrag mit dieser Auftragsart. Wenn Du die Einstellungen unten änderst, wird dieser Eintrag die alten Einstellungen behalten. Der Eintrag kann manuell zu den neuen Einstellungen bearbeitet werden. Wenn Du keine Einträge mit den alten Einstellungen auf der Website sichtbar haben möchtest, kannst Du diese kündigen, indem Du auf die Taste unterhalb klickst."
-        other: "Es gibt %{count} offene Einträge mit dieser Auftragsart. Wenn Du die Einstellungen unten änderst, werden diese Einträge die alten Einstellungen behalten. Die Einträge können manuell zu den neuen Einstellungen bearbeitet werden. Wenn Du keine Einträge mit den alten Einstellungen auf der Website sichtbar haben möchtest, kannst Du diese kündigen, indem Du auf die Taste unterhalb klickst."
+        one: "Es gibt %{count} offenen Eintrag mit dieser Auftragsart. Wenn du die Einstellungen unten änderst, wird dieser Eintrag die alten Einstellungen behalten. Der Eintrag kann manuell zu den neuen Einstellungen bearbeitet werden. Wenn du keine Einträge mit den alten Einstellungen auf der Website sichtbar haben möchtest, kannst du diese kündigen, indem du auf die Taste unterhalb klickst."
+        other: "Es gibt %{count} offene Einträge mit dieser Auftragsart. Wenn du die Einstellungen unten änderst, werden diese Einträge die alten Einstellungen behalten. Die Einträge können manuell zu den neuen Einstellungen bearbeitet werden. Wenn du keine Einträge mit den alten Einstellungen auf der Website sichtbar haben möchtest, kannst du diese kündigen, indem du auf die Taste unterhalb klickst."
       close_listings_action:
         one: "%{count} Eintrag schließen"
         other: "%{count} Einträge schließen"
@@ -892,9 +1065,10 @@ de:
       stripe_fee: Stripe-Gebühren
       stripe_fee_notice: "%{stripe_fee_link} werden von deiner Transaktionsgebühr abgezogen."
       fee_should_be_less_than_minimum_price: "Der Mindestgebühr muss weniger als der Mindestbetrag einer Transaktion sein"
+      the_transaction_fee_must_be_lower_than_100: "Die Transaktionsgebühr muss weniger als 100% betragen"
       confirm_disable: "Bist du sicher, dass du %{gateway} deaktivieren willst? Wenn du es deaktivierst, können Verkäufer und Käufer es nicht mehr verwenden, um Geld zu empfangen oder zu bezahlen. Wenn ein Verkäufer keine alternative Bezahlungsmethode eingerichtet hat, können Käufer nicht mehr von ihnen kaufen."
-      commission_from_buyer_label: ~
-      minimum_buyer_transaction_fee_label: ~
+      commission_from_buyer_label: "Transaktionsgebühr des Käufers:"
+      minimum_buyer_transaction_fee_label: "Mindestgebühr des Käufers für die Transaktion:"
       stripe_connected:
         title: "Stripe verbunden"
         disable: "Stripe deaktivieren"
@@ -907,7 +1081,7 @@ de:
         enable: "PayPal erneut aktivieren"
       cannot_enable_gateway: "Das Aktivieren von %{gateway} ist fehlgeschlagen."
       cannot_disable_gateway: "Das Deaktivieren von %{gateway} ist fehlgeschlagen."
-      cannot_enable_gateway_because_of_buyer_commission: ~
+      cannot_enable_gateway_because_of_buyer_commission: "%{gateway} kann nicht aktiviert werden, weil Transaktionsgebühren für Käufer aktiviert sind"
       stripe_form:
         add_your_api_keys: "Deine Stripe API Keys hinzufügen"
         how_to_get_these: "Wie bekomme ich sie?"
@@ -950,6 +1124,20 @@ de:
         request: Anbieten
         offer: Anfragen
         inquiry: Kontakt
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: "Seite bearbeiten"
     default_community_slogan: Community-Marktplatz
@@ -1033,14 +1221,14 @@ de:
       quantity_label: "Anzahl:"
       sum_label: "Zwischensumme:"
       service_fee_label: "%{service_name} Servicegebühr:"
-      buyer_service_fee_label: ~
+      buyer_service_fee_label: "%{service_name} Servicegebühr:"
       you_will_get_label: "Du wirst erhalten:"
       total_label: "Summe:"
       total_value: "%{seller_gets}*"
       total_value_paypal: "%{seller_gets}*"
       total_value_stripe: "%{seller_gets}"
-      paypal_fee_info: "* Ohne <a id='%{fee_info_link_id}' href='#'>PayPal-Zahlungsbearbeitungsgebühr</a>"
-      payment_fee_info: "* <a id='%{fee_info_link_id}' href='#'>Zahlungsbearbeitungsgebühr</a> nicht inklusive"
+      paypal_fee: PayPal-Zahlungsbearbeitungsgebühr
+      paypal_fee_info: "* Ohne %{link}"
       shipping_price_label: "Versand:"
       stripe-fee_label: Zahlungsbearbeitungsgebühr
     confirm:
@@ -1079,7 +1267,7 @@ de:
     message:
       accepted_request: "Anfrage akzeptiert"
       received_payment: "Hat die Anfrage angenommen und eine Zahlung in Höhe von %{sum} erhalten."
-      received_payment_wo_sum: ~
+      received_payment_wo_sum: "hat die Anfrage angenommen, und Zahlung erhalten"
       accepted_offer: "Angebot akzeptieren"
       rejected_request: "Anfrage abgelehnt, Bezahlung widerrufen"
       rejected_offer: "Angebot ablehnen"
@@ -1089,10 +1277,10 @@ de:
       canceled_offer: "Angebot abgebrochen"
       paid: "bezahlt %{sum}"
       payment_preauthorized: "Zahlung wurde autorisiert: %{sum}"
-      payment_preauthorized_wo_sum: ~
+      payment_preauthorized_wo_sum: "Zahlung erfolgreich"
       stripe:
         held_payment: "Die Anfrage wurde akzeptiert. Die Zahlung in Höhe von %{sum} wird von %{service_name} verwahrt bis der Auftrag als erledigt markiert wird."
-        held_payment_wo_sum: ~
+        held_payment_wo_sum: "Hat die Anfrage angenommen. Zahlung wird von %{service_name} verwahrt bis der Auftrag als erledigt markiert wird."
         confirmed_request: "Hat den Auftrag als erledigt markiert. Die Zahlung wurde oder wird in Kürze auf das Bankkonto von %{author_name} transferiert."
     new:
       message: Nachricht
@@ -1307,9 +1495,9 @@ de:
       shipping_total: "Versand:"
       product: "Produkt:"
       price_payer_paid: "Betrag bezahlt von %{payer_full_name}:"
-      subtotal: ~
+      subtotal: "Zwischensumme:"
       service_fee: "%{service_name} Servicegebühr:"
-      buyer_service_fee: ~
+      buyer_service_fee: "%{service_name} Servicegebühr:"
       you_will_get: "Summe:"
       new_payment: "Du hast eine neue Zahlung erhalten"
       price_per_unit_type: "Preis pro %{unit_type}"
@@ -1325,7 +1513,7 @@ de:
       duration: Dauer
       quantity: Menge
       subtotal: Zwischensumme
-      buyer_service_fee: ~
+      buyer_service_fee: "%{service_name} Servicegebühr:"
       total: Summe
       price: Preis
       service_fee: Servicegebühr
@@ -1350,7 +1538,7 @@ de:
       subtotal: Zwischensumme
       total: Gesamtbetrag
       price: Preis
-      buyer_service_fee: ~
+      buyer_service_fee: "%{service_name} Servicegebühr"
       stripe_gateway_fee: "Gebühr von Stripe:"
       paypal_gateway_fee: "Gebühr von PayPal:"
       money_will_be_transferred: "Das Geld wird an %{recipient_name} übertragen werden, wenn a) Du die Anfrage als abgeschlossen markiert hast, oder b) %{automatic_confirmation_days} Tage sind vergangen, seit du bezahlt hast."
@@ -1383,7 +1571,7 @@ de:
       text_version_text: "Könntest du etwas teilen, das andere möglicherweise brauchen? Oder benötigst du etwas, das andere vielleicht haben? Füge ein Angebot oder eine Anfrage hinzu oder sieh nach, was andere anbieten oder benötigen bei %{url}"
     reset_password_instructions:
       change_my_password: "Mein Passwort ändern"
-      reset_password_instructions: "<p>Du hast angegeben, dein Passwort oder den Benutzernamen im %{service_name} Dienst vergessen zu haben.</p><p>Dein Benutzername ist: %{username}</p><p>Um dein Passwort zurückzusetzen, klicke auf den folgenden Link: %{password_reset_link}</p><br/><p> Falls du das Zurücksetzen des Passworts nicht angefordert hast, ignoriere diese E-Mail. Dein Passwort wird nicht zurückgesetzt, solange du den oberen Link nicht anklickst und ein neues Passwort erstellst.</p>"
+      reset_password_instructions: "<p>Du hast angegeben, dein Passwort im %{service_name} Dienst vergessen zu haben.</p><p>Um dein Passwort zurückzusetzen, klicke auf den folgenden Link: %{password_reset_link}</p><br/><p> Falls du das Zurücksetzen des Passworts nicht angefordert hast, ignoriere diese E-Mail. Dein Passwort wird nicht zurückgesetzt, solange du den oberen Link nicht anklickst und ein neues Passwort erstellst.</p>"
     testimonial_reminder:
       remember_to_give_feedback_to: "Zur Erinnerung: Denke daran, %{name} zu bewerten"
       you_have_not_given_feedback_yet: "Du hast %{name} noch kein Feedback zur Transaktion '%{event}' gegeben. Denke daran, ein Feedback darüber zu hinterlassen, wie %{given_name} die Transaktion durchgeführt hat."
@@ -1412,28 +1600,37 @@ de:
       you_are_receiving_this_because: "Du hast diese Benachrichtigung erhalten, weil du %{author_name} folgst."
       view_listing: "Eintrag ansehen"
     new_member_notification:
+      subject: ~
       new_member_has_joined: "Ein neues Mitglied ist %{community} beigetreten. Es kann sein, dass sie noch ihre E-Mail-Adresse bestätigen müssen."
       this_is_automatic_message: "Diese Nachricht wurde automatisch an alle Administratoren von %{community} geschickt."
       person_name: "Name:"
       person_email: "E-mail:"
     listing_submited_for_review:
-      subject: ~
-      there_is_a_new_listing_to_review: ~
-      review_the_listing: ~
-      this_is_automatic_message: ~
+      subject: "Neuer Eintrag der überprüft werden muss: \"%{listing_title}\" von %{author_name} auf %{community}"
+      there_is_a_new_listing_to_review: "Es gibt einen neuen Eintrag, der überprüft werden muss: \"%{listing_title}\" von %{author_name}. Du solltest jetzt den Eintrag annehmen oder ablehnen."
+      review_the_listing: "Neuer Eintrag überprüfen"
+      this_is_automatic_message: "Dies ist eine automatische Nachricht, geschickt an die Administratoren von %{community}."
     listing_approved:
-      subject: ~
-      listing_has_been_approved: ~
-      view_the_listing: ~
+      subject: "Das %{community} Team hat deinen Eintrag \"%{listing_title}\" angenommen"
+      listing_has_been_approved: "Gute Neuigkeiten! Dein Eintrag \"%{listing_title}\" wurde überprüft und von dem Team von %{community} angenommen. Der Eintrag wurde veröffentlicht."
+      view_the_listing: "Eintrag anzeigen"
     listing_rejected:
-      subject: ~
-      listing_has_been_rejected: ~
-      contact_link: ~
-      edit_the_listing: ~
+      subject: "Das %{community} Team hat deinen Eintrag \"%{listing_title}\" abgelehnt"
+      listing_has_been_rejected: "Leider hat das %{community} Team deinen Eintrag \"%{listing_title}\" überprüft und abgelehnt. Du kannst %{contact_link} um mehr zu erfahren, oder deinen Eintrag ändern und erneut zur Überprüfung schicken."
+      contact_link: "das %{community} Team kontaktieren"
+      edit_the_listing: "Eintrag bearbeiten"
     edited_listing_submited_for_review:
-      subject: ~
-      there_is_a_edited_listing_to_review: ~
-      review_the_listing: ~
+      subject: "Bearbeiteter Eintrag, der Überprüft werden soll: \"%{listing_title}\" von %{author_name} auf %{community}"
+      there_is_a_edited_listing_to_review: "Es gibt einen bearbeiteten Eintrag, der Überprüft werden soll: \"%{listing_title}\" von %{author_name}. Du kannst jetzt den Eintrag annehmen oder ablehnen."
+      review_the_listing: "Bearbeiteten Eintrag überprüfen"
+    new_transaction:
+      subject: "Neue Transaktion auf %{service_name}"
+      there_is_a_new_transaction: "Es gibt %{link} auf %{service_name}."
+      a_new_transaction: "eine neue Transaktion"
+      listing: "Eintrag: %{title}"
+      sum: "Summe: %{amount}"
+      starter: "Starter: %{name}"
+      provider: "Anbieter: %{name}"
   error_messages:
     booking:
       booking_failed_payment_voided: "Die Buchung ist wegen eines unerwarteten Fehlers fehlgeschlagen. Bitte versuche erneut später. Dein Konto bzw. deine Kreditkarte wurde nicht belastet."
@@ -1456,6 +1653,7 @@ de:
       buyer_cannot_pay_error: "Die Bezahlung wurde von Paypal abgelehnt. Bitte kontaktiere den Kundenservice für mehr Informationen: %{customer_service_link}"
       pending_review_error: "Die Zahlung wurde eingereicht, wurde aber von PayPal als \"erfordert Bewertung' gekennzeichnet. Wenn PayPal die Überprüfung abgeschlossen hat, wird die Zahlung automatisch genehmigt werden."
       seller_express_checkout_disabled: "PayPal Express-Checkout ist für das Paypal-Konto des Eintraginhabers deaktiviert. Bitte kontaktiere den Inhaber und lass ihn/sie wissen, dass es ein Problem mit seinem/ihrem Paypal-Konto gibt, und empfehle ihn/sie, den PayPal-Kundendienst zu kontaktieren."
+      seller_express_checkout_disabled_no_free: "PayPal Express-Checkout ist für das Paypal-Konto des Eintraginhabers deaktiviert. Bitte kontaktiere das %{service_name} Team und erzähle ihnen, dass sie des Eintraginhaber kontaktieren sollen. Der Inhaber sollte nämlich den PayPal Kundendienst kontaktieren."
       generic_error: "Während des Zahlungsvorgangs ist ein Fehler aufgetreten. Die PayPal Zahlung konnte nicht abgeschlossen werden."
       cancel_error: "Während der Stornierung ist ein Fehler aufgetreten. Der Abbruch konnte nicht abgeschlossen werden."
       accept_authorization_error: "Bei dem Versuch, eine vorab autorisierte PayPal-Zahlung zu akzeptieren, ist ein Fehler aufgetreten. Bitte versuche es erneut."
@@ -1503,6 +1701,9 @@ de:
       on_or_after: "muss genau oder nach %{restriction} sein"
       positive_number: "Bitte eine Zahl eingeben."
       from_must_be_less_than_till: "\"Startzeit\" muss vor der \"Endzeit\" sein"
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} hat zugestimmt %{listing_title} an %{requester_name}% zu verleihen vor {time_ago}."
@@ -1726,6 +1927,23 @@ de:
       messages: Nachrichten
     logged_in_notifications_icon:
       notifications: Benachrichtigungen
+    markdown_help:
+      title: Markdown-Formatierungshilfe
+      description: "Mit Markdown kannst du Texte formatieren, so dass die gut auf allen Geräten ansieht. Es ist nicht für sonderliche formatierungen gemeint, so wie das ändern der Fontgröße, -Farbe, oder des Fontstils, sondern für die Grundsachen, die du mit vertrauten Tastatursymbolen anwenden kannst."
+      formatting: Formatierung
+      result: Ergebnis
+      h1: H1
+      h2: H2
+      h3: H3
+      italic: kursiv
+      bold: fett
+      underline: unterstreichen
+      strikethrough: durchstreichen
+      inline_link: Inline-Link
+      list: Liste
+      one: Eins
+      two: Zwei
+      three: Drei
     mobile_logged_in:
       admin: Administrator
       go_to_your_profile_page: Profil
@@ -1787,6 +2005,7 @@ de:
       listing_updated_successfully: "Eintrag wurde erfolgreich aktualisiert"
       listing_updated_availability_management_enabled: "Eintrag wurde erfolgreich aktualisiert. Verfügbarkeitsverwaltung aktiviert."
       listing_updated_availability_management_disabled: "Eintrag wurde erfolgreich aktualisiert. Verfügbarkeitsverwaltung deaktiviert."
+      listing_deleted: "Angebot gelöscht"
       only_kassi_administrators_can_access_this_area: "Bitte mit einem Administratorkonto einloggen, um diesen Bereich zu betreten"
       only_listing_author_can_close_a_listing: "Nur der erstellende Anbieter kann ein Angebot deaktivieren"
       only_listing_author_can_edit_a_listing: "Nur Autoren eines Eintrags können den Eintrag bearbeiten"
@@ -1853,6 +2072,7 @@ de:
       user_does_not_have_email_to_delete: "Die E-Mail-Adresse, die du zu entfernen versuchst, gehört nicht zu dir"
       email_deleted: "E-Mail entfernt"
       listing_author_payment_details_missing: "Leider kann dieser Anbieter keine Zahlungen empfangen, da er seine Zahlungsdaten noch angeben muss. Bitte kontaktiere ihn über das Kontakt Feld unten."
+      listing_author_payment_details_missing_no_free: "Bitte kontaktiere das %{service_name} Team und erzähle ihnen, dass sie dem Eintraginhaber kontaktieren sollen. Der Inhaber sollte nämlich seine/ihre Zahlungsdetails aktualisieren, um Zahlungen empfangen zu können."
       images_are_processing: "Wir bearbeiten deine Bilder. Nach ein paar Minuten werden die angezeigt."
       maintenance_mode:
         zero: "Die Webseite geht nun offline für Wartungsarbeiten."
@@ -1889,6 +2109,7 @@ de:
       you_cannot_send_a_new_comment_because_listing_is_closed: "Du kannst keine neuen Kommentare schicken, da dieser Eintrag geschlossen wurde."
       you_must: "Du musst dich"
       subscribe_to_comments: "Benachrichtigt mich über neue Kommentare und Updates"
+    deleting_a_listing_cannot_be_undone: "Das Löschen eines Angebots kann nicht rückgängig gemacht werden. Bist du sicher, dass du fortfahren willst?"
     edit:
       edit_listing: "Eintrag bearbeiten"
     edit_links:
@@ -1900,10 +2121,11 @@ de:
       show_in_updates_email_loading: Lädt...
       show_in_updates_email_error: "Der Server konnte nicht erreicht werden. Lade die Seite neu und versuche es erneut."
       show_in_updates_email_success: "Dieser Eintrag wird auf der nächsten automatischen Update-E-Mail den Nutzern angezeigt"
-      listing_is_pending: ~
-      listing_is_rejected: ~
-      approve_listing: ~
-      reject_listing: ~
+      listing_is_pending: "Eintrag wurde noch nicht angenommen"
+      listing_is_rejected: "Eintrag wurde abgelehnt"
+      approve_listing: "Eintrag annehmen"
+      reject_listing: "Eintrag ablehnen"
+      delete_listing: "Angebot löschen"
     map:
       open_in_google_maps: "In Google Maps öffnen"
     error:
@@ -1925,7 +2147,8 @@ de:
         repeated: "Wiederholt (ergänze Uhrzeiten und Tage im 'Beschreibungs-Feld')"
       description:
         detailed_description: "Ausführliche Beschreibung"
-        youtube_info: "Wenn Deine Beschreibung YouTube Links enthält, werden die Videos unterhalb der Beschreibung angezeigt."
+        youtube_info: "Wenn deine Beschreibung YouTube Links enthält, werden die Videos unterhalb der Beschreibung angezeigt."
+        youtube_info_markdown: "Du kannst %{link}. Wenn deine Beschreibung YouTube Links enthält, werden die Videos unterhalb der Beschreibung angezeigt."
       destination:
         destination: Ziel
       form_content:
@@ -1984,9 +2207,9 @@ de:
         origin: Herkunft
       send_button:
         save_listing: "Eintrag veröffentlichen"
-        submit_for_review: ~
-        will_be_reviewed: ~
-        we_noticed_youre_an_admin: ~
+        submit_for_review: "Zur Überprüfung vorlegen"
+        will_be_reviewed: "Alle Einträge auf %{service_name} werden überprüft bevor sie veröffentlicht werden. Sobald dein Eintrag angenommen wurde, wird dir eine E-mail zugeschickt, und der Eintrag wird für alle sichtbar sein."
+        we_noticed_youre_an_admin: "Wir haben bemerkt, dass du Admin von %{service_name} bist. Deine Änderungen werden automatisch angenommen und brauchen keine Überprüfung."
       share_type:
         select: Auswählen
         borrow: Ausleihen
@@ -2066,7 +2289,7 @@ de:
       select_one: "Bitte auswählen"
       start_time: Startzeit
       end_time: Endzeit
-      marketplace_fees_may_apply: ~
+      marketplace_fees_may_apply: "Gebühren von %{service_name} können anfallen"
     new:
       listing: Eintrag
       selected_category: "Kategorie: %{category}"
@@ -2304,8 +2527,6 @@ de:
       sign_up: "Ein neues Konto bei %{service_name} erstellen"
       terms: Nutzungsbedingungen
       privacy: Datenschutz
-      username_is_in_use: "Dieser Benutzername wird bereits verwendet."
-      username_is_invalid: "Der Benutzername ist ungültig. Erlaubte Zeichen sind Buchstaben (keine Umlaute), Ziffern und Unterstriche."
       visible_only_to_you: "nur für dich und den Admin von %{service_name} sichtbar"
       visible_to_everybody: "für jeden sichtbar"
       create_account_with_provider: "Registrieren mit %{provider}"
@@ -2467,7 +2688,7 @@ de:
       phone_number: Telefonnummer
       profile_picture: Profilbild
       postal_code: Postleitzahl
-      profile_page: "auf deiner Profil-Seite"
+      profile_page: "auf deiner Profilseite"
       profilemap: Kartenansicht
       street_address: Standort
       these_fields_are_shown_in_your: "Ein Teil dieser Informationen sind für alle %{service_name} Mitglieder sichtbar"
@@ -2478,6 +2699,8 @@ de:
       image_is_processing: "Dein Profilbild wird verarbeitet. Es wird gleich fertig sein."
       shown_in_your_public_profile: "(wird im öffentlichen Profil angezeigt)"
       editing_profile_of: "Du bearbeitest jetzt das Profil von %{name}"
+      format_markdown_link: "die Beschreibung mit Markdown formatieren"
+      format_markdown: "Du kannst %{link}."
     save_information: "Informationen speichern"
   shipping_address:
     shipping_address: Lieferadresse
@@ -2757,6 +2980,12 @@ de:
     paypal_connected: "PayPal-Konto erfolgreich verbunden!"
     paypal_can_accept: "Du bist bereit, PayPal-Zahlungen entgegenzunehmen"
     paypal_connected_give_permission: "Als letztes, bitte erteile eine Genehmigung für das Abheben der Transaktionsgebühr, um Geld auf das PayPal Konto <%{email}> bekommen zu können."
+    stripe_account_restricted: "Online-Zahlungen auf dein Konto sind beschränkt!"
+    stripe_account_restricted_info: "Du solltest deine Bankkontodetails ändern, um dem Zahlungsdienstleister mehr Informationen zu geben."
+    stripe_account_restricted_soon: "Online-Zahlungen auf dein Konto werden bald beschränkt."
+    stripe_account_restricted_soon_info: "Du solltest deine Bankkontodetails ändern, um dem Zahlungsdienstleister mehr Informationen zu geben."
+    stripe_account_pending_verification: "Kontodetails erfolgreich gespeichert. Warte auf Konto-Verifizierung vom Zahlungsdienstleister."
+    stripe_account_pending_verification_info: "Prüfe bitte diese Seite später um sicherzustellen, dass alles in Ordnung ist."
     form_new:
       need_info: "Wir brauchen einige Informationen über dich, um dir Geld überweisen zu können."
       select_country: "Land wählen..."
@@ -2796,7 +3025,6 @@ de:
       address_kanji_line1: "Adresse kanji"
       male: männlich
       female: weiblich
-      mcc: ~
     form_bank:
       bank_account_number: Kontonummer
       bank_routing_number: Bankleitzahl
@@ -2846,11 +3074,35 @@ de:
     invalid_bank_account_number: "Bitte sicherstellen, dass dein Bankkonto ist richtig eingetragen und mit deinem Land zustimmt."
     invalid_postal_code: "Ungültige Postleitzahl für %{country}"
   seo_sections:
-    you_can_use_variables: ~
+    you_can_use_variables: "Du kannst die folgenden Variablen verwenden: %{vars}"
     placeholder:
-      search_results: ~
-      search_results_for: ~
-      listing_description: ~
-      category_description: ~
-      profile_title: ~
-      profile_description: ~
+      search_results: "Suchergebnisse - %{variable}"
+      search_results_for: "Suchergebnisse für: %{placeholder1} auf %{placeholder2}"
+      listing_description: "%{title} für %{price} von %{author} auf %{marketplace}"
+      listing_description_without_price: "%{title} von %{author} auf %{marketplace}"
+      category_description: "%{category} auf %{marketplace}"
+      profile_title: "Profil von %{user} - %{marketplace}"
+      profile_description: "Mehr über %{user} auf %{marketplace} erfahren"
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

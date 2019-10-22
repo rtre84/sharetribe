@@ -11,6 +11,7 @@ class PersonMailer < ActionMailer::Base
   require 'active_support/core_ext'
 
   require "truncate_html"
+  helper :markdown
 
   default :from => APP_CONFIG.sharetribe_mail_from_address
   layout 'email'
@@ -105,12 +106,11 @@ class PersonMailer < ActionMailer::Base
       if community.payments_in_use?
         @payment_settings_link = paypal_account_settings_payment_url(recipient, @url_params.merge(locale: recipient.locale))
       end
+      @skip_unsubscribe_footer = true
 
       premailer_mail(:to => recipient.confirmed_notification_emails_to,
                      :from => community_specific_sender(community),
-                     :subject => t("emails.payment_settings_reminder.remember_to_add_payment_details")) do |format|
-        format.html {render :locals => {:skip_unsubscribe_footer => true} }
-      end
+                     :subject => t("emails.payment_settings_reminder.remember_to_add_payment_details"))
     end
   end
 
@@ -273,7 +273,7 @@ class PersonMailer < ActionMailer::Base
       if address.present?
         premailer_mail(:to => address,
                        :from => community_specific_sender(community),
-                       :subject => "New member in #{@community.full_name(@person.locale)}",
+                       :subject => t("emails.new_member_notification.subject", community: @community.full_name(@person.locale)),
                        :template_name => "new_member_notification")
       end
     end
@@ -327,11 +327,7 @@ class PersonMailer < ActionMailer::Base
       @test_email = test_email
       @show_branding_info = !PlanService::API::Api.plans.get_current(community_id: community.id).data[:features][:whitelabel]
 
-      subject = if @recipient.has_admin_rights?(@current_community) && !@test_email
-        t("emails.welcome_email_marketplace_creator.welcome_email_subject_for_marketplace_creator")
-      else
-        t("emails.welcome_email.welcome_email_subject", :community => community.full_name(recipient.locale), :person => PersonViewUtils.person_display_name_for_type(person, "first_name_only"))
-      end
+      subject = t("emails.welcome_email.welcome_email_subject", :community => community.full_name(recipient.locale), :person => PersonViewUtils.person_display_name_for_type(person, "first_name_only"))
       premailer_mail(:to => recipient.confirmed_notification_emails_to,
                      :from => community_specific_sender(community),
                      :subject => subject) do |format|

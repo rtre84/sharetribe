@@ -80,6 +80,8 @@ el:
         transaction_agreement_checkbox_label_description: ~
         transaction_agreement_text_header: ~
         transaction_agreement_description: ~
+        terms_privacy_policy_and_static_content: ~
+        terms_privacy_policy_and_static_content_infotext: ~
       edit_look_and_feel:
         edit_community_look_and_feel: "Αλλαγή της εμφάνισης της κοινότητας \"%{community_name}\""
         community_logo: Λογότυπο
@@ -102,6 +104,8 @@ el:
         logo_mobile_icon_instructions_text_with_dimensions: ~
         cover_photo_visibility: ~
         cover_photo_instructions_text_with_dimensions: "Το μέγεθος της φωτογραφίας εξώφυλλου θα γίνει %{width}x%{height} pixels και ψηλότερες εικόνες θα περικοπούν στο κέντρο."
+        we_have_you_covered: ~
+        cover_photo_ready_made: ~
         small_cover_photo_visibility: ~
         small_cover_photo_instructions_text_with_dimensions: ~
         main_content_width: ~
@@ -203,6 +207,7 @@ el:
         users_can_invite_new_users: ~
         private: ~
         require_verification_to_post_listings: ~
+        allow_free_conversations: ~
         search_preferences: ~
         default_search_type: ~
         keyword_search: ~
@@ -240,6 +245,7 @@ el:
         delete_this_marketplace: ~
         payment_preferences: ~
         pre_approved_listings: ~
+        email_admins_about_new_transactions: ~
       manage_members:
         manage_members: ~
         email: ~
@@ -301,6 +307,7 @@ el:
         twitter_handle_placeholder: ~
         invalid_twitter_handle: ~
         facebook_connect: ~
+        facebook_developers_dashboard: ~
         facebook_connect_info_text: ~
         facebook_connect_info_text_with_instructions: ~
         facebook_instructions_link_text: ~
@@ -313,6 +320,7 @@ el:
         add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
+        google_developers_console: ~
         google_connect_info_text_with_instructions: ~
         google_connect_info_text: ~
         enable_google_login: ~
@@ -320,6 +328,7 @@ el:
         google_connect_secret: ~
         linkedin_connect: ~
         linkedin_instructions_link_text: ~
+        linkedin_developers_dashboard: ~
         linkedin_connect_info_text_with_instructions: ~
         linkedin_connect_info_text: ~
         enable_linkedin_login: ~
@@ -433,6 +442,8 @@ el:
           canceled: ~
           preauthorized: ~
           rejected: ~
+          payment_intent_requires_action: ~
+          payment_intent_action_expired: ~
         headers:
           conversation: ~
           listing: ~
@@ -478,6 +489,9 @@ el:
             canceled: ~
             initiated: ~
             pending_ext: ~
+            payment_intent_requires_action: ~
+            payment_intent_action_expired: ~
+            payment_intent_failed: ~
         not_available: ~
       conversations:
         conversations: ~
@@ -533,6 +547,9 @@ el:
           confirm_modify: ~
           deleting_info: ~
           blocking_info: ~
+          unskip: ~
+          if_you_unskip_the_review: ~
+          they_will_not_be_notified_automatically: ~
       invitations:
         invitations: ~
         used:
@@ -549,6 +566,8 @@ el:
         search_by_title_author_category: ~
         search: ~
         reset_search: ~
+        export_all_as_csv: ~
+        processing_export: ~
         status:
           all: ~
           selected_js: ~
@@ -611,6 +630,159 @@ el:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: ~
@@ -641,8 +813,8 @@ el:
         remove_field_confirmation: ~
         cancel: Άκυρο
         save: Αποθήκευση
-        field_title: ~
-        field_type: ~
+        field_title: "Τίτλος Πεδίου"
+        field_type: "Τύπος Πεδίου"
         categories: ~
         select_all: ~
         clear_all: ~
@@ -728,6 +900,7 @@ el:
       emails_title: ~
       subscription: ~
       preview: ~
+      whats_new: ~
     listing_shapes:
       availability_title: ~
       read_more: ~
@@ -861,6 +1034,7 @@ el:
       stripe_fee: ~
       stripe_fee_notice: ~
       fee_should_be_less_than_minimum_price: ~
+      the_transaction_fee_must_be_lower_than_100: ~
       confirm_disable: ~
       commission_from_buyer_label: ~
       minimum_buyer_transaction_fee_label: ~
@@ -919,6 +1093,20 @@ el:
         request: Πρόσφερε
         offer: "Ζήτησέ το"
         inquiry: ~
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: "Επεξεργασία σελίδας"
     default_community_slogan: "Δάνεισε, βοήθα, πούλα, μοιράσου"
@@ -1004,8 +1192,8 @@ el:
       total_value: ~
       total_value_paypal: ~
       total_value_stripe: ~
+      paypal_fee: ~
       paypal_fee_info: ~
-      payment_fee_info: ~
       shipping_price_label: ~
       stripe-fee_label: ~
     confirm:
@@ -1302,13 +1490,13 @@ el:
       shipping_total: ~
     braintree_new_payment:
       product: "Προϊόν:"
-      price_payer_paid: ~
+      price_payer_paid: "Τιμή %{payer_full_name} πληρώθηκε:"
       service_fee: ~
       you_will_get: ~
     receipt_to_payer:
       receipt_of_payment: "Απόδειξη πληρωμής"
       you_have_made_new_payment: "Πληρώσατε <b>%{payment_sum}</b> για το <b>%{listing_title}</b> στον/στην %{recipient_full_name}. Ορίστε η απόδειξη πληρωμής."
-      product: ~
+      product: Προϊόν
       price_per_unit_type: ~
       duration: ~
       quantity: ~
@@ -1348,7 +1536,7 @@ el:
       text_version_text: "Μήπως έχεις κάτι που μπορείς να προσφέρεις; Ή μήπως χρειάζεσαι κάτι που μπορεί να το έχει κάποιος άλλος; Βάλε μια προσφορά ή ένα αίτημα στο ή δες τι προσφέρουν ή τι χρειάζονται άλλα άτομα στο %{url}"
     reset_password_instructions:
       change_my_password: "Αλλαγή του κωδικού πρόσβασής μου"
-      reset_password_instructions: "<p>Δήλωσες ότι έχεις ξεχάσει το όνομα χρήστη ή τον κωδικό σου στο %{service_name}.</p><p>Το όνομα χρήστη είναι: %{username}</p><p>Αν θέλεις να επαναφέρεις τον κωδικό σου κάνε κλικ στον παρακάτω σύνδεσμο: %{password_reset_link}</p><br/><p>Αν δεν το ζήτησες εσύ αυτό, παρακαλούμε να αγνοήσεις αυτό το μήνυμα. Ο κωδικός σου δεν θα αλλάξει μέχρι να κάνεις κλικ στον παραπάνω σύνδεσμο και να δημιουργήσεις νέο κωδικό.</p>"
+      reset_password_instructions: "<p>Δήλωσες ότι έχεις ξεχάσει το όνομα χρήστη ή τον κωδικό σου στο %{service_name}.</p><p>Αν θέλεις να επαναφέρεις τον κωδικό σου κάνε κλικ στον παρακάτω σύνδεσμο: %{password_reset_link}</p><br/><p>Αν δεν το ζήτησες εσύ αυτό, παρακαλούμε να αγνοήσεις αυτό το μήνυμα. Ο κωδικός σου δεν θα αλλάξει μέχρι να κάνεις κλικ στον παραπάνω σύνδεσμο και να δημιουργήσεις νέο κωδικό.</p>"
     testimonial_reminder:
       remember_to_give_feedback_to: "Υπενθύμιση: θυμηθείτε να γράψετε την κριτική σας για το χρήστη %{name}"
       you_have_not_given_feedback_yet: "Δεν έχετε κάνει ακόμα κριτική στο χρήστη %{name} σχετικά με το συμβάν \"%{event}\". Θυμηθείτε να πείτε τη γνώμη σας για το πόσο καλά ανταποκρίθηκε ο/η %{given_name}."
@@ -1377,6 +1565,7 @@ el:
       you_are_receiving_this_because: ~
       view_listing: ~
     new_member_notification:
+      subject: ~
       new_member_has_joined: ~
       this_is_automatic_message: ~
       person_name: ~
@@ -1399,6 +1588,14 @@ el:
       subject: ~
       there_is_a_edited_listing_to_review: ~
       review_the_listing: ~
+    new_transaction:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
   error_messages:
     booking:
       booking_failed_payment_voided: ~
@@ -1421,6 +1618,7 @@ el:
       buyer_cannot_pay_error: ~
       pending_review_error: ~
       seller_express_checkout_disabled: ~
+      seller_express_checkout_disabled_no_free: ~
       generic_error: ~
       cancel_error: ~
       accept_authorization_error: ~
@@ -1468,6 +1666,9 @@ el:
       on_or_after: ~
       positive_number: ~
       from_must_be_less_than_till: ~
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "Ο/Η %{offerer_name} συμφώνησε να δανείσει το %{listing_title} στον/στην %{requester_name} %{time_ago}."
@@ -1543,7 +1744,7 @@ el:
       some_private_offers_exist: "Υπάρχουν ήδη <b>%{number_of_listings} προσφορές</b>"
       some_private_requests_exist: "Υπάρχουν ήδη  <b>%{number_of_listings} αιτήματα</b>"
     custom_filters:
-      update_view: ~
+      update_view: "Επικαιροποιήση Εικόνας"
       min: ~
       max: ~
     event_feed:
@@ -1647,7 +1848,7 @@ el:
     application:
       join_this_community: "Εγγραφή στην κοινότητα"
       read_more: "Διαβάστε περισσότερα"
-      feedback: ~
+      feedback: "Το μύνημα σας στην ομάδα %{service_name}"
       dont_use_to_contact_support: ~
       feedback_forum: "περιοχή σχολίων"
       feedback_handle: Ανατροφοδότηση
@@ -1672,7 +1873,7 @@ el:
       select_language: "Επιλέξτε γλώσσα"
     infos:
       about: Σχετικά
-      how_to_use: Βοήθεια
+      how_to_use: "Πώς δουλεύει"
       info_about_kassi: "Σχετικά με το %{service_name}"
       news: Νέα
       register_details: Ιδιωτικότητα
@@ -1691,6 +1892,23 @@ el:
       messages: Μηνύματα
     logged_in_notifications_icon:
       notifications: Ειδοποιήσεις
+    markdown_help:
+      title: ~
+      description: ~
+      formatting: ~
+      result: ~
+      h1: ~
+      h2: ~
+      h3: ~
+      italic: ~
+      bold: ~
+      underline: ~
+      strikethrough: ~
+      inline_link: ~
+      list: ~
+      one: ~
+      two: ~
+      three: ~
     mobile_logged_in:
       admin: Admin
       go_to_your_profile_page: Προφίλ
@@ -1752,7 +1970,8 @@ el:
       listing_updated_successfully: "Η καταχώρηση ενημερώθηκε επιτυχώς"
       listing_updated_availability_management_enabled: ~
       listing_updated_availability_management_disabled: ~
-      only_kassi_administrators_can_access_this_area: ~
+      listing_deleted: ~
+      only_kassi_administrators_can_access_this_area: "Παρακαλούμε συνδεθείτε με το λογαριασμό του διαχειριστή για αποκτήσετε πρόσβαση."
       only_listing_author_can_close_a_listing: "Μόνο ο δημιουργός μιας καταχώρησης μπορεί να την κλείσει."
       only_listing_author_can_edit_a_listing: "Μόνο ο δημιουργός μιας καταχώρησης μπορεί να την επεξεργαστεί."
       payment_successful: "Επιτυχής πληρωμή"
@@ -1818,6 +2037,7 @@ el:
       user_does_not_have_email_to_delete: "Δεν έχετε τη διεύθυνση email που προσπαθείτε να αφαιρέσετε"
       email_deleted: "Η διεύθυνση email αφαιρέθηκε"
       listing_author_payment_details_missing: ~
+      listing_author_payment_details_missing_no_free: ~
       images_are_processing: ~
       automatically_logged_out_please_sign_in: ~
       stripe_you_account_balance_is_not_0: ~
@@ -1850,6 +2070,7 @@ el:
       you_cannot_send_a_new_comment_because_listing_is_closed: "Δεν μπορείτε να σχολιάσετε γιατί η καταχώρηση είναι ανενεργή."
       you_must: "Πρέπει να"
       subscribe_to_comments: "Ειδοποίησέ με αν υπάρξουν νέα σχόλια ή αλλάγες"
+    deleting_a_listing_cannot_be_undone: ~
     edit:
       edit_listing: "Επεξεργασία καταχώρησης"
     edit_links:
@@ -1865,6 +2086,7 @@ el:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
+      delete_listing: ~
     map:
       open_in_google_maps: ~
     error:
@@ -1887,6 +2109,7 @@ el:
       description:
         detailed_description: Περιγραφή
         youtube_info: ~
+        youtube_info_markdown: ~
       destination:
         destination: Προορισμός
       form_content:
@@ -2154,7 +2377,7 @@ el:
   mercury:
     content_too_long: ~
   okl:
-    member_id: ~
+    member_id: "Ταυτότητα Μέλους"
     member_id_or_email: "ID μέλους ή email"
   paypal_accounts:
     payout_info_title: ~
@@ -2263,10 +2486,8 @@ el:
       password_again: Επιβεβαίωση
       show_my_name_to_others: "Να εμφανίζεται το πραγματικό μου όνομα στους άλλους χρήστες του %{service_name}"
       sign_up: "Δημιουργήστε λογαριασμό στο %{service_name}"
-      terms: "όρους χρήσης"
+      terms: "Όροι Χρήσης"
       privacy: ~
-      username_is_in_use: "Το όνομα χρήστη που δώσατε χρησιμοποιείται ήδη."
-      username_is_invalid: "Αυτό το όνομα χρήστη δεν είναι έγκυρο. Επιτρέπονται μόνο γράμματα, αριθμοί και κάτω παύλες."
       visible_only_to_you: "ορατή μόνο σε σας και το διαχειριστή της κοινότητας"
       visible_to_everybody: "ορατό σε όλους"
       create_account_with_provider: ~
@@ -2439,6 +2660,8 @@ el:
       image_is_processing: ~
       shown_in_your_public_profile: ~
       editing_profile_of: ~
+      format_markdown_link: ~
+      format_markdown: ~
     save_information: Αποθήκευση
   shipping_address:
     shipping_address: ~
@@ -2668,6 +2891,12 @@ el:
     paypal_connected: ~
     paypal_can_accept: ~
     paypal_connected_give_permission: ~
+    stripe_account_restricted: ~
+    stripe_account_restricted_info: ~
+    stripe_account_restricted_soon: ~
+    stripe_account_restricted_soon_info: ~
+    stripe_account_pending_verification: ~
+    stripe_account_pending_verification_info: ~
     form_new:
       need_info: ~
       select_country: ~
@@ -2707,7 +2936,6 @@ el:
       address_kanji_line1: ~
       male: ~
       female: ~
-      mcc: ~
     form_bank:
       bank_account_number: ~
       bank_routing_number: ~
@@ -2762,6 +2990,30 @@ el:
       search_results: ~
       search_results_for: ~
       listing_description: ~
+      listing_description_without_price: ~
       category_description: ~
       profile_title: ~
       profile_description: ~
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

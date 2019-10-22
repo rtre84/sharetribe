@@ -90,6 +90,8 @@ zh:
         transaction_agreement_checkbox_label_description: 该文本将被显示于结帐表单的检查框边上。用户需要勾选该框以继续交易。标签文字类似于“通过勾选该检查框表明我接受协议。“
         transaction_agreement_text_header: 协定文本
         transaction_agreement_description: "这是用户需要接受的实际协议的内容。该协议内容会在用户点击协议标签旁边的“%{read_more}”链接时展现。"
+        terms_privacy_policy_and_static_content: ~
+        terms_privacy_policy_and_static_content_infotext: ~
       edit_look_and_feel:
         edit_community_look_and_feel: "编辑集市”%{community_name}“的外观"
         community_logo: 页面展示Logo
@@ -112,6 +114,8 @@ zh:
         logo_mobile_icon_instructions_text_with_dimensions: ~
         cover_photo_visibility: 封面照片将显示在未登录用户的首页
         cover_photo_instructions_text_with_dimensions: "照片大小将调整为%{width}x%{height}像素，超过高度的图片将从中间截取。%{see_how_it_looks_like}"
+        we_have_you_covered: ~
+        cover_photo_ready_made: ~
         small_cover_photo_visibility: 小的封面照片将显示在除未登录用户首页的所有页面。
         small_cover_photo_instructions_text_with_dimensions: "照片大小将调整为%{width}x%{height}像素，超过高度的图片将从中间截取。"
         main_content_width: "在选择封面照片时注意页面主要内容最多是%{main_width}像素宽。记得检查你的封面照片在较小屏幕上看上去如何（比如使用较窄的浏览器窗口）。"
@@ -213,6 +217,7 @@ zh:
         users_can_invite_new_users: 所有用户都可以邀请新用户来到这个集市
         private: 这个集市是私有的（只有注册用户可以看到内容）
         require_verification_to_post_listings: 只有经管理员验证的用户可以发布新的信息
+        allow_free_conversations: ~
         search_preferences: ~
         default_search_type: ~
         keyword_search: 按关键词搜索
@@ -250,6 +255,7 @@ zh:
         delete_this_marketplace: 删除这个集市。
         payment_preferences: ~
         pre_approved_listings: ~
+        email_admins_about_new_transactions: ~
       manage_members:
         manage_members: 管理用户
         email: 电子邮件
@@ -311,6 +317,7 @@ zh:
         twitter_handle_placeholder: 用户名
         invalid_twitter_handle: Twitter用户名最多不能超过15个字母和数字（字母A-Z和数字0-9）。
         facebook_connect: Facebook
+        facebook_developers_dashboard: ~
         facebook_connect_info_text: "为了启用Facebook登录，在<a href='https://developers.facebook.com/'>Facebook开发者Dashboard</a>中为你的集市创建一个应用。在这里添加应用生成的ID和密钥。"
         facebook_connect_info_text_with_instructions: "为了启用Facebook登录，在<a href='https://developers.facebook.com/'>Facebook开发者Dashboard</a>中为你的集市创建一个应用。在这里添加应用生成的ID和密钥。%{instructions_link}"
         facebook_instructions_link_text: "关于如何配置Facebook Connect请参考说明。"
@@ -323,6 +330,7 @@ zh:
         add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
+        google_developers_console: ~
         google_connect_info_text_with_instructions: ~
         google_connect_info_text: ~
         enable_google_login: ~
@@ -330,6 +338,7 @@ zh:
         google_connect_secret: ~
         linkedin_connect: ~
         linkedin_instructions_link_text: ~
+        linkedin_developers_dashboard: ~
         linkedin_connect_info_text_with_instructions: ~
         linkedin_connect_info_text: ~
         enable_linkedin_login: ~
@@ -443,6 +452,8 @@ zh:
           canceled: ~
           preauthorized: ~
           rejected: ~
+          payment_intent_requires_action: ~
+          payment_intent_action_expired: ~
         headers:
           conversation: 会话
           listing: 发布的信息
@@ -488,6 +499,9 @@ zh:
             canceled: ~
             initiated: ~
             pending_ext: ~
+            payment_intent_requires_action: ~
+            payment_intent_action_expired: ~
+            payment_intent_failed: ~
         not_available: 无
       conversations:
         conversations: ~
@@ -543,6 +557,9 @@ zh:
           confirm_modify: ~
           deleting_info: ~
           blocking_info: ~
+          unskip: ~
+          if_you_unskip_the_review: ~
+          they_will_not_be_notified_automatically: ~
       invitations:
         invitations: ~
         used:
@@ -559,6 +576,8 @@ zh:
         search_by_title_author_category: ~
         search: ~
         reset_search: ~
+        export_all_as_csv: ~
+        processing_export: ~
         status:
           all: ~
           selected_js: ~
@@ -621,6 +640,159 @@ zh:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+      landing_pages:
+        landing_pages: ~
+        info_1: ~
+        info_2: ~
+        info_2_preview_text: ~
+        info_2_details_text: ~
+        info_2_design_text: ~
+        info_3: ~
+        info_4: ~
+        editor_title: ~
+        editor_info: ~
+        preview: ~
+        set_live: ~
+        headers:
+          section_id: ~
+          section_type: ~
+          version: ~
+          released: ~
+        add_new_version: ~
+        new_version: ~
+        edit_version: ~
+        add_new_section: ~
+        select_section_type: ~
+        form:
+          version: ~
+          save: ~
+        sections:
+          identifier: ~
+          kind: ~
+          variation: ~
+          new: ~
+          edit: ~
+          remove_section_confirmation: ~
+          info_single_column: ~
+          info_multi_column_2: ~
+          info_multi_column_3: ~
+          listings: ~
+          categories: ~
+          hero: ~
+          locations: ~
+          video: ~
+          new_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+          edit_section:
+            categories: ~
+            footer: ~
+            hero: ~
+            info_single_column: ~
+            info_multi_column_2: ~
+            info_multi_column_3: ~
+            listings: ~
+            locations: ~
+            video: ~
+    landing_page_versions:
+      sections:
+        hero:
+          hero_title: ~
+          hero_description: ~
+        footer:
+          footer_title: ~
+          footer_style: ~
+          style_dark: ~
+          style_light: ~
+          style_marketplace_color: ~
+          style_logo: ~
+        cta_button:
+          cta_button: ~
+          cta_enabled: ~
+          cta_text: ~
+          cta_url: ~
+        background_image_overlay:
+          background_image: ~
+          background_image_info: ~
+          add_another_image: ~
+          current_image: ~
+          file_not_selected: ~
+          background_image_overlay: ~
+          background_image_overlay_info: ~
+          overlay_dark: ~
+          overlay_light: ~
+          overlay_transparent: ~
+        background_style:
+          background_style: ~
+          style_image: ~
+          style_color: ~
+          style_none: ~
+        background_color:
+          background_color: ~
+          background_color_info: ~
+        categories:
+          add: ~
+          category: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_categories: ~
+          need_at_most_7_categories: ~
+        category:
+          add_another_image: ~
+          category: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          select_category: ~
+        locations:
+          add: ~
+          location: ~
+          empty: ~
+          image: ~
+          include_title: ~
+          info_text: ~
+          need_at_least_3_locations: ~
+          need_at_most_7_locations: ~
+        location:
+          add_another_image: ~
+          location: ~
+          current_image: ~
+          file_not_selected: ~
+          image: ~
+          image_required: ~
+          title: ~
+          title_placeholder: ~
+          url: ~
+          url_placeholder: ~
+        multi_column:
+          main_title: ~
+          column_header: ~
+          column_title: ~
+          column_icon_info: ~
+          column_icon: ~
+          column_paragraph: ~
+          column_button: ~
+          column_button_text: ~
+          column_button_url: ~
+        listings:
+          you_need_to_add_the_listing_ids: ~
+        video:
+          text: ~
+          youtube_video_id: ~
+          autoplay: ~
+          autoplay_no: ~
+          autoplay_muted: ~
+          info: ~
     custom_fields:
       edit:
         edit_listing_field: "编辑信息字段“%{field_name}”"
@@ -738,6 +910,7 @@ zh:
       emails_title: 电邮
       subscription: 订阅
       preview: 预览站点
+      whats_new: ~
     listing_shapes:
       availability_title: ~
       read_more: ~
@@ -879,6 +1052,7 @@ zh:
       stripe_fee: ~
       stripe_fee_notice: ~
       fee_should_be_less_than_minimum_price: ~
+      the_transaction_fee_must_be_lower_than_100: ~
       confirm_disable: ~
       commission_from_buyer_label: ~
       minimum_buyer_transaction_fee_label: ~
@@ -937,6 +1111,20 @@ zh:
         request: 请求
         offer: 请求
         inquiry: 联系人
+    community_transactions:
+      show:
+        transaction_for: ~
+        status: ~
+        next_step: ~
+        waiting_for_provider_accept_or_reject: ~
+        waiting_for_fulfill_and_complete: ~
+        buyer: ~
+        provider: ~
+        buyer_pays: ~
+        marketplace_collects: ~
+        buyer_service_fee_label: ~
+        service_fee_label: ~
+        provider_receives: ~
   common:
     edit_page: 编辑页面
     default_community_slogan: 集市
@@ -1022,8 +1210,8 @@ zh:
       total_value: "%{seller_gets}*"
       total_value_paypal: ~
       total_value_stripe: ~
-      paypal_fee_info: "* 不包括<a id='%{fee_info_link_id}' href='#'>PayPal的支付处理费用</a>"
-      payment_fee_info: ~
+      paypal_fee: ~
+      paypal_fee_info: "* 不包括 %{link}"
       shipping_price_label: "运费:"
       stripe-fee_label: ~
     confirm:
@@ -1366,7 +1554,7 @@ zh:
       text_version_text: "你可以共享一些其他人可能需要的东西吗？或者你可能需要一些别人已经拥有的东西？点击%{url}新添一个宝贝或者查看其他人当前提供的或者请求的东西"
     reset_password_instructions:
       change_my_password: 修改密码
-      reset_password_instructions: "<p>你以確認你忘记了%{service_name}的用户名或者密码。</p><p>你的用户名是：%{username}</p><p>如果你需要重置密码，点击以下链接：%{password_reset_link}</p><br/><p>如果你没有这个要求，请忽略这封电子邮件。 你的密码将不会改变，直到你访问上面的链接并创建一个新的密码。</p>"
+      reset_password_instructions: "<p>你以確認你忘记了%{service_name}的用户名或者密码。</p><p>如果你需要重置密码，点击以下链接：%{password_reset_link}</p><br/><p>如果你没有这个要求，请忽略这封电子邮件。 你的密码将不会改变，直到你访问上面的链接并创建一个新的密码。</p>"
     testimonial_reminder:
       remember_to_give_feedback_to: "提醒：记得给%{name} 评价"
       you_have_not_given_feedback_yet: "你尚未评价%{name} 参与的活动'%{event}'。记得评价%{given_name} 在活动中的表现。"
@@ -1395,6 +1583,7 @@ zh:
       you_are_receiving_this_because: "你收到这个通知是由于你关注了%{author_name}。"
       view_listing: 查看发布的信息
     new_member_notification:
+      subject: ~
       new_member_has_joined: ~
       this_is_automatic_message: ~
       person_name: "名字:"
@@ -1417,6 +1606,14 @@ zh:
       subject: ~
       there_is_a_edited_listing_to_review: ~
       review_the_listing: ~
+    new_transaction:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
   error_messages:
     booking:
       booking_failed_payment_voided: ~
@@ -1439,6 +1636,7 @@ zh:
       buyer_cannot_pay_error: " 该支付被Paypal拒绝。请联系他们的客服获得更多信息：%{customer_service_link}"
       pending_review_error: 支付已经提交，但是被Paypal标记为‘需要检查’。当Paypal完成检查后，该支付将会被自动授权。
       seller_express_checkout_disabled: ~
+      seller_express_checkout_disabled_no_free: ~
       generic_error: 付款过程中出现错误。无法完成你的PayPal付款。
       cancel_error: 取消时发生错误。不能完成取消操作。
       accept_authorization_error: 尝试接受预授权的PayPal付款时出错。请重试。
@@ -1486,6 +1684,9 @@ zh:
       on_or_after: "必须在%{restriction}时或之后"
       positive_number: 填入一个数字
       from_must_be_less_than_till: ~
+      section_with_this_id_already_exists: ~
+      listing_with_this_id_does_not_exist: ~
+      presence: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} 同意将 %{listing_title} 借给 %{requester_name} %{time_ago}."
@@ -1709,6 +1910,23 @@ zh:
       messages: 私信
     logged_in_notifications_icon:
       notifications: 通知
+    markdown_help:
+      title: ~
+      description: ~
+      formatting: ~
+      result: ~
+      h1: ~
+      h2: ~
+      h3: ~
+      italic: ~
+      bold: ~
+      underline: ~
+      strikethrough: ~
+      inline_link: ~
+      list: ~
+      one: ~
+      two: ~
+      three: ~
     mobile_logged_in:
       admin: 后台管理
       go_to_your_profile_page: 个人主页
@@ -1770,6 +1988,7 @@ zh:
       listing_updated_successfully: 信息更新成功
       listing_updated_availability_management_enabled: ~
       listing_updated_availability_management_disabled: ~
+      listing_deleted: ~
       only_kassi_administrators_can_access_this_area: ~
       only_listing_author_can_close_a_listing: 仅作者可以关闭发布的信息
       only_listing_author_can_edit_a_listing: 仅作者可以编辑发布的信息
@@ -1836,6 +2055,7 @@ zh:
       user_does_not_have_email_to_delete: 你想要移除的邮件地址不存在
       email_deleted: 邮件已删除
       listing_author_payment_details_missing: 请点击下面的‘联系’按钮联系卖家。他们需要更新付款信息来接收付款。
+      listing_author_payment_details_missing_no_free: ~
       images_are_processing: ~
       automatically_logged_out_please_sign_in: 你已被自动登出。请重新登录。
       stripe_you_account_balance_is_not_0: ~
@@ -1868,6 +2088,7 @@ zh:
       you_cannot_send_a_new_comment_because_listing_is_closed: 你不能发表新的评论，因为这条信息已经关闭。
       you_must: 你必须
       subscribe_to_comments: 若有新评论或更新，发邮件通知我
+    deleting_a_listing_cannot_be_undone: ~
     edit:
       edit_listing: 编辑发布的信息
     edit_links:
@@ -1883,6 +2104,7 @@ zh:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
+      delete_listing: ~
     map:
       open_in_google_maps: 在Google地图中打开
     error:
@@ -1905,6 +2127,7 @@ zh:
       description:
         detailed_description: 详细描述
         youtube_info: "如果您的描述包括Youtube连结, 该影片将会在描述栏下方显示."
+        youtube_info_markdown: ~
       destination:
         destination: 目的地
       form_content:
@@ -2285,8 +2508,6 @@ zh:
       sign_up: "在%{service_name}注册"
       terms: 使用条款
       privacy: ~
-      username_is_in_use: 此用户名已被使用。
-      username_is_invalid: 用户名格式不正确。请使用字母，数字以及下划线。
       visible_only_to_you: 仅对你和集市管理员可见
       visible_to_everybody: 所有人可见
       create_account_with_provider: ~
@@ -2459,6 +2680,8 @@ zh:
       image_is_processing: 你的个人头像图片正在准备。请过一会重新刷新页面。
       shown_in_your_public_profile: ~
       editing_profile_of: ~
+      format_markdown_link: ~
+      format_markdown: ~
     save_information: 保存信息
   shipping_address:
     shipping_address: 送货地址
@@ -2706,6 +2929,12 @@ zh:
     paypal_connected: ~
     paypal_can_accept: ~
     paypal_connected_give_permission: ~
+    stripe_account_restricted: ~
+    stripe_account_restricted_info: ~
+    stripe_account_restricted_soon: ~
+    stripe_account_restricted_soon_info: ~
+    stripe_account_pending_verification: ~
+    stripe_account_pending_verification_info: ~
     form_new:
       need_info: ~
       select_country: ~
@@ -2745,7 +2974,6 @@ zh:
       address_kanji_line1: ~
       male: ~
       female: ~
-      mcc: ~
     form_bank:
       bank_account_number: ~
       bank_routing_number: ~
@@ -2800,6 +3028,30 @@ zh:
       search_results: ~
       search_results_for: ~
       listing_description: ~
+      listing_description_without_price: ~
       category_description: ~
       profile_title: ~
       profile_description: ~
+  activemodel:
+    attributes:
+      landing_page_version/section/base:
+        id: ~
+        title: ~
+        paragraph: ~
+        button_color: ~
+        button_color_hover: ~
+        button_title: ~
+        button_path: ~
+        button_path_string: ~
+        background_image: ~
+        background_image_variation: ~
+        background_color: ~
+        background_color_string: ~
+        icon_color: ~
+      landing_page_version/section/listings:
+        listing_1_id: ~
+        listing_2_id: ~
+        listing_3_id: ~
+      landing_page_version/section/video:
+        text: ~
+        youtube_video_id: ~

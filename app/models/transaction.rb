@@ -97,7 +97,7 @@ class Transaction < ApplicationRecord
     .where("listings.author_id = ? OR starter_id = ?", person.id, person.id)
   }
   scope :availability_blocking, -> do
-    where(current_state: ['preauthorized', 'paid', 'confirmed', 'canceled'])
+    where(current_state: ['payment_intent_requires_action', 'preauthorized', 'paid', 'confirmed', 'canceled'])
   end
   scope :non_free, -> { where('current_state <> ?', ['free']) }
   scope :by_community, -> (community_id) { where(community_id: community_id) }
@@ -105,9 +105,9 @@ class Transaction < ApplicationRecord
     left_outer_joins(:conversation).merge(Conversation.payment)
   }
   scope :with_payment_conversation_latest, -> (sort_direction) {
-    with_payment_conversation.order(
+    with_payment_conversation.order(Arel.sql(
       "GREATEST(COALESCE(transactions.last_transition_at, 0),
-        COALESCE(conversations.last_message_at, 0)) #{sort_direction}")
+        COALESCE(conversations.last_message_at, 0)) #{sort_direction}"))
   }
   scope :for_csv_export, -> {
     includes(:starter, :booking, :testimonials, :transaction_transitions, :conversation => [{:messages => :sender}, :listing, :participants], :listing => :author)
@@ -143,8 +143,8 @@ class Transaction < ApplicationRecord
   scope :skipped_feedback, -> { where('starter_skipped_feedback OR author_skipped_feedback') }
 
   scope :waiting_feedback, -> {
-    where("NOT starter_skipped_feedback AND NOT #{Testimonial.with_tx_starter.select('1').exists.to_sql}
-           OR NOT author_skipped_feedback AND NOT #{Testimonial.with_tx_author.select('1').exists.to_sql}")
+    where("NOT starter_skipped_feedback AND NOT #{Testimonial.with_tx_starter.select('1').arel.exists.to_sql}
+           OR NOT author_skipped_feedback AND NOT #{Testimonial.with_tx_author.select('1').arel.exists.to_sql}")
   }
 
   def booking_uuid_object

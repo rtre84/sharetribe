@@ -118,7 +118,8 @@ CREATE TABLE `bookings` (
   KEY `index_bookings_on_transaction_id` (`transaction_id`) USING BTREE,
   KEY `index_bookings_on_per_hour` (`per_hour`),
   KEY `index_bookings_on_start_time` (`start_time`),
-  KEY `index_bookings_on_end_time` (`end_time`)
+  KEY `index_bookings_on_end_time` (`end_time`),
+  KEY `index_bookings_on_transaction_start_on_end_on_per_hour` (`transaction_id`,`start_on`,`end_on`,`per_hour`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `categories`;
@@ -317,6 +318,7 @@ CREATE TABLE `communities` (
   `allow_free_conversations` tinyint(1) DEFAULT '1',
   `email_admins_about_new_transactions` tinyint(1) DEFAULT '0',
   `show_location` tinyint(1) DEFAULT '1',
+  `fuzzy_location` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_communities_on_uuid` (`uuid`),
   KEY `index_communities_on_domain` (`domain`) USING BTREE,
@@ -686,6 +688,7 @@ CREATE TABLE `invitations` (
   `inviter_id` varchar(255) DEFAULT NULL,
   `message` text,
   `email` varchar(255) DEFAULT NULL,
+  `deleted` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `index_invitations_on_code` (`code`) USING BTREE,
   KEY `index_invitations_on_inviter_id` (`inviter_id`) USING BTREE
@@ -719,6 +722,20 @@ CREATE TABLE `landing_pages` (
   UNIQUE KEY `index_landing_pages_on_community_id` (`community_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `listing_blocked_dates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `listing_blocked_dates` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `listing_id` bigint(20) DEFAULT NULL,
+  `blocked_at` date DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_listing_blocked_dates_on_listing_id_and_blocked_at` (`listing_id`,`blocked_at`),
+  KEY `index_listing_blocked_dates_on_listing_id` (`listing_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `listing_followers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -748,6 +765,11 @@ CREATE TABLE `listing_images` (
   `height` int(11) DEFAULT NULL,
   `author_id` varchar(255) DEFAULT NULL,
   `position` int(11) DEFAULT '0',
+  `email_image_file_name` varchar(255) DEFAULT NULL,
+  `email_image_content_type` varchar(255) DEFAULT NULL,
+  `email_image_file_size` int(11) DEFAULT NULL,
+  `email_image_updated_at` datetime DEFAULT NULL,
+  `email_hash` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_listing_images_on_listing_id` (`listing_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -857,6 +879,7 @@ CREATE TABLE `listings` (
   `availability` varchar(32) DEFAULT 'none',
   `per_hour_ready` tinyint(1) DEFAULT '0',
   `state` varchar(255) DEFAULT 'approved',
+  `approval_count` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_listings_on_uuid` (`uuid`),
   KEY `index_listings_on_new_category_id` (`category_id`) USING BTREE,
@@ -1164,6 +1187,7 @@ CREATE TABLE `paypal_payments` (
   `commission_pending_reason` varchar(64) DEFAULT NULL,
   `commission_total_cents` int(11) DEFAULT NULL,
   `commission_fee_total_cents` int(11) DEFAULT NULL,
+  `commission_retry_count` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_paypal_payments_on_transaction_id` (`transaction_id`) USING BTREE,
   UNIQUE KEY `index_paypal_payments_on_authorization_id` (`authorization_id`) USING BTREE,
@@ -1364,9 +1388,11 @@ CREATE TABLE `stripe_accounts` (
   `stripe_customer_id` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
+  `api_version` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_stripe_accounts_on_community_id` (`community_id`),
-  KEY `index_stripe_accounts_on_person_id` (`person_id`)
+  KEY `index_stripe_accounts_on_person_id` (`person_id`),
+  KEY `index_stripe_accounts_on_api_version` (`api_version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 DROP TABLE IF EXISTS `stripe_payments`;
@@ -1518,7 +1544,8 @@ CREATE TABLE `transactions` (
   KEY `index_transactions_on_deleted` (`deleted`) USING BTREE,
   KEY `index_transactions_on_starter_id` (`starter_id`) USING BTREE,
   KEY `index_transactions_on_listing_author_id` (`listing_author_id`) USING BTREE,
-  KEY `community_starter_state` (`community_id`,`starter_id`,`current_state`)
+  KEY `community_starter_state` (`community_id`,`starter_id`,`current_state`),
+  KEY `index_transactions_on_listing_id_and_current_state` (`listing_id`,`current_state`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -2414,11 +2441,22 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20190305112030'),
 ('20190319114719'),
 ('20190319122745'),
-('20190717105844'),
-('20190718081745'),
-('20190904115045'),
 ('20190627055931'),
 ('20190705083608'),
 ('20190705100256'),
-('20190920113245');
+('20190717105844'),
+('20190718081745'),
+('20190904115045'),
+('20190920113245'),
+('20191016061908'),
+('20191016064022'),
+('20200109145736'),
+('20200127120611'),
+('20200131111643'),
+('20200213130051'),
+('20200224080321'),
+('20200303075727'),
+('20200312062151'),
+('20200312112018');
+
 

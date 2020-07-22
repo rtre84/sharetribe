@@ -18,6 +18,8 @@ window.ST = window.ST || {};
   };
   var stripe, spinner;
 
+  var inProgress = false;
+
   var createCard = function() {
     var elements = stripe.elements();
 
@@ -45,41 +47,6 @@ window.ST = window.ST || {};
       return false;
     }
     return true;
-  };
-
-  var initCharge = function(options){
-    stripe = Stripe(options.publishable_key);
-
-    $("#shipping_address_country_code").change(function(){
-      if($(this).val() == 'US') $(".us-only").show(); else $(".us-only").hide();
-    });
-    $("#shipping_address_country_code").trigger("change");
-
-    var card = createCard();
-
-    $("#send-add-card").on('click', function(event) {
-      event.preventDefault();
-      var form = $("#transaction-form");
-      if (!validateForm(form)) {
-        return false;
-      }
-
-      stripe.createToken(card).then(function(result) {
-        var errorElement = document.getElementById('card-errors');
-        if (result.error) {
-          errorElement.textContent = result.error.message;
-          errorElement.className = 'error';
-        } else {
-          errorElement.className = 'hidden';
-          var input = $("<input/>", {type: "hidden", name: "stripe_token", value: result.token.id});
-          form.append(input);
-          $("#payment_type").val("stripe");
-          if(form.valid()) {
-            form.submit();
-          }
-        }
-      });
-    });
   };
 
   var handleCreatedPaymentIntent = function(response) {
@@ -133,6 +100,7 @@ window.ST = window.ST || {};
     ST.utils.showError(message, 'error');
     ST.transaction.toggleSpinner(spinner, false);
     $('html, body').animate({ scrollTop: $('.flash-notifications').offset().top}, 1000);
+    inProgress = false;
   };
 
   var formSubmit = function(e) {
@@ -146,7 +114,11 @@ window.ST = window.ST || {};
       } else if (data.stripe_payment_intent) {
         handleCreatedPaymentIntent(data);
       } else if (data.error) {
+        ST.transaction.toggleSpinner(spinner, true);
         showError(data.error);
+      } else if (data.error_msg) {
+        ST.transaction.toggleSpinner(spinner, true);
+        showError(data.error_msg);
       }
     };
     $.post(formAction, form.serialize(), submitSuccess, 'json');
@@ -161,35 +133,41 @@ window.ST = window.ST || {};
     form.on('stripe-submit', formSubmit);
     spinner = form.find('.paypal-button-loading-img');
     $("#send-add-card").on('click', function(ev) {
-      event.preventDefault();
-      if (!validateForm(form)) {
+      ev.preventDefault();
+      if (inProgress) {
         return false;
-      }
-
-      ST.transaction.toggleSpinner(spinner, true);
-      stripe.createPaymentMethod('card', card, {}).then(function(result) {
-        if (result.error) {
-          showError(ST.t('error_messages.stripe.generic_error'));
-        } else {
-          // Otherwise send paymentMethod.id to server
-          var existingInput = $('#stripe_payment_method_id');
-          if (existingInput.length > 0) {
-            existingInput.val(result.paymentMethod.id);
-          } else {
-            var input = $('<input/>', {type: 'hidden', name: 'stripe_payment_method_id', id: 'stripe_payment_method_id', value: result.paymentMethod.id});
-            form.append(input);
-          }
-          $('#payment_type').val('stripe');
-          if(form.valid()) {
-            form.trigger('stripe-submit');
-          }
+      } else {
+        if (!validateForm(form)) {
+          return false;
         }
-      });
+
+        inProgress = true;
+
+        ST.transaction.toggleSpinner(spinner, true);
+        stripe.createPaymentMethod('card', card, {}).then(function(result) {
+          if (result.error) {
+            inProgress = false;
+            showError(ST.t('error_messages.stripe.generic_error'));
+          } else {
+            // Otherwise send paymentMethod.id to server
+            var existingInput = $('#stripe_payment_method_id');
+            if (existingInput.length > 0) {
+              existingInput.val(result.paymentMethod.id);
+            } else {
+              var input = $('<input/>', {type: 'hidden', name: 'stripe_payment_method_id', id: 'stripe_payment_method_id', value: result.paymentMethod.id});
+              form.append(input);
+            }
+            $('#payment_type').val('stripe');
+            if(form.valid()) {
+              form.trigger('stripe-submit');
+            }
+          }
+        });
+      }
     });
   };
 
   module.StripePayment = {
-    initCharge: initCharge,
     initIntent: initIntent,
   };
 })(window.ST);

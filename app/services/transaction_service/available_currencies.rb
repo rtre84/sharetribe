@@ -39,7 +39,7 @@ module TransactionService::AvailableCurrencies
       "AD" => "EUR",
       "AT" => "EUR",
       "BE" => "EUR",
-      "BG" => "EUR",
+      "BG" => "BGN",
       "HR" => "EUR",
       "CY" => "EUR",
       "FI" => "EUR",
@@ -69,6 +69,7 @@ module TransactionService::AvailableCurrencies
       "VA" => "EUR",
       "EE" => "EUR",
       "LV" => "EUR",
+      "RO" => "RON",
       "US" => "USD"
   }
   OLD_CURRENCY_SET = SortedSet.new(["USD"].concat(COUNTRY_CURRENCIES.values))
@@ -76,24 +77,31 @@ module TransactionService::AvailableCurrencies
   CURRENCIES = [
     "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BIF", "BMD",
     "BND", "BOB", "BRL", "BSD", "BWP", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CVE", "CZK", "DJF",
-    "DKK", "DOP", "DZD", "EGP", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD",
-    "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "INR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KRW",
-    "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR",
-    "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "PAB", "PEN", "PGK", "PHP", "PKR",
-    "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SEK", "SGD", "SHP", "SLL", "SOS", "SRD",
-    "SSP", "STD", "SVC", "SZL", "THB", "TJS", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS",
-    "VND", "VUV", "WST", "XAF", "XCD", "XOF", "XPF", "YER", "ZAR", "ZMW",
+    "DKK", "DOP", "DZD", "EGP", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD",
+    "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "INR", "ISK", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF",
+    "KRW", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO",
+    "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "PAB", "PEN", "PGK", "PHP",
+    "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SEK", "SGD", "SHP", "SLL", "SOS",
+    "SRD", "SSP", "STD", "SVC", "SZL", "THB", "TJS", "TOP", "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU",
+    "UZS", "VND", "VUV", "WST", "XAF", "XCD", "XOF", "XPF", "YER", "ZAR", "ZMW",
   ]
 
   # Austria, Belgium, Denmark, Finland, France, Germany, Ireland, Luxembourg, Netherlands, Norway, Spain, Sweden, Switzerland, the United Kingdom, the United States
   # Australia, Canada, Hong Kong, New Zealand
   # Portugal, Italy
-  # Puerto Rico
+  # Puerto Rico, Japan, Singapore
+  # Estonia, Lithuania, Latvia, Greece, Poland, Slovakia, Slovenia, Mexico
+  # Czech Republic
+  # Romania
+  # Cyprus, Malta, Bulgaria
   COUNTRY_SET_STRIPE_AND_PAYPAL = ['AT', 'BE', 'DK', 'FI', 'FR', 'DE', 'IE', 'LU', 'NL', 'NO', 'ES', 'SE', 'CH', 'GB', 'US',
                                    'AU', 'CA', 'HK', 'NZ',
                                    'PT', 'IT',
                                    'PR', 'JP', 'SG',
-                                   'EE', 'LT', 'LV', 'GR', 'PL', 'SK', 'SI']
+                                   'EE', 'LT', 'LV', 'GR', 'PL', 'SK', 'SI', 'MX',
+                                   'CZ',
+                                   'RO',
+                                   'CY', 'MT', 'BG']
 
   # Countries listed by Paypal
   # Brazil, Czech Republic, Hungary, Israel, Italy, Japan, Mexico, Malaysia, Poland, Philippines, Portugal, Russia, Singapore, Taiwan, Thailand
@@ -104,6 +112,7 @@ module TransactionService::AvailableCurrencies
   VALID_CURRENCIES = {
     "ARS" => :country_sets,
     "AUD" => :country_sets,
+    "BGN" => :country_sets,
     "BRL" => "BR", # BRL is valid only for PayPal accounts in Brazil
     "CAD" => :country_sets,
     "CHF" => :country_sets,
@@ -122,6 +131,7 @@ module TransactionService::AvailableCurrencies
     "NZD" => :country_sets,
     "PHP" => :country_sets,
     "PLN" => :country_sets,
+    "RON" => :country_sets,
     "RUB" => :country_sets,
     "SEK" => :country_sets,
     "SGD" => :country_sets,

@@ -1,22 +1,24 @@
  window.ST = window.ST || {};
 
 (function(module) {
+  var toggleElements = function(selector, show) {
+    var parentEl = $(selector),
+      elements = parentEl.find('input, select');
+
+    if(show) {
+      elements.removeAttr("disabled").removeClass("disabled");
+      parentEl.show();
+    } else {
+      elements.attr("disabled", true).addClass("disabled");
+      parentEl.hide();
+    }
+  };
+
   var onBgStyleSelect = function(e) {
-    var currentStyle = $("input.bg-style-selector:checked").val(),
-      elems_for_image = $(".bg-style-image *"),
-      elems_for_color = $(".bg-style-color *");
+    var currentStyle = $("input.bg-style-selector:checked").val();
 
-    if(currentStyle != "image") {
-      elems_for_image.attr("disabled", true).addClass("disabled");
-    } else {
-      elems_for_image.removeAttr("disabled").removeClass("disabled");
-    }
-
-    if(currentStyle != "color") {
-      elems_for_color.attr("disabled", true).addClass("disabled");
-    } else {
-      elems_for_color.removeAttr("disabled").removeClass("disabled");
-    }
+    toggleElements('.bg-style-image', currentStyle == "image");
+    toggleElements('.bg-style-color', currentStyle == "color");
   };
 
   var onCtaSelect = function(e) {
@@ -25,10 +27,10 @@
       return;
     }
     var elems = $(".cta-enabled *");
-    if(!cta_input.checked) {
-      elems.attr("disabled", true).addClass("disabled");
-    } else {
+    if(cta_input.checked) {
       elems.removeAttr("disabled").removeClass("disabled");
+    } else {
+      elems.attr("disabled", true).addClass("disabled");
     }
   };
 
@@ -77,7 +79,26 @@
     };
   };
 
+  var initHero = function(options) {
+    $('input[cta_button_type_radio]').on('change', function() {
+      var value = $('input[cta_button_type_radio]:checked').val(),
+        button = value == 'button',
+        none = value == 'none',
+        ctaButtonInfo = $('#cta-button-info'),
+        ctaButtonText = $('#section_cta_button_text'),
+        ctaButtonUrl = $('#section_cta_button_url');
+      toggleElements(".cta-enabled", button);
+      toggleElements(ctaButtonInfo, !button);
+      toggleElements(".cta-default", !none);
+
+      ctaButtonText.attr('required', button ? true : null);
+      ctaButtonUrl.attr('required', button ? true : null);
+    });
+    $("form.edit_section, form.new_section").validate();
+  };
+
   module.LandingPageSectionEditor = {
-    initForm: initForm
+    initForm: initForm,
+    initHero: initHero
   };
 })(window.ST);

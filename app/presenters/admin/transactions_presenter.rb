@@ -22,12 +22,15 @@ class Admin::TransactionsPresenter
     end
   end
 
-  FILTER_STATUSES = %w(free confirmed paid canceled preauthorized rejected payment_intent_requires_action payment_intent_action_expired)
+  FILTER_STATUSES = %w[free confirmed paid canceled preauthorized rejected
+                       payment_intent_requires_action payment_intent_action_expired
+                       disputed refunded dismissed]
 
   def sorted_statuses
-    FILTER_STATUSES.map {|status|
+    statuses = FILTER_STATUSES
+    statuses.map {|status|
       [status, I18n.t("admin.communities.transactions.status_filter.#{status}"), status_checked?(status)]
-    }.sort_by{|status, translation, checked| collator.get_sort_key(translation) }
+    }.sort_by{|_status, translation, _checked| collator.get_sort_key(translation) }
   end
 
   def status_checked?(status)
@@ -39,7 +42,7 @@ class Admin::TransactionsPresenter
   end
 
   def show_link?(tx)
-    exclude = %w(pending payment_intent_requires_action payment_intent_action_expired)
+    exclude = %w[pending payment_intent_requires_action payment_intent_action_expired]
     !exclude.include?(tx.current_state)
   end
 
@@ -142,7 +145,7 @@ class Admin::TransactionsPresenter
   def messages_and_actions
     @messages_and_actions ||= TransactionViewUtils.merge_messages_and_transitions(
       TransactionViewUtils.conversation_messages(transaction.conversation.messages, community.name_display_type),
-      TransactionViewUtils.transition_messages(transaction, transaction.conversation, community.name_display_type)).reverse
+      TransactionViewUtils.transition_messages(transaction, transaction.conversation, community)).reverse
   end
 
   def preauthorized?
@@ -153,8 +156,12 @@ class Admin::TransactionsPresenter
     transaction.current_state == 'paid'
   end
 
+  def disputed?
+    transaction.current_state == 'disputed'
+  end
+
   def show_next_step?
-    preauthorized? || paid?
+    preauthorized? || paid? || disputed?
   end
 
   def buyer
@@ -174,6 +181,37 @@ class Admin::TransactionsPresenter
   end
 
   def completed?
-    transaction.current_state == 'confirmed' || transaction.current_state == 'canceled'
+    %w[confirmed canceled refunded].include?(transaction.current_state)
+  end
+
+  def shipping?
+    transaction.delivery_method == 'shipping'
+  end
+
+  def pickup?
+    transaction.delivery_method == 'pickup'
+  end
+
+  def shipping_address
+    return @shipping_address if defined?(@shipping_address)
+
+    @shipping_address = nil
+    fields = [:name, :phone, :street1, :street2, :postal_code, :city, :state_or_province, :country]
+    if transaction.shipping_address
+      address = transaction.shipping_address.slice(*fields)
+      if address.values.any?
+        address[:country] ||= CountryI18nHelper.translate_country(shipping_address[:country_code])
+        @shipping_address = fields.map{|field| address[field]}.select{|x| x.present?}.join(', ')
+      end
+    end
+    @shipping_address
+  end
+
+  def show_transactions_export?
+    !personal? && !has_search?
+  end
+
+  def personal?
+    service.personal
   end
 end

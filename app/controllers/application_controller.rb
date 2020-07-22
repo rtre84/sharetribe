@@ -97,7 +97,7 @@ class ApplicationController < ActionController::Base
 
     # A hack to get the path where the user is
     # redirected after the locale is changed
-    new_path = request.fullpath.clone
+    new_path = request.fullpath.dup
     new_path.slice!("/#{params[:locale]}")
     new_path.slice!(0,1) if new_path =~ /^\//
     @return_to = new_path
@@ -559,7 +559,8 @@ class ApplicationController < ActionController::Base
         url: PathHelpers.change_locale_path(is_logged_in: @current_user.present?,
                                             locale: locale_code,
                                             redirect_uri: @return_to),
-        title: title
+        title: title,
+        locale_code: locale_code.upcase
       }
     }
 
@@ -567,6 +568,7 @@ class ApplicationController < ActionController::Base
       logged_in: @current_user.present?,
       homepage_path: @homepage_path,
       current_locale_name: get_full_locale_name(I18n.locale),
+      current_locale_code: I18n.locale.upcase,
       sign_up_path: sign_up_path,
       login_path: login_path,
       new_listing_path: new_listing_path,

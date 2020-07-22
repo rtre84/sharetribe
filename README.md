@@ -1,18 +1,22 @@
 # Sharetribe
 
-[![CircleCI](https://circleci.com/gh/sharetribe/sharetribe/tree/master.svg?style=svg)](https://circleci.com/gh/sharetribe/sharetribe/tree/master) [![Dependency Status](https://gemnasium.com/sharetribe/sharetribe.png)](https://gemnasium.com/sharetribe/sharetribe) [![Code Climate](https://codeclimate.com/github/sharetribe/sharetribe.png)](https://codeclimate.com/github/sharetribe/sharetribe)
+[![CircleCI](https://circleci.com/gh/sharetribe/sharetribe/tree/master.svg?style=svg)](https://circleci.com/gh/sharetribe/sharetribe/tree/master) [![Code Climate](https://codeclimate.com/github/sharetribe/sharetribe.png)](https://codeclimate.com/github/sharetribe/sharetribe)
 
-Sharetribe is a source available platform to create your own peer-to-peer marketplace.
+Sharetribe develops advanced marketplace software for every business life cycle stage.
 
-Would you like to set up your marketplace in one minute without touching code? [Head to Sharetribe.com](https://www.sharetribe.com).
+Sharetribe Go gives you the complete feature set to launch a marketplace for rentals, services, events, or products. The platform is source-available under the Sharetribe Community Public License.
 
-Would you like to work with an API-based marketplace solution that allows you to build your marketplace with the programming language of your choice, build a mobile app, or easily integrate third party services? [Check out Sharetribe Flex](https://www.sharetribe.com/flex).
+To launch your marketplace in minutes without touching code or worrying about hosting and backups, [head to the SaaS version of Sharetribe Go](https://www.sharetribe.com/products/go).
+
+If you're looking for a customizable and extendable marketplace solution, [check out Sharetribe Flex](https://www.sharetribe.com/products/flex). Flex is an API-based marketplace solution designed with a developers-first mindset. It allows you to develop your marketplace with the programming language of your choice, build a mobile app, design a customized transaction flow, and easily integrate third party services.
+
 
 ### Contents
 
 - [Technology stack](#technology-stack)
 - [Installation](#installation)
 - [Payments](#payments)
+- [Custom Landing Page](#custom-landing-page)
 - [Versioning](#versioning)
 - [Changes](#changes)
 - [Upgrade](#upgrade)
@@ -51,7 +55,7 @@ Would you like to work with an API-based marketplace solution that allows you to
 ### Requirements
 
 Before you get started, the following needs to be installed:
-  * **Ruby**. Version 2.6.2 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Ruby, [RVM](https://rvm.io//) or [rbenv](https://github.com/rbenv/rbenv) is recommended.
+  * **Ruby**. Version 2.6.5 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Ruby, [RVM](https://rvm.io//) or [rbenv](https://github.com/rbenv/rbenv) is recommended.
   * [**RubyGems**](http://rubygems.org/)
   * **Bundler**: `gem install bundler`
   * **Node**. Version 10.15 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Node, consider using [n](https://github.com/tj/n), [nvm](https://github.com/creationix/nvm), or [nenv](https://github.com/ryuone/nenv).
@@ -386,6 +390,7 @@ Use these instructions to set up and deploy Sharetribe for production in differe
 If you have installation instructions that you would like to share, don't hesitate to share them at the [Sharetribe community forum](https://www.sharetribe.com/community).
 
 - [Deploying Sharetribe to Heroku](https://gist.github.com/svallory/d08e9baa88e18d691605) by [svallory](https://github.com/svallory)
+- [How to install Sharetribe on Centos 7.x](https://medium.com/@resilientbeast/how-to-install-sharetribe-on-centos-7-x-cbdb6d0366e5) by [Arek Hukalowicz](https://www.linkedin.com/in/arek-hukalowicz-8ab0228a/)
 
 
 ## Payments
@@ -409,6 +414,12 @@ If Stripe isn't automatically enabled in the admin panel after upgrading to 7.2.
 `TransactionService::API::Api.processes.create(community_id: <ID>, process: :preauthorize, author_is_seller: true)`
 and
 `TransactionService::API::Api.settings.provision(community_id: <ID>, payment_gateway: :stripe, payment_process: :preauthorize, active: true)`.
+
+## Custom Landing Page
+
+Sharetribe Go includes a Custom Landing Page add-on and editor. You can [learn more about it here](https://www.sharetribe.com/products/go/landing-page/).
+
+The Custom Landing Page Editor should be available automatically, from [v9.1.0](https://github.com/sharetribe/sharetribe/releases/tag/v9.1.0). If this is not the case, you can find plenty of useful information in the *[Landing Pages for Idiots Like Me](https://www.sharetribe.com/community/t/landing-pages-for-idiots-like-me/2788)* post written by [Jeremy D Evans](https://github.com/jeremyevans6). 
 
 ## Versioning
 
@@ -474,4 +485,4 @@ The forum is a great place to ask support and help for example with issues durin
 
 ## License
 
-Sharetribe is source available under the Sharetribe Community Public Licence. See [LICENSE](LICENSE) for details.
+Sharetribe Go is source-available under the Sharetribe Community Public License. See [LICENSE](LICENSE) for details.

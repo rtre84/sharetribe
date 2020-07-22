@@ -141,6 +141,10 @@ module ApplicationHelper
     locales.map { |loc| [loc[:name], loc[:ident]] }
   end
 
+  def local_name(locale)
+    available_locales.detect { |p| p[1] == locale.to_s }&.first
+  end
+
   def self.send_error_notification(message, error_class="Special Error", parameters={})
     if APP_CONFIG.use_airbrake
       Airbrake.notify(
@@ -165,6 +169,10 @@ module ApplicationHelper
 
   def on_admin?
     controller.class.name.split("::").first=="Admin"
+  end
+
+  def on_admin2?
+    controller.class.name.split("::").first=="Admin2"
   end
 
   def facebook_like(recommend=false)
@@ -471,7 +479,7 @@ module ApplicationHelper
         :topic => :configure,
         :text => t("admin.landing_page.landing_page"),
         :icon_class => icon_class("home"),
-        :path => FeatureFlagHelper.feature_enabled?(:clp_editor) ? admin_landing_page_versions_path : admin_landing_page_path,
+        :path => @current_plan.try(:[], :features).try(:[], :landing_page) ? admin_landing_page_versions_path : admin_landing_page_path,
         :name => "landing_page"
       }
     end
@@ -591,6 +599,13 @@ module ApplicationHelper
             :icon_class => icon_class("thumbnails"),
             :path => listings_person_settings_path(person, sort: "updated"),
             :name => "listings"
+          },
+          {
+            :id => "settings-tab-transactions",
+            :text => t("layouts.settings.transactions"),
+            :icon_class => icon_class("coins"),
+            :path => transactions_person_settings_path(person, sort: "last_activity", direction: "desc"),
+            :name => "transactions"
           },
           {
             :id => "settings-tab-account",
@@ -746,63 +761,6 @@ module ApplicationHelper
     value.present? ? value.strftime(format) : nil
   end
 
-  def us_states
-    [
-      ['Alabama', 'AL'],
-      ['Alaska', 'AK'],
-      ['Arizona', 'AZ'],
-      ['Arkansas', 'AR'],
-      ['California', 'CA'],
-      ['Colorado', 'CO'],
-      ['Connecticut', 'CT'],
-      ['Delaware', 'DE'],
-      ['District of Columbia', 'DC'],
-      ['Florida', 'FL'],
-      ['Georgia', 'GA'],
-      ['Hawaii', 'HI'],
-      ['Idaho', 'ID'],
-      ['Illinois', 'IL'],
-      ['Indiana', 'IN'],
-      ['Iowa', 'IA'],
-      ['Kansas', 'KS'],
-      ['Kentucky', 'KY'],
-      ['Louisiana', 'LA'],
-      ['Maine', 'ME'],
-      ['Maryland', 'MD'],
-      ['Massachusetts', 'MA'],
-      ['Michigan', 'MI'],
-      ['Minnesota', 'MN'],
-      ['Mississippi', 'MS'],
-      ['Missouri', 'MO'],
-      ['Montana', 'MT'],
-      ['Nebraska', 'NE'],
-      ['Nevada', 'NV'],
-      ['New Hampshire', 'NH'],
-      ['New Jersey', 'NJ'],
-      ['New Mexico', 'NM'],
-      ['New York', 'NY'],
-      ['North Carolina', 'NC'],
-      ['North Dakota', 'ND'],
-      ['Ohio', 'OH'],
-      ['Oklahoma', 'OK'],
-      ['Oregon', 'OR'],
-      ['Pennsylvania', 'PA'],
-      ['Puerto Rico', 'PR'],
-      ['Rhode Island', 'RI'],
-      ['South Carolina', 'SC'],
-      ['South Dakota', 'SD'],
-      ['Tennessee', 'TN'],
-      ['Texas', 'TX'],
-      ['Utah', 'UT'],
-      ['Vermont', 'VT'],
-      ['Virginia', 'VA'],
-      ['Washington', 'WA'],
-      ['West Virginia', 'WV'],
-      ['Wisconsin', 'WI'],
-      ['Wyoming', 'WY']
-    ]
-  end
-
   def regex_definition_to_js(string)
     string.gsub('\A', '^').gsub('\z', '$').gsub('\\', '\\\\')
   end
@@ -825,8 +783,8 @@ module ApplicationHelper
       placeholder: "https://www.youtube.com/channel/CHANGEME"
     },
     googleplus: {
-      name: "Google+",
-      placeholder: "https://plus.google.com/CHANGEME"
+      name: "Google",
+      placeholder: "https://www.google.com/CHANGEME"
     },
     linkedin: {
       name: "LinkedIn",

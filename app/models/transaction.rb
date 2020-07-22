@@ -42,19 +42,26 @@
 #
 # Indexes
 #
-#  community_starter_state                   (community_id,starter_id,current_state)
-#  index_transactions_on_community_id        (community_id)
-#  index_transactions_on_conversation_id     (conversation_id)
-#  index_transactions_on_deleted             (deleted)
-#  index_transactions_on_last_transition_at  (last_transition_at)
-#  index_transactions_on_listing_author_id   (listing_author_id)
-#  index_transactions_on_listing_id          (listing_id)
-#  index_transactions_on_starter_id          (starter_id)
-#  transactions_on_cid_and_deleted           (community_id,deleted)
+#  community_starter_state                             (community_id,starter_id,current_state)
+#  index_transactions_on_community_id                  (community_id)
+#  index_transactions_on_conversation_id               (conversation_id)
+#  index_transactions_on_deleted                       (deleted)
+#  index_transactions_on_last_transition_at            (last_transition_at)
+#  index_transactions_on_listing_author_id             (listing_author_id)
+#  index_transactions_on_listing_id                    (listing_id)
+#  index_transactions_on_listing_id_and_current_state  (listing_id,current_state)
+#  index_transactions_on_starter_id                    (starter_id)
+#  transactions_on_cid_and_deleted                     (community_id,deleted)
 #
 
 class Transaction < ApplicationRecord
   include ExportTransaction
+  include Testimonials
+
+  # While initiated is technically not a finished state it also
+  # doesn't have any payment data to track against, so removing person
+  # is still safe.
+  FINISHED_TX_STATES = ['initiated', 'free', 'rejected', 'confirmed', 'canceled', 'errored', 'payment_intent_action_expired', 'payment_intent_failed', 'refunded', 'dismissed', 'disputed'].freeze
 
   attr_accessor :contract_agreed
 
@@ -92,14 +99,14 @@ class Transaction < ApplicationRecord
   monetize :minimum_buyer_fee_cents, with_model_currency: :minimum_buyer_fee_currency
 
   scope :exist, -> { where(deleted: false) }
+  scope :initialized, -> { where.not(current_state: nil) }
   scope :for_person, -> (person){
-    joins(:listing)
-    .where("listings.author_id = ? OR starter_id = ?", person.id, person.id)
+    where('listing_author_id = ? OR starter_id = ?', person.id, person.id)
   }
   scope :availability_blocking, -> do
-    where(current_state: ['payment_intent_requires_action', 'preauthorized', 'paid', 'confirmed', 'canceled'])
+    where(current_state: ['payment_intent_requires_action', 'preauthorized', 'paid', 'confirmed', 'canceled', 'dismissed', 'disputed'])
   end
-  scope :non_free, -> { where('current_state <> ?', ['free']) }
+  scope :non_free_including_uninitialized, -> { where('current_state IS NULL OR current_state <> ?', ['free']) }
   scope :by_community, -> (community_id) { where(community_id: community_id) }
   scope :with_payment_conversation, -> {
     left_outer_joins(:conversation).merge(Conversation.payment)
@@ -114,7 +121,7 @@ class Transaction < ApplicationRecord
   }
   scope :for_testimonials, -> {
     includes(:testimonials, testimonials: [:author, :receiver], listing: :author)
-    .where(current_state: ['confirmed', 'canceled'])
+    .where(current_state: ['confirmed', 'canceled', 'dismissed', 'refunded'])
   }
   scope :search_by_party_or_listing_title, ->(pattern) {
     joins(:starter, :listing_author)
@@ -146,6 +153,11 @@ class Transaction < ApplicationRecord
     where("NOT starter_skipped_feedback AND NOT #{Testimonial.with_tx_starter.select('1').arel.exists.to_sql}
            OR NOT author_skipped_feedback AND NOT #{Testimonial.with_tx_author.select('1').arel.exists.to_sql}")
   }
+  scope :unfinished, -> { where.not(current_state: FINISHED_TX_STATES) }
+  # We include deleted transactions on purpose. They might be in a
+  # state where e.g. IPN message causes them to proceed so removing
+  # user data would be unwise.
+  scope :unfinished_for_person, -> (person) { unfinished.for_person(person) }
 
   def booking_uuid_object
     if self[:booking_uuid].nil?

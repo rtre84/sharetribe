@@ -172,6 +172,7 @@ zh-HK:
         status_resent: "已重新發送驗証電郵至%{email}。%{resend_link}"
         resend_link: 重新發送
         invalid_email_error: "郵件地址%{email}的格式不正確"
+        invalid_email_address: ~
         invalid_email_domain: "電郵地址%{email}來自不被支持的電郵提供商：‘%{domain}’。%{invalid_email_domain_read_more_link}"
         invalid_email_domain_read_more_link: 通過資料庫的文章獲得更多訊息。
         unknown_error: 發生問題了
@@ -229,6 +230,7 @@ zh-HK:
         miles: 英里
         show_only_nearby: ~
         allow_users_to_add_location: ~
+        fuzzy_location: ~
         listing_preferences: 訊息展示頁面偏好設置訊
         transaction_preferences: 交易偏好
         show_listing_publishing_date: 在信息展示頁面顯示信息的發布日期
@@ -274,6 +276,10 @@ zh-HK:
         ban_user_confirmation: 這將會把用戶從集市中刪除並阻止他們使用這個帳號再次訪問該站點。你確認要繼續嗎？
         unban_user_confirmation: ~
         ban_me_error: ~
+        have_ongoing_transactions: ~
+        only_delete_disabled: ~
+        delete_info1: ~
+        delete_info2: ~
         search: ~
         search_by_name_email: ~
         reset_search: ~
@@ -293,6 +299,7 @@ zh-HK:
         unconfirmed_user: ~
         resend: ~
         cancel: ~
+        confirm: ~
         user_didnt_complete_the_signup_process: ~
         pending_user: ~
       new_layout:
@@ -302,6 +309,7 @@ zh-HK:
         enabled_for_all: ~
         new_topbar: ~
         searchpage: ~
+        new_email_templates: ~
       social_media:
         social_media: ~
         logo: ~
@@ -329,7 +337,6 @@ zh-HK:
         invalid_facebook_connect_secret: ~
         enable_facebook_login: ~
         save: 保存設定
-        add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
         google_developers_console: ~
@@ -392,6 +399,10 @@ zh-HK:
         robots_info: ~
         robots_info_link_text: ~
         robots_info_2: ~
+        google_search_console: ~
+        google_search_console_paragraph1: ~
+        google_search_console_these_instructions: ~
+        google_search_console_paragraph2: ~
         save: ~
       analytics:
         analytics: ~
@@ -404,6 +415,10 @@ zh-HK:
         sharetribe_analytics_instructions_link_text: ~
         end_user_analytics: ~
         save: 保存設定
+        google_tag_manager: ~
+        gtm_paragraph_1: ~
+        gtm_paragraph_2: ~
+        learn_how_to_configure_gtm: ~
       logo_link:
         title: ~
         info: ~
@@ -452,10 +467,13 @@ zh-HK:
           confirmed: ~
           paid: ~
           canceled: ~
+          disputed: ~
           preauthorized: ~
           rejected: ~
           payment_intent_requires_action: ~
           payment_intent_action_expired: ~
+          refunded: ~
+          dismissed: ~
         headers:
           conversation: 對話
           listing: 訊息
@@ -475,6 +493,7 @@ zh-HK:
           paid: 已支付
           confirmed: 已確認
           canceled: 已取消
+          disputed: ~
           initiated: 等待PayPal的款項
           pending_ext: 等待PayPal的款項
           none:
@@ -488,8 +507,11 @@ zh-HK:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
+            refunded: ~
+            dismissed: ~
           stripe:
             free: ~
             pending: ~
@@ -499,11 +521,14 @@ zh-HK:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
             payment_intent_requires_action: ~
             payment_intent_action_expired: ~
             payment_intent_failed: ~
+            refunded: ~
+            dismissed: ~
         not_available: ~
       conversations:
         conversations: ~
@@ -642,36 +667,33 @@ zh-HK:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+        change_your_sharetribe_domain: ~
+        only_letters_numbers_and_hyphens_can_be_used: ~
+        when_you_change_your_sharetribe_domain: ~
+        would_you_like_to_proceed: ~
+        change: ~
       landing_pages:
         landing_pages: ~
         info_1: ~
         info_2: ~
-        info_2_preview_text: ~
-        info_2_details_text: ~
-        info_2_design_text: ~
+        info_2_help_center: ~
         info_3: ~
         info_4: ~
         editor_title: ~
         editor_info: ~
         preview: ~
         set_live: ~
-        headers:
-          section_id: ~
-          section_type: ~
-          version: ~
-          released: ~
-        add_new_version: ~
-        new_version: ~
-        edit_version: ~
         add_new_section: ~
         select_section_type: ~
+        this_version_is_not_released: ~
+        latest_version_released: ~
+        check_it_out: ~
         form:
-          version: ~
           save: ~
+          cancel: ~
         sections:
           identifier: ~
           kind: ~
-          variation: ~
           new: ~
           edit: ~
           remove_section_confirmation: ~
@@ -685,8 +707,6 @@ zh-HK:
           video: ~
           new_section:
             categories: ~
-            footer: ~
-            hero: ~
             info_single_column: ~
             info_multi_column_2: ~
             info_multi_column_3: ~
@@ -703,11 +723,25 @@ zh-HK:
             listings: ~
             locations: ~
             video: ~
+      attachments:
+        delete: ~
+        or_change: ~
     landing_page_versions:
       sections:
+        content:
+          title: ~
         hero:
           hero_title: ~
           hero_description: ~
+          basic_details_tab: ~
+          cta_button: ~
+          cta_button_info: ~
+          button_type:
+            default: ~
+            button: ~
+            none: ~
+          button_content: ~
+          click_me: ~
         footer:
           footer_title: ~
           footer_style: ~
@@ -720,6 +754,10 @@ zh-HK:
           cta_enabled: ~
           cta_text: ~
           cta_url: ~
+          text_placeholder: ~
+          url_placeholder: ~
+        background_selector:
+          title: ~
         background_image_overlay:
           background_image: ~
           background_image_info: ~
@@ -781,20 +819,22 @@ zh-HK:
           column_header: ~
           column_title: ~
           column_icon_info: ~
+          column_icon_info_link: ~
           column_icon: ~
           column_paragraph: ~
           column_button: ~
           column_button_text: ~
           column_button_url: ~
         listings:
+          listings_to_feature: ~
           you_need_to_add_the_listing_ids: ~
         video:
           text: ~
-          youtube_video_id: ~
           autoplay: ~
           autoplay_no: ~
           autoplay_muted: ~
           info: ~
+          youtube_video_id_info: ~
     custom_fields:
       edit:
         edit_listing_field: ~
@@ -1108,12 +1148,15 @@ zh-HK:
       request: 請求
       inquiry: 公告
       share_for_free: 免費分享
+      event_w_online_payment: ~
+      event_wo_online_payment: ~
       default_action_button_labels:
         sell: 購買
         rent: 出租
         request: 交易
         offer: 請求
         inquiry: 聯絡資訊
+        book: ~
     community_transactions:
       show:
         transaction_for: ~
@@ -1123,11 +1166,17 @@ zh-HK:
         waiting_for_fulfill_and_complete: ~
         buyer: ~
         provider: ~
+        delivery: ~
+        shipping_to: ~
         buyer_pays: ~
         marketplace_collects: ~
         buyer_service_fee_label: ~
         service_fee_label: ~
         provider_receives: ~
+        admin_info_text: ~
+        manage_reviews: ~
+        you_should_investigate: ~
+        learn_more: ~
   common:
     edit_page: 编輯頁面
     default_community_slogan: 市集
@@ -1219,7 +1268,7 @@ zh-HK:
       stripe-fee_label: ~
     confirm:
       confirm_description: 如果你的訂購已完成，你應該確認完成。然後你可以給予其他人回應。
-      cancel_description: 如果你的訂購未完成，請標記它為「有爭議」。你仍可以給予其它人回應及說明發生的事情。
+      cancel_description_team: ~
       cancel_payed_description: 如果你的請求被接受但是你有其他的想法，你仍然可以在付款前取消請求。
       canceling_payed_transaction: 取消交易
       confirm: 標記已完成
@@ -1268,6 +1317,10 @@ zh-HK:
         held_payment: ~
         held_payment_wo_sum: ~
         confirmed_request: ~
+      canceled_the_order: ~
+      marked_as_refunded: ~
+      dismissed_the_cancellation: ~
+      payment_has_now_been_transferred: ~
     new:
       message: 訊息
       message_to: "發送給%{author_name}的訊息"
@@ -1342,6 +1395,18 @@ zh-HK:
           verify: 正在等待確認你的Paypal帳號
       stripe:
         waiting_confirmation_from_requester: ~
+      order_canceled: ~
+      waiting_for_marketplace_review: ~
+      marketplace_notified: ~
+      contact_them: ~
+      refunded: ~
+      dismissed: ~
+      order_refunded: ~
+      you_should_receive_refund_soon: ~
+      issue_with_the_refund: ~
+      do_you_disagree: ~
+      contact_the_marketpalce_team: ~
+      order_cancellation_dismissed: ~
     status_link:
       accept_offer: 接受議價
       accept_request: 接受要求
@@ -1353,9 +1418,11 @@ zh-HK:
       reject_preauthorized_request: 暫不需要
       confirm: 標記為已完成
       cancel: ~
+      mark_as_refunded: ~
+      dismiss: ~
   feedback:
     feedback_subject: ~
-    feedback_body: "%{author_name_and_email}已經在%{service_name}發送了以下的回應"
+    feedback_body: ~
     unlogged_user: ~
     anonymous_user: ~
   community_memberships:
@@ -1398,11 +1465,17 @@ zh-HK:
       if_will_not_happen_you_should_cancel: "如果你認為由於某種原因無法完成這個請求，你可以%{cancel_it_link}。"
       cancel_it_link_text: 取消
       automatic_confirmation: "如果你不能在請求被接受後%{days_to_automatic_confirmation}內確認或取消交易，我們將自動把它標記為已完成。"
+    confirm_reminder_v2:
+      headline: ~
+      you_have_not_yet_confirmed_or_canceled_request: ~
     payment_settings_reminder:
       remember_to_add_payment_details: 請記得填寫付款詳情以接收付款
       you_have_added_listing_with_payment: "你已新增了一個需要付款的訊息：%{listing_link}。然而，你尚未填寫你的付款詳情。請填寫付款的資料以接收款項。"
       please_go_to_payment_settings: "請至%{payment_settings_link}並填寫所需的付款資訊。"
       payment_settings_link: 付款設置
+    payment_settings_reminder_v2:
+      fill_payout_details: ~
+      you_have_added_listing_with_payment: ~
     transaction_confirmed:
       here_is_a_message_from: "這裡有一個%{other_party_given_name}給你的訊息:"
       request_marked_as_confirmed: 請求已完成——請不要忘記給予回應
@@ -1413,12 +1486,25 @@ zh-HK:
       give_feedback_to: "向%{other_party_given_name}作出回應"
       stripe:
         has_marked_request_as_confirmed: ~
+      team_title: ~
+    transaction_confirmed_v2:
+      headline_confirmed: ~
+      headline_canceled: ~
+      stripe:
+        has_marked_request_as_confirmed: ~
+      can_give_feedback: ~
+      team_title: ~
     transaction_automatically_confirmed:
       subject: 交易自動完成——不要忘記給予回應
       we_have_marked_request_as_confirmed: "我們已經把「%{request}」標示作已完成。此交易已自動完成，因為在請求被接受後%{days_passed}天已經過去。"
+    transaction_automatically_confirmed_v2:
+      we_have_marked_request_as_confirmed: ~
+      order_automatically_confirmed: ~
     booking_transaction_automatically_confirmed:
       subject: "交易已自動完成 ——不要忘記給予評價"
       we_have_marked_request_as_confirmed: "我們已把關於「%{request}」的交易標記成已完成。由於在預訂期限結束後一天已過去，此請求已自動完成。"
+    booking_transaction_automatically_confirmed_v2:
+      order_automatically_confirmed: ~
     automatically_confirmed_footer:
       giving_feedback_is_good_idea: "你現在可以向%{other_party_given_name}給予回應。若一切順利，你可以讓其它人知道%{other_party_given_name}是可靠的。若有任何問題發生，你也可向其它人提出。"
       give_feedback_to: "向%{other_party_given_name}給予回應"
@@ -1428,8 +1514,13 @@ zh-HK:
       need_to_confirm: 請確認你的電郵地址。
       confirmation_link_text: 確認我的電郵
       or_paste_link: 或者你可以複製以下的連結到你的瀏覽器：
+    confirmation_instructions_v2:
+      headline: ~
+      need_to_confirm: ~
+      confirmation_link_text: ~
     common:
       hey: "%{name} 你好 ,"
+      hi: ~
       kassi_team: "%{service_name} 團隊"
       thanks: 謝謝！
       dont_want_to_receive_these_emails: 不想收到這些郵件？
@@ -1441,6 +1532,7 @@ zh-HK:
       unsubscribe_from_these_emails: 取消訂閱這些電郵
       unsubscribe_from_invitation_emails_info: ~
       unsubscribe_from_invitation_emails: ~
+      here_is_your_receipt: ~
     conversation_status_changed:
       has_accepted_your_offer: "%{accepter} 已經接受了你的%{listing}"
       has_accepted_your_request: "%{accepter}已經接受了你的%{listing}"
@@ -1454,12 +1546,19 @@ zh-HK:
       you_can_now_pay_to: "你現在可以支付請求的金額予%{payment_receiver}。"
       pay_now: 現在付款
       remember_to_confirm: "當交易完成後，請把它標記為「已完成」。若交易未完成，你可在%{days_to_automatic_confirmation}內取消它。否則它將會自動被標示為已完成。"
+    conversation_status_changed_v2:
+      has_accepted_your_request: ~
+      has_accepted_your_request_text: ~
+      has_rejected_your_request: ~
+      has_rejected_your_request_text: ~
     invitation_to_kassi:
       hi: 你好！
       you_have_been_invited_to_kassi: "%{inviter}邀請你使用%{service_name}。"
       here_is_a_message_from: "這是來自%{inviter}的訊息"
       join_now: 立刻加入
       invitation_code: "邀請碼：%{code}"
+    invitation_to_kassi_v2:
+      headline: ~
     new_comment:
       has_commented_your_listing_in_kassi: "%{author}已在你的%{listing}留下評論。"
       view_comment: 查看評論
@@ -1470,6 +1569,9 @@ zh-HK:
       view_message: 查閱訊息
       has_sent_you_a_message_in_kassi: "%{sender} 在%{service_name} 傳送了訊息給你"
       you_have_a_new_message: "在%{service_name}收到來自%{sender_name}的新訊息"
+    new_message_v2:
+      headline: ~
+      reply: ~
     new_payment:
       new_payment: 你收到一筆新的款項
       price_per_unit_type: "每%{unit_type}的價格"
@@ -1491,6 +1593,10 @@ zh-HK:
       you_have_received_new_payment: ~
       stripe:
         you_have_received_new_payment: ~
+    payment_receipt_to_seller_v2:
+      headline: ~
+      main_text_stripe: ~
+      price_breakdown: ~
     payment_receipt_to_payer:
       receipt_of_payment: ~
       you_have_made_new_payment: ~
@@ -1506,6 +1612,9 @@ zh-HK:
       stripe_gateway_fee: ~
       paypal_gateway_fee: ~
       money_will_be_transferred: ~
+    payment_receipt_to_payer_v2:
+      headline: ~
+      you_have_made_new_payment: ~
     paypal_new_payment:
       paypal_gateway_fee: PayPal的費用：
       shipping_total: 運費：
@@ -1535,6 +1644,8 @@ zh-HK:
       has_given_you_feedback_in_kassi: "%{name}已在%{service_name}對您作出評價。"
       you_can_give_feedback_to: "您還未對%{name}作出評價。"
       view_feedback: 查看回應
+    new_testimonial_v2:
+      headline: ~
     new_update_to_listing:
       listing_you_follow_has_been_updated: 你所關注的訊息已更新
       has_updated_listing_you_follow_in_kassi: "%{author}在你關注的%{service_name}中，更新了%{listing}中的訊息。"
@@ -1550,6 +1661,8 @@ zh-HK:
       reduce_email_footer_text: "太多郵件？你可以%{settings_link}或%{unsubscribe_link}。"
       settings_link_text: 在此編輯你的電郵設置
       unsubscribe_link_text: 取消訂閱
+    community_updates_v2:
+      headline: ~
     newsletter:
       hi: "%{name}, 你好!"
       newest_offers: 大家最近提出的交易
@@ -1561,6 +1674,10 @@ zh-HK:
     testimonial_reminder:
       remember_to_give_feedback_to: "提示：請不要忘記對%{name}作出評價。"
       you_have_not_given_feedback_yet: "你尚未就%{event}對%{name}作出評價。請不要忘記對%{given_name}在該活動的表現作出評價。"
+    testimonial_reminder_v2:
+      headline: ~
+      you_have_not_given_feedback_yet: ~
+      leave_feedback: ~
     transaction_preauthorized:
       subject: "%{requester}已請求及授權為%{listing_title}付款。"
       transaction_requested_by_user: "%{requester}已請求及授權為「%{listing_title}」付款。"
@@ -1569,11 +1686,16 @@ zh-HK:
       if_you_do_accept_stripe: ~
       if_you_do_not_accept: ~
       click_here_to_reply: 按此以回應請求
+    transaction_preauthorized_v2:
+      headline: ~
     transaction_preauthorized_reminder:
       subject: "不要忘記接受來自%{requester}有關%{listing_title}的請求"
       remember_to_accept: "不要忘記接受來自%{requester}有關%{listing_title}的請求。%{requester}已為此請求付款。你需要接受請求以收取款項。"
       one_day_left: 如果你不能在一天內接受請求，這請求將會被自動取消，你亦不會收到款項。
       click_here_to_reply: 按此以回應請求
+    transaction_preauthorized_reminder_v2:
+      headline: ~
+      remember_to_accept: ~
     welcome_email:
       welcome_email_subject: "歡迎來到%{service_name}！"
       welcome_to_marketplace: "歡迎來到%{service_name}！恭喜你成功註冊。"
@@ -1585,12 +1707,22 @@ zh-HK:
       has_posted_a_new_listing: "%{author_name}已經發表了一個新的訊息："
       you_are_receiving_this_because: "你關注了%{author_name}所以收到這個通知。"
       view_listing: 查看訊息
+    new_listing_by_followed_person_v2:
+      headline: ~
+      has_posted_a_new_listing: ~
+      you_are_receiving_this_because: ~
+      view_listing: ~
+      cant_click: ~
     new_member_notification:
       subject: ~
       new_member_has_joined: ~
       this_is_automatic_message: ~
       person_name: ~
       person_email: ~
+    new_member_notification_v2:
+      headline: ~
+      new_member_has_joined: ~
+      view_profile: ~
     listing_submited_for_review:
       subject: ~
       there_is_a_new_listing_to_review: ~
@@ -1617,6 +1749,45 @@ zh-HK:
       sum: ~
       starter: ~
       provider: ~
+    new_transaction_v2:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
+      view_transaction: ~
+    transaction_cancel_flow:
+      the_order_about: ~
+      you_can_contact_the_marketplace_team: ~
+      you_can_now_give_feedback: ~
+      give_feedback_to: ~
+    transaction_disputed:
+      subject: ~
+      subject_admin: ~
+      order_about: ~
+      the_order_has_been_canceled: ~
+      the_order_between_buyer_and_seller_has_been_canceled: ~
+      the_marketplace_has_been_notified: ~
+      contact_the_marketplace_team: ~
+      you_must_now_decide: ~
+      learn_more_about: ~
+      review_the_transaction: ~
+    transaction_refunded:
+      subject: ~
+      marketplace_team_has_approved_the_cancellation: ~
+      you_should_receive_a_refund_soon: ~
+    transaction_cancellation_dismissed:
+      subject: ~
+      marketplace_team_has_rejected_the_cancellation: ~
+    transaction_commission_charge_failed:
+      subject: ~
+      transaction_about: ~
+      the_commission_of_the_transaction: ~
+      this_usually_means: ~
+      if_you_would_like_to_investigate: ~
+      contact_the_seller: ~
   error_messages:
     booking:
       booking_failed_payment_voided: ~
@@ -1648,6 +1819,8 @@ zh-HK:
       generic_error: ~
       accept_authorization_error: ~
       reject_authorization_error: ~
+      card_declined: ~
+      expired_card: ~
   error_pages:
     back_to_kassi_front_page: 返回到主頁
     error_404:
@@ -1690,6 +1863,9 @@ zh-HK:
       section_with_this_id_already_exists: ~
       listing_with_this_id_does_not_exist: ~
       presence: ~
+      username_is_invalid: ~
+      domain_name_is_invalid: ~
+      only_supported_variables: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{time_ago}前 %{offerer_name} 同意將 %{listing_title} 借給 %{requester_name} 。"
@@ -2065,8 +2241,10 @@ zh-HK:
         other: "網站即將在%{count}內關閉以進行維護"
       automatically_logged_out_please_sign_in: 你已自動登出，請再次登入。
       stripe_you_account_balance_is_not_0: ~
+      stripe_balance_for_username_is_not_0: ~
       visit_admin: ~
       visit_admin_link: ~
+      an_error_occurred_when_saving_your_information: ~
     settings:
       account: 帳戶
       notifications: 通知
@@ -2077,6 +2255,8 @@ zh-HK:
       payments: 款項
       listings: ~
       listings_search_placeholder: ~
+      transactions_search_placeholder: ~
+      transactions: ~
   listings:
     bubble_listing_not_visible:
       listing_not_visible: 你無權查閱此訊息。
@@ -2190,6 +2370,7 @@ zh-HK:
       origin:
         location: 地點
         origin: 來源
+        the_exact_location: ~
       send_button:
         save_listing: 儲存訊息
         submit_for_review: ~
@@ -2297,6 +2478,7 @@ zh-HK:
       month: 月：
       unit: ~
       custom: 數量：
+      person: ~
     quantity_placeholder: 數量
     please_comment: 評論
     reply_link:
@@ -2348,6 +2530,7 @@ zh-HK:
       week: 星期
       month: 月
       unit: ~
+      person: ~
     verification_required:
       verification_required: 需要驗証
   listing_conversations:
@@ -2364,6 +2547,7 @@ zh-HK:
       night: ~
       nights: ~
       invalid_parameters: ~
+      select_delivery_method: ~
     transaction_agreement_checkbox:
       read_more: ~
     stripe_payment:
@@ -2685,6 +2869,8 @@ zh-HK:
       editing_profile_of: ~
       format_markdown_link: ~
       format_markdown: ~
+      username: ~
+      username_description: ~
     save_information: 保存訊息
   shipping_address:
     shipping_address: ~
@@ -2950,6 +3136,7 @@ zh-HK:
       cancel: ~
       gender: ~
       phone_number: ~
+      phone_info_text: ~
       address_kana_postal_code: ~
       address_kana_state: ~
       address_kana_city: ~
@@ -2988,14 +3175,19 @@ zh-HK:
     form_verification:
       personal_id_number: ~
       document: ~
+      document_back: ~
       send_verification: ~
       need_verification: ~
+      additional_document: ~
+      additional_document_back: ~
+      files_need_to_be: ~
     form_pin:
       social_insurance_number: ~
       social_security_number: ~
       ssn_last_4: ~
       hong_kong_identity_card: ~
       singapore_identity_card: ~
+      mexico_id_number: ~
       messages:
         social_insurance_number: ~
   payment_settings:
@@ -3026,8 +3218,6 @@ zh-HK:
         id: ~
         title: ~
         paragraph: ~
-        button_color: ~
-        button_color_hover: ~
         button_title: ~
         button_path: ~
         button_path_string: ~
@@ -3035,7 +3225,6 @@ zh-HK:
         background_image_variation: ~
         background_color: ~
         background_color_string: ~
-        icon_color: ~
       landing_page_version/section/listings:
         listing_1_id: ~
         listing_2_id: ~
@@ -3043,3 +3232,20 @@ zh-HK:
       landing_page_version/section/video:
         text: ~
         youtube_video_id: ~
+      landing_page_version/section/hero:
+        cta_button_text: ~
+        cta_button_url: ~
+  canada_states:
+    AB: Alberta
+    BC: "British Columbia"
+    MB: Manitoba
+    NB: "New Brunswick"
+    NL: "Newfoundland and Labrador"
+    NS: "Nova Scotia"
+    NT: "Northwest Territories"
+    NU: Nunavut
+    "ON": Ontario
+    PE: "Prince Edward Island"
+    QC: Quebec
+    SK: Saskatchewan
+    YT: "Yukon Territory"

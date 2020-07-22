@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "/robots.txt" => RobotsGenerator
 
+  get "/test_design/:page" => "email_design#show"
+
   # URLs for sitemaps
   #
   # From Rails guide: By default dynamic segments don’t accept dots –
@@ -54,13 +56,12 @@ Rails.application.routes.draw do
     resources :listings, only: [], defaults: { format: :json } do
       member do
         post :update_working_time_slots
+        post :update_blocked_dates
       end
+      resources :blocked_dates, only: [:index], controller: 'listing/blocked_dates'
+      resources :bookings, only: [:index], controller: 'listing/bookings'
     end
   end
-
-  # Harmony Proxy
-  # This endpoint proxies the requests to Harmony and does authorization
-  match '/harmony_proxy/*harmony_path' => 'harmony_proxy#proxy', via: :all
 
   # UI API, i.e. internal endpoints for dynamic UI that doesn't belong to under any specific controller
   get "/ui_api/topbar_props" => "topbar_api#props"
@@ -169,6 +170,267 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    namespace :admin2 do
+      resources :dashboard, only: :index
+      namespace :general do
+        resources :essentials, only: %i[index] do
+          collection do
+            patch :update_essential
+          end
+        end
+        resources :admin_notifications, path: 'admin-notifications', only: %i[index] do
+          collection do
+            patch :update_admin_notifications
+          end
+        end
+        resources :static_content, path: 'static-content', only: %i[index]
+        resources :privacy, only: %i[index] do
+          collection do
+            patch :update_privacy
+          end
+        end
+      end
+      namespace :design do
+        resources :landing_page, path: 'landing-page', only: %i[index]
+
+        resources :topbar, path: 'top-bar', only: %i[index] do
+          collection do
+            patch :update_topbar
+          end
+        end
+
+        resources :footer, only: %i[index] do
+          collection do
+            patch :update_footer
+          end
+        end
+
+        resources :display, only: %i[index] do
+          collection do
+            patch :update_display
+          end
+        end
+        resources :experimental, only: %i[index] do
+          collection do
+            patch :update_experimental
+          end
+        end
+        resources :logos_color, path: 'logos-and-color', only: %i[index] do
+          collection do
+            patch :update_logos_color
+          end
+        end
+        resources :cover_photos, path: 'cover-photos', only: %i[index] do
+          collection do
+            patch :update_cover_photos
+          end
+        end
+      end
+
+      namespace :users do
+        resources :invitations, only: %i[index]
+        resources :manage_users, path: 'manage-users', only: %i[index destroy] do
+          member do
+            get :resend_confirmation
+            patch :ban
+            patch :unban
+            post :promote_admin
+            patch :posting_allowed
+          end
+        end
+        resources :signup_login, path: 'signup-and-login', only: %i[index] do
+          collection do
+            patch :update_signup_login
+          end
+        end
+        resources :user_rights, path: 'user-rights', only: %i[index] do
+          collection do
+            patch :update_user_rights
+          end
+        end
+      end
+      namespace :listings do
+        resources :listing_fields do
+          member do
+            get :delete_popup
+          end
+          collection do
+            post :order
+            post :add_unit
+            get :edit_price
+            get :edit_expiration
+            get :edit_location
+            put :update_expiration
+            put :update_price
+            put :update_location
+          end
+        end
+        resources :order_types, path: 'order-types' do
+          collection do
+            post :add_unit
+            post :order
+          end
+        end
+        resources :categories do
+          member do
+            get :remove_popup
+            delete :destroy_and_move
+          end
+          collection do
+            post :order
+            post :change_category
+          end
+        end
+        resources :manage_listings, path: 'manage-listings', only: %i[index] do
+          collection do
+            patch :update
+            patch :close
+            delete :delete
+            get :export
+            get :export_status
+          end
+        end
+        resources :listing_approval, path: 'listing-approval', only: %i[index] do
+          collection do
+            patch :update_listing_approval
+          end
+        end
+        resources :listing_comments, path: 'listing-comments', only: %i[index] do
+          collection do
+            patch :update_listing_comments
+          end
+        end
+      end
+
+      namespace :transactions_reviews, path: 'transactions-and-reviews' do
+        resources :manage_reviews, path: 'manage-reviews', only: %i[index destroy] do
+          member do
+            get :show_review
+            get :edit_review
+            get :delete_review
+            patch :update_review
+          end
+        end
+        resources :conversations, path: 'view-conversations', only: %i[index]
+        resources :manage_transactions, path: 'manage-transactions', only: %i[index] do
+          collection do
+            get :export
+            get :export_status
+          end
+        end
+        resources :config_transactions, path: 'configure-transactions', only: %i[index] do
+          collection do
+            patch :update_config
+          end
+        end
+      end
+
+      namespace :payment_system, path: 'payment-system' do
+        resources :country_currencies, path: 'country-currency', only: %i[index] do
+          collection do
+            patch :update_country_currencies
+            get :verify_currency
+          end
+        end
+      end
+
+      namespace :emails do
+        resources :email_users, path: 'email-users', only: %i[index create]
+        resources :welcome_emails, path: 'welcome-email', only: %i[index] do
+          collection do
+            patch :update_email
+          end
+        end
+        resources :newsletters, path: 'automatic-newsletter', only: %i[index] do
+          collection do
+            patch :update_newsletter
+          end
+        end
+      end
+
+      namespace :search_location, path: 'search-and-location' do
+        resources :search, only: %i[index] do
+          collection do
+            patch :update_search
+          end
+        end
+        resources :locations, path: 'location', only: %i[index] do
+          collection do
+            patch :update_location
+          end
+        end
+      end
+
+      namespace :social_media, path: 'social-media' do
+        resources :image_tags, path: 'image-and-tags', only: %i[index] do
+          collection do
+            patch :update_image
+          end
+        end
+        resources :twitter, only: %i[index] do
+          collection do
+            patch :update_twitter
+          end
+        end
+      end
+
+      namespace :seo do
+        resources :sitemap, path: 'sitemap-and-robots', only: %i[index]
+        resources :google_console, path: 'google-search-console', only: %i[index]
+        resources :landing_pages, path: 'landing-page-meta', only: %i[index] do
+          collection do
+            patch :update_landing_page
+          end
+        end
+        resources :search_pages, path: 'search-results-pages-meta', only: %i[index] do
+          collection do
+            patch :update_search_pages
+          end
+        end
+        resources :listing_pages, path: 'listing-pages-meta', only: %i[index] do
+          collection do
+            patch :update_listing_page
+          end
+        end
+        resources :category_pages, path: 'category-pages-meta', only: %i[index] do
+          collection do
+            patch :update_category_page
+          end
+        end
+        resources :profile_pages, path: 'profile-pages-meta', only: %i[index] do
+          collection do
+            patch :update_profile_page
+          end
+        end
+      end
+
+      namespace :analytics do
+        resources :google_manager, path: 'google-tag-manager', only: %i[index]
+        resources :google, path: 'google-analytics', only: %i[index] do
+          collection do
+            patch :update_google
+          end
+        end
+        resources :sharetribe, path: 'sharetribe-analytics', only: %i[index] do
+          collection do
+            patch :update_sharetribe
+          end
+        end
+      end
+
+      namespace :advanced do
+        resources :delete_marketplaces, path: 'delete-marketplace', only: %i[index destroy]
+        resources :custom_scripts, path: 'custom-script', only: %i[index] do
+          collection do
+            patch :update_script
+          end
+        end
+      end
+
+    end
+
+    get '/:locale/admin2', to: redirect('/%{locale}/admin2/dashboard')
 
     namespace :admin do
       get '' => "getting_started_guide#index"
@@ -289,6 +551,8 @@ Rails.application.routes.draw do
           member do
             get :confirm
             get :cancel
+            get :refund
+            get :dismiss
           end
         end
         resources :conversations, controller: :community_conversations, only: [:index, :show]
@@ -359,7 +623,11 @@ Rails.application.routes.draw do
         end
       end
       resource :plan, only: [:show]
-      resource :domain, only: [:show]
+      resource :domain, only: [:show, :update] do
+        collection do
+          get :check_availability
+        end
+      end
       resource :community_seo_settings, only: [:show, :update]
       resources :landing_page_versions do
         member do
@@ -465,6 +733,9 @@ Rails.application.routes.draw do
           get :check_email_availability_and_validity
           get :check_invitation_code
         end
+        member do
+          get :check_username_availability
+        end
       end
 
       resources :people, except: [:show], :path => "" do
@@ -525,6 +796,7 @@ Rails.application.routes.draw do
             get :notifications
             get :unsubscribe
             get :listings
+            get :transactions
           end
         end
         resources :testimonials

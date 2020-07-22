@@ -172,6 +172,7 @@ ka:
         status_resent: "დადასტურების წერილის თავიდან გაგზავნა %{email}-ზე. %{resend_link}"
         resend_link: გადაგზავნა
         invalid_email_error: "არასწორი ელ. ფოსტის ფორმატი %{email}"
+        invalid_email_address: ~
         invalid_email_domain: "%{email} ელ. ფოსტის მისამართი იყენებს ელ. ფოსტის პროვაიდერს რომლის მხარდაჭერაც არ ხდება ჩვენ მიერ: %{domain}. %{invalid_email_domain_read_more_link}"
         invalid_email_domain_read_more_link: "მეტი ინფორმაციისთვის წაიკითხე ცოდნაზე დაფუძნებული სტატია."
         unknown_error: "რაღაც წავიდა შეცდომით"
@@ -229,6 +230,7 @@ ka:
         miles: მილები
         show_only_nearby: "ძებნაში აჩვენე მხოლოდ ახლომდებარე პროდუქცია"
         allow_users_to_add_location: ~
+        fuzzy_location: ~
         listing_preferences: "ჩამონათვალის პარამეტრები"
         transaction_preferences: "შეკვეთის პარამეტრები"
         show_listing_publishing_date: "გამოაჩინე ჩამონათვალის გამოქვეყნების თარიღი ჩამონათვალის გვერდზე"
@@ -274,6 +276,10 @@ ka:
         ban_user_confirmation: "ეს წაშლის მომხმარებელს ბაზრიდან და შეუზრუდავს თავისი ანგარიშით საიტზე შემოსვლის უფლებას. დარწმუნებული ხარ რომ გსურს გაგრძელება?"
         unban_user_confirmation: ~
         ban_me_error: "თქვენ ვერ დაბლოკავთ საკუთარ თავს."
+        have_ongoing_transactions: ~
+        only_delete_disabled: ~
+        delete_info1: ~
+        delete_info2: ~
         search: ~
         search_by_name_email: ~
         reset_search: ~
@@ -293,6 +299,7 @@ ka:
         unconfirmed_user: ~
         resend: ~
         cancel: ~
+        confirm: ~
         user_didnt_complete_the_signup_process: ~
         pending_user: ~
       new_layout:
@@ -302,6 +309,7 @@ ka:
         enabled_for_all: "ყველასთვის გააქტიურდა"
         new_topbar: "ახალი ზემოთა ბარი (ყველა გვერდზე ჩანს)"
         searchpage: "ახალი გვერდის ძებნა (მოითხოვს ახალი ზედა ზოლის გამოყენებას)"
+        new_email_templates: ~
       social_media:
         social_media: "სოციალური მედია"
         logo: ~
@@ -329,7 +337,6 @@ ka:
         invalid_facebook_connect_secret: "კლიენტის საიდუმლო უნდა შეიცავდეს მხოლოდ ციფრებს და ასოებს a-დან f-მდე."
         enable_facebook_login: ~
         save: "დაიმახსოვრე პარამეტრები"
-        add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
         google_developers_console: ~
@@ -392,6 +399,10 @@ ka:
         robots_info: ~
         robots_info_link_text: ~
         robots_info_2: ~
+        google_search_console: ~
+        google_search_console_paragraph1: ~
+        google_search_console_these_instructions: ~
+        google_search_console_paragraph2: ~
         save: ~
       analytics:
         analytics: ანალიტიკა
@@ -404,6 +415,10 @@ ka:
         sharetribe_analytics_instructions_link_text: ~
         end_user_analytics: ~
         save: "დაიმახსოვრე პარამეტრები"
+        google_tag_manager: ~
+        gtm_paragraph_1: ~
+        gtm_paragraph_2: ~
+        learn_how_to_configure_gtm: ~
       logo_link:
         title: ~
         info: ~
@@ -452,10 +467,13 @@ ka:
           confirmed: ~
           paid: ~
           canceled: ~
+          disputed: ~
           preauthorized: ~
           rejected: ~
           payment_intent_requires_action: ~
           payment_intent_action_expired: ~
+          refunded: ~
+          dismissed: ~
         headers:
           conversation: "მიმოწერის ნაკრები"
           listing: ჩამონათვლები
@@ -475,6 +493,7 @@ ka:
           paid: გადახდილი
           confirmed: დადასტურებულია
           canceled: გაუქმებულია
+          disputed: ~
           initiated: "ველოდებით PayPal-ით გადახდას"
           pending_ext: "ველოდებით PayPal-ით გადახდას"
           none:
@@ -488,8 +507,11 @@ ka:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
+            refunded: ~
+            dismissed: ~
           stripe:
             free: ~
             pending: ~
@@ -499,11 +521,14 @@ ka:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
             payment_intent_requires_action: ~
             payment_intent_action_expired: ~
             payment_intent_failed: ~
+            refunded: ~
+            dismissed: ~
         not_available: "არ არის ხელმისაწვდომი"
       conversations:
         conversations: ~
@@ -642,36 +667,33 @@ ka:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+        change_your_sharetribe_domain: ~
+        only_letters_numbers_and_hyphens_can_be_used: ~
+        when_you_change_your_sharetribe_domain: ~
+        would_you_like_to_proceed: ~
+        change: ~
       landing_pages:
         landing_pages: ~
         info_1: ~
         info_2: ~
-        info_2_preview_text: ~
-        info_2_details_text: ~
-        info_2_design_text: ~
+        info_2_help_center: ~
         info_3: ~
         info_4: ~
         editor_title: ~
         editor_info: ~
         preview: ~
         set_live: ~
-        headers:
-          section_id: ~
-          section_type: ~
-          version: ~
-          released: ~
-        add_new_version: ~
-        new_version: ~
-        edit_version: ~
         add_new_section: ~
         select_section_type: ~
+        this_version_is_not_released: ~
+        latest_version_released: ~
+        check_it_out: ~
         form:
-          version: ~
           save: ~
+          cancel: ~
         sections:
           identifier: ~
           kind: ~
-          variation: ~
           new: ~
           edit: ~
           remove_section_confirmation: ~
@@ -685,8 +707,6 @@ ka:
           video: ~
           new_section:
             categories: ~
-            footer: ~
-            hero: ~
             info_single_column: ~
             info_multi_column_2: ~
             info_multi_column_3: ~
@@ -703,11 +723,25 @@ ka:
             listings: ~
             locations: ~
             video: ~
+      attachments:
+        delete: ~
+        or_change: ~
     landing_page_versions:
       sections:
+        content:
+          title: ~
         hero:
           hero_title: ~
           hero_description: ~
+          basic_details_tab: ~
+          cta_button: ~
+          cta_button_info: ~
+          button_type:
+            default: ~
+            button: ~
+            none: ~
+          button_content: ~
+          click_me: ~
         footer:
           footer_title: ~
           footer_style: ~
@@ -720,6 +754,10 @@ ka:
           cta_enabled: ~
           cta_text: ~
           cta_url: ~
+          text_placeholder: ~
+          url_placeholder: ~
+        background_selector:
+          title: ~
         background_image_overlay:
           background_image: ~
           background_image_info: ~
@@ -781,20 +819,22 @@ ka:
           column_header: ~
           column_title: ~
           column_icon_info: ~
+          column_icon_info_link: ~
           column_icon: ~
           column_paragraph: ~
           column_button: ~
           column_button_text: ~
           column_button_url: ~
         listings:
+          listings_to_feature: ~
           you_need_to_add_the_listing_ids: ~
         video:
           text: ~
-          youtube_video_id: ~
           autoplay: ~
           autoplay_no: ~
           autoplay_muted: ~
           info: ~
+          youtube_video_id_info: ~
     custom_fields:
       edit:
         edit_listing_field: "დაარედაქტირე ჩამონათვალის დარგი %{field_name}"
@@ -915,7 +955,7 @@ ka:
       preview: "საიტის გადახედვა"
       whats_new: ~
     listing_shapes:
-      availability_title: ხელმისაწვდომობა
+      availability_title: "მონიშნეთ დაჯავშნილი თარიღები"
       read_more: "წაიკითხეთ მეტი ავტომატური ხელმისაწვდომობის მართვაზე."
       read_more_availability_management: "წაიკითხეთ მეტი ხელმისაწვდომობის შესახებ"
       allow_providers_to_manage_availability: "მიეცი უფლება პროვაიდერებს რათა მართონ მათი თავისუფალი დრო კალენდრიდან."
@@ -986,7 +1026,7 @@ ka:
       units:
         piece: "ყოველ ცალზე"
         hour: "ყოველ საათში"
-        day: "ყოველ დღე"
+        day: დღე
         night: "ყოველ ღამე"
         week: "ყოველ კვირას"
         month: "ყოველ თვიურად"
@@ -1108,12 +1148,15 @@ ka:
       request: მოთხოვნა
       inquiry: განცხადება
       share_for_free: "უფასოთ გაზიარება"
+      event_w_online_payment: ~
+      event_wo_online_payment: ~
       default_action_button_labels:
         sell: ყიდვა
         rent: გაქირავება
         request: შეთავაზება
         offer: ყიდვა
         inquiry: კონტაქტი
+        book: ~
     community_transactions:
       show:
         transaction_for: ~
@@ -1123,11 +1166,17 @@ ka:
         waiting_for_fulfill_and_complete: ~
         buyer: ~
         provider: ~
+        delivery: ~
+        shipping_to: ~
         buyer_pays: ~
         marketplace_collects: ~
         buyer_service_fee_label: ~
         service_fee_label: ~
         provider_receives: ~
+        admin_info_text: ~
+        manage_reviews: ~
+        you_should_investigate: ~
+        learn_more: ~
   common:
     edit_page: "დაარედაქტირე გვერდი"
     default_community_slogan: "ბაზრის გაერთიანება"
@@ -1215,11 +1264,11 @@ ka:
       total_value_stripe: ~
       paypal_fee: ~
       paypal_fee_info: "არ შეიცავს %{link}"
-      shipping_price_label: გაგზავნა
+      shipping_price_label: "მიტანის სერვისიმიტანის სერვისი:"
       stripe-fee_label: ~
     confirm:
       confirm_description: "თუ თქვენი შეკვეთა შესრულდა უნდა მონიშნოთ იგი დასრულებულად. შემდეგ შეგეძლებათ მისცეთ შეფასება სხვა ნაწილს."
-      cancel_description: "თუ თქვნეი შეკვეთა არ შესრულდა, თქვენ შეგიძლიათ მონიშნოთ იგი როგორც, \"სადავო\". თქვენ ისევ გაქვთ შესაძლებლობა მისცეთ შეფასება მეორე მხარეს და აღწეროთ რა მოხდა. "
+      cancel_description_team: ~
       cancel_payed_description: "თუ თქვენი მოთხოვნა დადასტურდა, მაგრამ თუ ისევ ყოყმანობთ, სანამ გადაიხდით თქვენ შეგიძლიათ შეკვეთის გაუქმება. "
       canceling_payed_transaction: "ტრანზაქციის გაუქმება"
       confirm: "მონიშნე დასრულებულად"
@@ -1268,6 +1317,10 @@ ka:
         held_payment: ~
         held_payment_wo_sum: ~
         confirmed_request: ~
+      canceled_the_order: ~
+      marked_as_refunded: ~
+      dismissed_the_cancellation: ~
+      payment_has_now_been_transferred: ~
     new:
       message: შეტყობინება
       message_to: "წერილი %{author_name}ს"
@@ -1342,6 +1395,18 @@ ka:
           verify: "გელოდებით რომ დაადასტუროთ PayPal-ს ანგარიში"
       stripe:
         waiting_confirmation_from_requester: ~
+      order_canceled: ~
+      waiting_for_marketplace_review: ~
+      marketplace_notified: ~
+      contact_them: ~
+      refunded: ~
+      dismissed: ~
+      order_refunded: ~
+      you_should_receive_refund_soon: ~
+      issue_with_the_refund: ~
+      do_you_disagree: ~
+      contact_the_marketpalce_team: ~
+      order_cancellation_dismissed: ~
     status_link:
       accept_offer: "შემოთავაზების მიღება"
       accept_request: "მოთხოვნის მიღება"
@@ -1353,11 +1418,13 @@ ka:
       reject_preauthorized_request: "ახლა არა"
       confirm: "მონიშნე დასრულებულად"
       cancel: დავა
+      mark_as_refunded: ~
+      dismiss: ~
   feedback:
-    feedback_subject: "ახალი სეფასება %{service_name} სგან"
-    feedback_body: "%{author_name_and_email} გამოაგზავნა შეფასება %{service_name}-სგან"
-    unlogged_user: "სისტემიდან გამოსული მომხმარებელი"
-    anonymous_user: "ანონიმური მომხმარებელი"
+    feedback_subject: ~
+    feedback_body: ~
+    unlogged_user: ~
+    anonymous_user: ~
   community_memberships:
     access_denied:
       access_denied: "წვდომა უარყოფილია"
@@ -1398,11 +1465,17 @@ ka:
       if_will_not_happen_you_should_cancel: "თუ თვლით, რომ ეს შეკვეთა არ დასრულდება ერთი ან რამოდენიმე მიზეზის გამო, თქვენ შეგიძლიათ %{cancel_it_link}."
       cancel_it_link_text: გააუქმე
       automatic_confirmation: "თუ თქვენ არ დაადასტურებთ ან გააუქმებთ შეკვეთას %{days_to_automatic_confirmation}-ს მოთხოვნის დადასტურებიდან რამოდენიმე დღის განმავლობაში, ჩვენ ამას მოვნიშნავთ როგორც დასრულებულად."
+    confirm_reminder_v2:
+      headline: ~
+      you_have_not_yet_confirmed_or_canceled_request: ~
     payment_settings_reminder:
       remember_to_add_payment_details: "არ დაგავიწყდეთ გადახდის დეტალების დამატება, რომ მიიღოთ გადახდები; "
       you_have_added_listing_with_payment: "თქვენ დაამატეთ ჩამონათვალი %{listing_link} გადახდით. მაგრამ თქვენ ჯერ არ დაგიმატებიათ გადახდის დეტალები. გადახდის მიღებისთვის აუცილებელია რომ შეავსოთ ეს ინფორმაცია."
       please_go_to_payment_settings: "გთხოვთ შედით თქვენ %{payment_settings_link}ში და შეაფსეთ მოთხოვნილი გადახდის ინფორმაცია."
       payment_settings_link: "გადახდის პარამეტრები"
+    payment_settings_reminder_v2:
+      fill_payout_details: ~
+      you_have_added_listing_with_payment: ~
     transaction_confirmed:
       here_is_a_message_from: "აქ არის წერილი %{other_party_given_name}სგან"
       request_marked_as_confirmed: "შეკვეთა წარმატებით დასრულდა - არ დაგავიწყდეთ შეფასების მიცემა"
@@ -1413,12 +1486,25 @@ ka:
       give_feedback_to: "მიეცი შეფასება %{other_party_given_name}ს"
       stripe:
         has_marked_request_as_confirmed: ~
+      team_title: ~
+    transaction_confirmed_v2:
+      headline_confirmed: ~
+      headline_canceled: ~
+      stripe:
+        has_marked_request_as_confirmed: ~
+      can_give_feedback: ~
+      team_title: ~
     transaction_automatically_confirmed:
       subject: "შეკვეთა ავტომატურად დასრულდა - არ დაგავიწყდთ შეფასების მიცემა"
       we_have_marked_request_as_confirmed: "ჩვენ მოვნიშნეთ შეკვეთა %{request}-ს შესახებ დასრულებულად. შეკვეთა ავტომატურად დასრულდა, იმის გამო, რომ %{days_passed} დღე გავიდა იმის შემდეგ, რაც მოთხოვნა დადასტურდა."
+    transaction_automatically_confirmed_v2:
+      we_have_marked_request_as_confirmed: ~
+      order_automatically_confirmed: ~
     booking_transaction_automatically_confirmed:
       subject: "შეკვეთა წარმატებით დასრულდა - არ დაგავიწყდეთ შეფასების მიცემა"
       we_have_marked_request_as_confirmed: "%{request}-ის შეკვეთა მოვნიშნეთ როგორც დასრულებული. მოთხოვნა ავტომატურად დასრულდა, იმიტომ, რომ ერთი დღე გავიდა იმის მერე რაც ჯავშანის გაკეთების დრო დასრულდა."
+    booking_transaction_automatically_confirmed_v2:
+      order_automatically_confirmed: ~
     automatically_confirmed_footer:
       giving_feedback_is_good_idea: |-
           თქვენ ეხლა შეგიძლიათ შეაფასოთ %{other_party_given_name}.
@@ -1430,8 +1516,13 @@ ka:
       need_to_confirm: "თქვენ უნდა დაადასტუროთ ელ. ფოსტა. "
       confirmation_link_text: "ელ. ფოსტის დადასტურება"
       or_paste_link: "ან თქვენ შეგიძლიათ დააკოპიროთ ეს ბმული თქვენი ბრაუზერის მისამართის ველში:"
+    confirmation_instructions_v2:
+      headline: ~
+      need_to_confirm: ~
+      confirmation_link_text: ~
     common:
       hey: "გამარჯობა %{name},"
+      hi: ~
       kassi_team: "%{service_name}  გუნდი"
       thanks: "მადლობა,"
       dont_want_to_receive_these_emails: "არ გსურთ მიიღოთ ეს ელ. ფოსტა?"
@@ -1443,6 +1534,7 @@ ka:
       unsubscribe_from_these_emails: "ამ ელ. ფოსტისგან გამოწერის გაუქმება"
       unsubscribe_from_invitation_emails_info: ~
       unsubscribe_from_invitation_emails: ~
+      here_is_your_receipt: ~
     conversation_status_changed:
       has_accepted_your_offer: "%{accepter} დაეთანხმა თქვენ შემოთავაზებას %{listing}."
       has_accepted_your_request: "%{accepter} დაეთანხმა თქვენ მოთხოვნას %{listing}."
@@ -1456,12 +1548,19 @@ ka:
       you_can_now_pay_to: "თქვენ ეხლა შგიძლიათ გადაუხადოთ მოთხოვნილი თანხა %{payment_receiver}-ს"
       pay_now: "გადაიხადე ეხლა"
       remember_to_confirm: "როცა შეკვეთა შესრულებულია, არ დაგავიწყდეს, რომ მონიშნო ის დასრულებულად. თუ მოთხოვნა შეუსრულებელია, შენ გაქვს %{days_to_automatic_confirmation} დღე  რომ გააუქმო ის. სხვა შემთხვევაში ავტომატურად მოინიშნება როგორც დასრულებული."
+    conversation_status_changed_v2:
+      has_accepted_your_request: ~
+      has_accepted_your_request_text: ~
+      has_rejected_your_request: ~
+      has_rejected_your_request_text: ~
     invitation_to_kassi:
       hi: გამარჯობა!
       you_have_been_invited_to_kassi: "%{inviter} მიგიწვიათ %{service_name}ზე."
       here_is_a_message_from: "პერსონალური წერილი %{inviter}სგან"
       join_now: ეხლა
       invitation_code: "მოწვევის კოდი: %{code}"
+    invitation_to_kassi_v2:
+      headline: ~
     new_comment:
       has_commented_your_listing_in_kassi: "%{author} დააკომენტარა თქვენ ჩამონათვალზე %{listing}."
       view_comment: "ნახე კომენტარი"
@@ -1472,6 +1571,9 @@ ka:
       view_message: "ნახე წერილი"
       has_sent_you_a_message_in_kassi: "%{sender} გამოგიგზავნათ წერილი %{service_name}ში."
       you_have_a_new_message: "ახალი წერილი %{service_name}ში %{sender_name}სგან"
+    new_message_v2:
+      headline: ~
+      reply: ~
     new_payment:
       new_payment: "თქვენ მიიღეთ ახალი გადახდა"
       price_per_unit_type: "ფასი ყოველ %{unit_type}"
@@ -1493,6 +1595,10 @@ ka:
       you_have_received_new_payment: ~
       stripe:
         you_have_received_new_payment: ~
+    payment_receipt_to_seller_v2:
+      headline: ~
+      main_text_stripe: ~
+      price_breakdown: ~
     payment_receipt_to_payer:
       receipt_of_payment: ~
       you_have_made_new_payment: ~
@@ -1508,9 +1614,12 @@ ka:
       stripe_gateway_fee: ~
       paypal_gateway_fee: ~
       money_will_be_transferred: ~
+    payment_receipt_to_payer_v2:
+      headline: ~
+      you_have_made_new_payment: ~
     paypal_new_payment:
       paypal_gateway_fee: "PayPal-ის გადასახადი:"
-      shipping_total: "ფოსტით გაგზავნა:"
+      shipping_total: "მიტანის სერვისიმიტანის სერვისი:"
     braintree_new_payment:
       product: პროდუქტი
       price_payer_paid: "ფასი %{payer_full_name} გადახდილია:"
@@ -1537,6 +1646,8 @@ ka:
       has_given_you_feedback_in_kassi: "%{name} მოგცათ შეფასება %{service_name}ში"
       you_can_give_feedback_to: "თქვენ ჯერ არ მიგიციათ შეფასება %{name}სთვის."
       view_feedback: "ნახე შეფასება"
+    new_testimonial_v2:
+      headline: ~
     new_update_to_listing:
       listing_you_follow_has_been_updated: "ჩამონათვალი რომელსაც მიყვებით განახლდა"
       has_updated_listing_you_follow_in_kassi: "%{author} განაახლა ჩამონათვალი %{listing} რომელსაც თქვენ მისდევთ %{service_name}-ზე."
@@ -1552,6 +1663,8 @@ ka:
       reduce_email_footer_text: "ძალიან ბევრი ელ. ფოსტა? %{settings_link} ან %{unsubscribe_link}."
       settings_link_text: "დააკორექტირე შენი ელ. ფოსტის პარამეტრები აქ"
       unsubscribe_link_text: "გამოწერის გაუქმება"
+    community_updates_v2:
+      headline: ~
     newsletter:
       hi: "გამარჯობა %{name}"
       newest_offers: "რას თავაზობს ეხლა ხალხი სხვებს"
@@ -1563,6 +1676,10 @@ ka:
     testimonial_reminder:
       remember_to_give_feedback_to: "შეხსენება: გახსოვდეთ შეფასების მიცემა %{name}სთვის"
       you_have_not_given_feedback_yet: "თქვენ ჯერ არ მიგიციათ შეფასება %{name}-სთვის %{event} ღონისძიების შესახებ. არ დაგავიწყდეთ შეფასების მიცემა  %{given_name}-ზე თუ როგორ გამოვიდა ღონისძიებაზე."
+    testimonial_reminder_v2:
+      headline: ~
+      you_have_not_given_feedback_yet: ~
+      leave_feedback: ~
     transaction_preauthorized:
       subject: "%{requester} მოითხოვა და ავტორიზება გაუკეთა %{listing_title}-ს გადახდას"
       transaction_requested_by_user: "%{requester} მოითხოვა და ავტორიზება გაუკეთა %{listing_title}-ს გადახდას"
@@ -1571,11 +1688,16 @@ ka:
       if_you_do_accept_stripe: ~
       if_you_do_not_accept: ~
       click_here_to_reply: "დააჭირე აქ რომ უპასუხო მოთხოვნას"
+    transaction_preauthorized_v2:
+      headline: ~
     transaction_preauthorized_reminder:
       subject: "არ დაგავიწყდეთ რომ დაადასტუროთ %{listing_title} ჩამონათვალის შესახებ მოთხოვნა %{requester}-სგან"
       remember_to_accept: "არ დაგავიწყდეთ რომ დაადასტუროთ %{listing_title} ჩამონათვალის შესახებ მოთხოვნა %{requester}-სგან. %{requester} უკვე გადაიხადა ამ ჩამონათვლისთვის. თანხის მისაღებად თქვენ უნდა დაადასტუროთ მოთხოვნა."
       one_day_left: "თუ არ დაადასტურებთ მოთხოვნას 1 დღის განმავლობაში მოთხოვნა ავტომატურად გაუქმდება და თქვენ ვერ მიიღებთ თანხას."
       click_here_to_reply: "დააჭირეთ აქ რომ უპასუხოთ მოთხოვნას"
+    transaction_preauthorized_reminder_v2:
+      headline: ~
+      remember_to_accept: ~
     welcome_email:
       welcome_email_subject: "მოგესალმებით %{service_name}ზე"
       welcome_to_marketplace: "მოგესალმებით %{service_name}-ზე! მოხარული ვართ რომ ჩვენი გუნდის წევრი ხართ."
@@ -1587,12 +1709,22 @@ ka:
       has_posted_a_new_listing: "%{author_name} დაპოსტა ახალი ჩამონათვალი"
       you_are_receiving_this_because: "თქვენ მიიღეთ შეტყობინება, იმიტომ, რომ მისდევთ %{author_name}-ს."
       view_listing: "ნახე ჩამონათვლები"
+    new_listing_by_followed_person_v2:
+      headline: ~
+      has_posted_a_new_listing: ~
+      you_are_receiving_this_because: ~
+      view_listing: ~
+      cant_click: ~
     new_member_notification:
       subject: ~
       new_member_has_joined: "ახალი წევრი შემოუერთდა %{community}ს. მათ მოუწევთ ელ.ფოსტის დადასტურება."
       this_is_automatic_message: "ეს არის ავტომატური წერილი რომელიც გაეგზავნა %{community}ის ადმინისტრატორებს"
       person_name: "სახელი:"
       person_email: "ელ.ფოსტა:"
+    new_member_notification_v2:
+      headline: ~
+      new_member_has_joined: ~
+      view_profile: ~
     listing_submited_for_review:
       subject: ~
       there_is_a_new_listing_to_review: ~
@@ -1619,6 +1751,45 @@ ka:
       sum: ~
       starter: ~
       provider: ~
+    new_transaction_v2:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
+      view_transaction: ~
+    transaction_cancel_flow:
+      the_order_about: ~
+      you_can_contact_the_marketplace_team: ~
+      you_can_now_give_feedback: ~
+      give_feedback_to: ~
+    transaction_disputed:
+      subject: ~
+      subject_admin: ~
+      order_about: ~
+      the_order_has_been_canceled: ~
+      the_order_between_buyer_and_seller_has_been_canceled: ~
+      the_marketplace_has_been_notified: ~
+      contact_the_marketplace_team: ~
+      you_must_now_decide: ~
+      learn_more_about: ~
+      review_the_transaction: ~
+    transaction_refunded:
+      subject: ~
+      marketplace_team_has_approved_the_cancellation: ~
+      you_should_receive_a_refund_soon: ~
+    transaction_cancellation_dismissed:
+      subject: ~
+      marketplace_team_has_rejected_the_cancellation: ~
+    transaction_commission_charge_failed:
+      subject: ~
+      transaction_about: ~
+      the_commission_of_the_transaction: ~
+      this_usually_means: ~
+      if_you_would_like_to_investigate: ~
+      contact_the_seller: ~
   error_messages:
     booking:
       booking_failed_payment_voided: ""
@@ -1650,6 +1821,8 @@ ka:
       generic_error: ~
       accept_authorization_error: ~
       reject_authorization_error: ~
+      card_declined: ~
+      expired_card: ~
   error_pages:
     back_to_kassi_front_page: "მთავარ გვერდზე დაბრუნება"
     error_404:
@@ -1692,6 +1865,9 @@ ka:
       section_with_this_id_already_exists: ~
       listing_with_this_id_does_not_exist: ~
       presence: ~
+      username_is_invalid: ~
+      domain_name_is_invalid: ~
+      only_supported_variables: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} დაეთანხმა რომ გააქირაოს %{listing_title} %{requester_name}ზე %{time_ago}."
@@ -1718,7 +1894,7 @@ ka:
       offer_partitive: შეთავაზება
       request_partitive: ყიდვა
   header:
-    about: შესახებ
+    about: "ჩვენს შესახებ"
     home: მთავარი
     members: გაერთიანება
     new_listing: "ახალი სია"
@@ -1834,7 +2010,7 @@ ka:
       search: ძებნა
       map: "რუკის ჩვენება"
       list: "სიის ჩვენება"
-      map_button: რუქა
+      map_button: რუკა
       grid_button: ცხრილი
       list_button: სია
       all_listing_types: "ყველა სიის ტიპი"
@@ -2067,8 +2243,10 @@ ka:
         other: "საიტი იქნება გამორთული შეკეთებისთვის %{count} წუთში"
       automatically_logged_out_please_sign_in: "თქვენ ავტომატურად გამოხვედით სისტემიდან. გთხოვთ შედით თავიდან."
       stripe_you_account_balance_is_not_0: ~
+      stripe_balance_for_username_is_not_0: ~
       visit_admin: ~
       visit_admin_link: ~
+      an_error_occurred_when_saving_your_information: ~
     settings:
       account: ანგარიში
       notifications: შეტყობინებები
@@ -2079,6 +2257,8 @@ ka:
       payments: გადახდები
       listings: ~
       listings_search_placeholder: ~
+      transactions_search_placeholder: ~
+      transactions: ~
   listings:
     bubble_listing_not_visible:
       listing_not_visible: "თქვენ არ გაქვთ წვდომა ამ ჩამონათვლის სანახავად"
@@ -2098,10 +2278,10 @@ ka:
       subscribe_to_comments: "შემატყობინეთ ახალი კომენტარების და განახლებების შესახებ"
     deleting_a_listing_cannot_be_undone: ~
     edit:
-      edit_listing: "დაარედაქტირე სია"
+      edit_listing: "დაარედაქტირე განცხადება"
     edit_links:
-      close_listing: "სიის დახურვა"
-      edit_listing: "დაარედაქტირე სია"
+      close_listing: "განცხადების დახურვა"
+      edit_listing: "დაარედაქტირე განცხადება"
       reopen_listing: "თავიდან გახსენი ჩამონათვალი"
       move_to_top: "გადაიტანე მთავარი გვერდის თავში"
       show_in_updates_email: "მანახე შემდეგ გამოწერაში"
@@ -2112,7 +2292,7 @@ ka:
       listing_is_rejected: ~
       approve_listing: ~
       reject_listing: ~
-      delete_listing: ~
+      delete_listing: "წაშალე განცხადება"
     map:
       open_in_google_maps: "გახსენი Google Maps-ში"
     error:
@@ -2185,13 +2365,14 @@ ka:
         after_service_fee_you_will_get_payment_text: ~
         payment_fee_info_link_text: ~
         delivery: "მიტანის მეთოდი"
-        shipping: "ფოსტით გაგზავნა:"
+        shipping: "მიტანის სერვისი:"
         shipping_price: "ტრანსპორტირების გადასახადი"
         shipping_price_additional: "დამატებითი  ნივთები"
         pickup: "ადგილზე აღება"
       origin:
         location: ადგილმდებარეობა
         origin: თავდაპირველი
+        the_exact_location: ~
       send_button:
         save_listing: "დაიმახსოვრე ჩამონათვალი"
         submit_for_review: ~
@@ -2268,7 +2449,7 @@ ka:
       trades: გაცვლა
     listing_actions:
       booking_from: დან
-      booking_to: ზე
+      booking_to: მდე
       how_paypal_works: "როგორ მუშაობს PayPal"
       payment_help: "გადახდის დახმარება"
       unable_load_availability: "ვერ მოხდა ჩატვირთვა ხელმისაწვდომობაზე. გთხოვთ თავიდან სცადოთ."
@@ -2299,6 +2480,7 @@ ka:
       month: "თვეების რაოდენობა"
       unit: ~
       custom: რაოდენობა
+      person: ~
     quantity_placeholder: რაოდენობა
     please_comment: კომენტარი
     reply_link:
@@ -2333,7 +2515,7 @@ ka:
       processing_uploaded_image: "(სურათი იტვირთება)"
       listing_created_at: "ჩამონათვალი შექმნილია"
       price:
-        per_quantity_unit: "ყოველ %{quantity_unit}"
+        per_quantity_unit: "%{quantity_unit}"
         per_day: დღიურად
       delivery: "მიტანის მეთოდი"
       shipping: "ფოსტით გაგზავნა (+%{price})"
@@ -2350,6 +2532,7 @@ ka:
       week: კვირა
       month: თვე
       unit: ~
+      person: ~
     verification_required:
       verification_required: "ვერიფიკაცია სავალდებულოა"
   listing_conversations:
@@ -2366,6 +2549,7 @@ ka:
       night: ღამე
       nights: ღამე
       invalid_parameters: "ახალი ტრანზაქციისთვის ასეთი სახელი არ არსებობს"
+      select_delivery_method: ~
     transaction_agreement_checkbox:
       read_more: ნახვა
     stripe_payment:
@@ -2524,10 +2708,10 @@ ka:
       and_gave_following_feedback: "და მისცა შემდეგი შეფასება"
     profile_listings:
       no_image: "არ არის სურათი"
-      manage_listings: ~
+      manage_listings: "მართეთ ჩემი ყველა ჩამონათვალი"
     show:
       contact: "დაეკონტაქტე %{person}ს"
-      about_me: "ჩემ შესახებ:"
+      about_me: "ჩემს შესახებ:"
       add_description: "გააზიარე რამე შენ შესახებ"
       add_location: "ადგილმდებარეობის დამატება"
       add_phone_number: "ტელეფონის ნომრის დამატება"
@@ -2562,10 +2746,10 @@ ka:
     followed_people:
       you_follow_plural: "თქვენ მისდევთ %{count} ადამიანს"
       you_follow_singular: "თქვენ მისდევთ %{count} ადამიანს"
-      they_follow_plural: "%{count} გაყვა ადამიანი"
-      they_follow_singular: "%{count} გაყვა პიროვნება"
+      they_follow_plural: "%{count} გამოწერილი ხალხი"
+      they_follow_singular: "%{count} გაყვა პიროვნებაგამოწერილი ხალხი"
       show_all_followed_people: "მანახე ყველა მიდევნებული ადამიანი"
-      no_followed_people: "არ არის მიდევნებული ხალხი"
+      no_followed_people: "გამოწერილი ხალხი"
     follow_button:
       following: მიყვება
       follow: გაყოლა
@@ -2661,7 +2845,7 @@ ka:
       unsubscribe_unsuccesful: "გამოწერის გაუქმების შეცდომა"
       unsuccessful_unsubscribe_info_text: "გამოწერის გაუქმების ბმულს ვადა გაუვიდა. შედი სისტემაში, რომ შეცვალოთ ელ. ფოსტის გამოწერის პარამეტრები"
     profile:
-      about_you: "შენ შესახებ"
+      about_you: "შენს შესახებ"
       city: ქალაქი
       family_name: გვარი
       given_name: სახელი
@@ -2687,6 +2871,8 @@ ka:
       editing_profile_of: ~
       format_markdown_link: ~
       format_markdown: ~
+      username: ~
+      username_description: ~
     save_information: "ინფორმაციის შენახვა"
   shipping_address:
     shipping_address: "ტრანსპორტირების მისამართი"
@@ -2784,7 +2970,7 @@ ka:
       december: დეკ
     today: დღეს
     clear: მოწმენდილი
-    format: თთ/დდ/წწწწ
+    format: dd/mm/yyyy
   time:
     formats:
       short: "%b %e, %წ %ს.%თ ზე"
@@ -2828,7 +3014,7 @@ ka:
       price_per_unit: ~
       quantity: რაოდენობა
       subtotal: "ჯამი:"
-      shipping-price: "ფოსტით გაგზავნა:"
+      shipping-price: "მიტანის სერვისი:"
       stripe-fee: ~
       start_end_time: ~
     price_per_quantity: "ფასი ყოველ %{unit_type}"
@@ -2893,7 +3079,7 @@ ka:
       signup: დარეგისტრირება
       admin_dashboard: "ადმინისტრატორის პანელი"
       language: ენა
-      listings: ~
+      listings: "ჩემი ჩამონათვალი"
     utils:
       km: კილომეტრი
       mi: მილი
@@ -2971,6 +3157,7 @@ ka:
       cancel: ~
       gender: ~
       phone_number: ~
+      phone_info_text: ~
       address_kana_postal_code: ~
       address_kana_state: ~
       address_kana_city: ~
@@ -3009,14 +3196,19 @@ ka:
     form_verification:
       personal_id_number: ~
       document: ~
+      document_back: ~
       send_verification: ~
       need_verification: ~
+      additional_document: ~
+      additional_document_back: ~
+      files_need_to_be: ~
     form_pin:
       social_insurance_number: ~
       social_security_number: ~
       ssn_last_4: ~
       hong_kong_identity_card: ~
       singapore_identity_card: ~
+      mexico_id_number: ~
       messages:
         social_insurance_number: ~
   payment_settings:
@@ -3047,8 +3239,6 @@ ka:
         id: ~
         title: ~
         paragraph: ~
-        button_color: ~
-        button_color_hover: ~
         button_title: ~
         button_path: ~
         button_path_string: ~
@@ -3056,7 +3246,6 @@ ka:
         background_image_variation: ~
         background_color: ~
         background_color_string: ~
-        icon_color: ~
       landing_page_version/section/listings:
         listing_1_id: ~
         listing_2_id: ~
@@ -3064,3 +3253,20 @@ ka:
       landing_page_version/section/video:
         text: ~
         youtube_video_id: ~
+      landing_page_version/section/hero:
+        cta_button_text: ~
+        cta_button_url: ~
+  canada_states:
+    AB: Alberta
+    BC: "British Columbia"
+    MB: Manitoba
+    NB: "New Brunswick"
+    NL: "Newfoundland and Labrador"
+    NS: "Nova Scotia"
+    NT: "Northwest Territories"
+    NU: Nunavut
+    "ON": Ontario
+    PE: "Prince Edward Island"
+    QC: Quebec
+    SK: Saskatchewan
+    YT: "Yukon Territory"

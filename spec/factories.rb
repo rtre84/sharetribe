@@ -535,4 +535,14 @@ FactoryGirl.define do
     version           '1'
     content           CustomLandingPage::ExampleData::DATA_STR
   end
+
+  factory :feature_flag do
+    community_id      123
+    enabled           true
+  end
+
+  factory :listing_blocked_date, class: 'Listing::BlockedDate' do
+    listing_id 123
+    blocked_at Date.current
+  end
 end

@@ -1,4 +1,5 @@
 module TransactionService::Transaction
+  class BookingDatesInvalid < StandardError; end
 
   class IllegalTransactionStateException < Exception
   end
@@ -86,10 +87,6 @@ module TransactionService::Transaction
     adapter
   end
 
-  def has_unfinished_transactions(person_id)
-    TxStore.unfinished_tx_count(person_id) > 0
-  end
-
   def can_start_transaction(opts)
     payment_gateway = opts[:transaction][:payment_gateway]
     author_id = opts[:transaction][:listing_author_id]
@@ -112,6 +109,9 @@ module TransactionService::Transaction
     tx_process_settings = set_adapter.tx_process_settings(opts_tx)
 
     tx = TxStore.create(opts_tx.merge(tx_process_settings))
+    unless tx.persisted?
+      return Result::Error.new(BookingDatesInvalid.new(I18n.t("error_messages.booking.double_booking_payment_voided")))
+    end
 
     tx_process = tx_process(tx[:payment_process])
     gateway_adapter = gateway_adapter(tx[:payment_gateway])
@@ -235,6 +235,28 @@ module TransactionService::Transaction
     else
       Result::Success.new({})
     end
+  end
+
+  # This process should be repeated 3 times. So the delayed job would
+  # run 5 days from the original charge (and error), 10 days and 15 days.
+  def charge_commission_and_retry(transaction_id)
+    result = charge_commission(transaction_id)
+    unless result[:success]
+      paypal_payment = PaypalPayment.find_by(transaction_id: transaction_id)
+      if paypal_payment.retry_charge_commision?
+        paypal_payment.increment_commission_retry_count
+        Delayed::Job.enqueue(TransactionRetryChargeCommissionJob.new(transaction_id), run_at: 5.days.from_now)
+      else
+        paypal_payment.charge_commision_failed
+        transaction = Transaction.find(transaction_id)
+        transaction.community.admins.each do |admin|
+          TransactionMailer.transaction_commission_charge_failed(
+            transaction: transaction,
+            recipient: admin).deliver_now
+        end
+      end
+    end
+    result
   end
 
   def payment_details(tx)

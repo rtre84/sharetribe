@@ -22,7 +22,8 @@ class Admin::CommunitiesController < Admin::AdminBaseController
     @url_params = {
       :host => @current_community.full_domain,
       :ref => "welcome_email",
-      :locale => @current_user.locale
+      :locale => @current_user.locale,
+      :protocol => APP_CONFIG.always_use_ssl.to_s == "true" ? "https://" : "http://"
     }
 
     sender_address = EmailService::API::Api.addresses.get_sender(community_id: @current_community.id).data
@@ -72,6 +73,8 @@ class Admin::CommunitiesController < Admin::AdminBaseController
         case Maybe(res.data)[:error_code]
         when Some(:invalid_email)
           t("admin.communities.outgoing_email.invalid_email_error", email: res.data[:email])
+        when Some(:invalid_email_address)
+          t('admin.communities.outgoing_email.invalid_email_address')
         when Some(:invalid_domain)
           kb_link = view_context.link_to(t("admin.communities.outgoing_email.invalid_email_domain_read_more_link"), "#{APP_CONFIG.knowledge_base_url}/configuration-and-how-to/how-to-define-your-own-address-as-the-sender-of-all-outgoing-emails", class: "flash-error-link") # rubocop:disable Metrics/LineLength
           t("admin.communities.outgoing_email.invalid_email_domain", email: res.data[:email], domain: res.data[:domain], invalid_email_domain_read_more_link: kb_link).html_safe
@@ -184,7 +187,8 @@ class Admin::CommunitiesController < Admin::AdminBaseController
 
     permitted_params = [
       :wide_logo, :logo,:cover_photo, :small_cover_photo, :favicon, :custom_color1,
-      :custom_color2, :slogan_color, :description_color, :default_browse_view, :name_display_type
+      :custom_color2, :slogan_color, :description_color, :default_browse_view, :name_display_type,
+      attachments_destroyer: []
     ]
     permitted_params << :custom_head_script
     community_params = params.require(:community).permit(*permitted_params)
@@ -216,7 +220,8 @@ class Admin::CommunitiesController < Admin::AdminBaseController
       :linkedin_connect_enabled, :linkedin_connect_id, :linkedin_connect_secret,
       social_logo_attributes: [
         :id,
-        :image
+        :image,
+        :destroy_image
       ],
       community_customizations_attributes: [
         :id,

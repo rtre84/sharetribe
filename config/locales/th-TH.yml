@@ -172,6 +172,7 @@ th-TH:
         status_resent: "อีเมลเพื่อทำการยืนยันได้ส่งไปที่ %{email} อีกครั้ง หากต้องการส่งใหม่กรุณากด %{resend_link}"
         resend_link: ส่งอีกครั้ง
         invalid_email_error: "อีเมลไม่ถูกต้องสำหรับ '%{email}'"
+        invalid_email_address: ~
         invalid_email_domain: ~
         invalid_email_domain_read_more_link: ~
         unknown_error: เกิดข้อผิดพลาดบางอย่าง
@@ -229,6 +230,7 @@ th-TH:
         miles: ~
         show_only_nearby: ~
         allow_users_to_add_location: ~
+        fuzzy_location: ~
         listing_preferences: การกำหนดค่ารายการ
         transaction_preferences: การตั้งค่าการสั่งซื้อสินค้า
         show_listing_publishing_date: แสดงวันที่เผยแพร่รายการในหน้ารายการ
@@ -262,7 +264,7 @@ th-TH:
         manage_members: จัดการผู้ใช้
         email: อีเมล์
         name: ชื่อ
-        display_name: ~
+        display_name: ชื่อที่แสดง
         join_date: เข้าร่วมแล้ว
         admin: ผู้ดูแลระบบ
         posting_allowed: การโพสต์ที่ได้รับอนุญาต
@@ -274,6 +276,10 @@ th-TH:
         ban_user_confirmation: "การกระทำเช่นนี้จะย้ายผู้ใช้ออกจากตลาด และป้องกันไม่ให้พวกเขาเข้าถึงเว็บไซต์ได้อีกครั้ง กับบัญชีนี้ คุณแน่ใจหรือว่าต้องการดำเนินการต่อ?"
         unban_user_confirmation: ~
         ban_me_error: คุณไม่สามารถแบนตัวเองได้
+        have_ongoing_transactions: ~
+        only_delete_disabled: ~
+        delete_info1: ~
+        delete_info2: ~
         search: ~
         search_by_name_email: ~
         reset_search: ~
@@ -293,6 +299,7 @@ th-TH:
         unconfirmed_user: ~
         resend: ~
         cancel: ~
+        confirm: ~
         user_didnt_complete_the_signup_process: ~
         pending_user: ~
       new_layout:
@@ -302,6 +309,7 @@ th-TH:
         enabled_for_all: ~
         new_topbar: ~
         searchpage: ~
+        new_email_templates: ~
       social_media:
         social_media: โซเชียลมีเดีย
         logo: ~
@@ -329,7 +337,6 @@ th-TH:
         invalid_facebook_connect_secret: "รหัสลับลูกค้าควรมีเฉพาะตัวเลขและตัวอักษรจาก A ถึง F"
         enable_facebook_login: ~
         save: บันทึกการตั้งค่า
-        add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
         google_developers_console: ~
@@ -392,6 +399,10 @@ th-TH:
         robots_info: ~
         robots_info_link_text: ~
         robots_info_2: ~
+        google_search_console: ~
+        google_search_console_paragraph1: ~
+        google_search_console_these_instructions: ~
+        google_search_console_paragraph2: ~
         save: ~
       analytics:
         analytics: การวิเคราะห์ข้อมูลหรือสถิติ
@@ -404,6 +415,10 @@ th-TH:
         sharetribe_analytics_instructions_link_text: "อ่านข้อมูลเพิ่มเติมเกี่ยวกับการวิเคราะห์ของ Sharetribe"
         end_user_analytics: ~
         save: บันทึกการตั้งค่า
+        google_tag_manager: ~
+        gtm_paragraph_1: ~
+        gtm_paragraph_2: ~
+        learn_how_to_configure_gtm: ~
       logo_link:
         title: ~
         info: ~
@@ -452,10 +467,13 @@ th-TH:
           confirmed: ~
           paid: ~
           canceled: ~
+          disputed: ~
           preauthorized: ~
           rejected: ~
           payment_intent_requires_action: ~
           payment_intent_action_expired: ~
+          refunded: ~
+          dismissed: ~
         headers:
           conversation: บทสนทนา
           listing: รายการ
@@ -475,6 +493,7 @@ th-TH:
           paid: ชำระเงินแล้ว
           confirmed: ยืนยันแล้ว
           canceled: ถูกยกเลิก
+          disputed: ~
           initiated: "กำลังรอการชำระเงิน PayPal"
           pending_ext: "กำลังรอการชำระเงิน PayPal"
           none:
@@ -488,8 +507,11 @@ th-TH:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
+            refunded: ~
+            dismissed: ~
           stripe:
             free: ~
             pending: ~
@@ -499,11 +521,14 @@ th-TH:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
             payment_intent_requires_action: ~
             payment_intent_action_expired: ~
             payment_intent_failed: ~
+            refunded: ~
+            dismissed: ~
         not_available: ไม่พบข้อมูล
       conversations:
         conversations: ~
@@ -642,36 +667,33 @@ th-TH:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+        change_your_sharetribe_domain: ~
+        only_letters_numbers_and_hyphens_can_be_used: ~
+        when_you_change_your_sharetribe_domain: ~
+        would_you_like_to_proceed: ~
+        change: ~
       landing_pages:
         landing_pages: ~
         info_1: ~
         info_2: ~
-        info_2_preview_text: ~
-        info_2_details_text: ~
-        info_2_design_text: ~
+        info_2_help_center: ~
         info_3: ~
         info_4: ~
         editor_title: ~
         editor_info: ~
         preview: ~
         set_live: ~
-        headers:
-          section_id: ~
-          section_type: ~
-          version: ~
-          released: ~
-        add_new_version: ~
-        new_version: ~
-        edit_version: ~
         add_new_section: ~
         select_section_type: ~
+        this_version_is_not_released: ~
+        latest_version_released: ~
+        check_it_out: ~
         form:
-          version: ~
           save: ~
+          cancel: ~
         sections:
           identifier: ~
           kind: ~
-          variation: ~
           new: ~
           edit: ~
           remove_section_confirmation: ~
@@ -685,8 +707,6 @@ th-TH:
           video: ~
           new_section:
             categories: ~
-            footer: ~
-            hero: ~
             info_single_column: ~
             info_multi_column_2: ~
             info_multi_column_3: ~
@@ -703,11 +723,25 @@ th-TH:
             listings: ~
             locations: ~
             video: ~
+      attachments:
+        delete: ~
+        or_change: ~
     landing_page_versions:
       sections:
+        content:
+          title: ~
         hero:
           hero_title: ~
           hero_description: ~
+          basic_details_tab: ~
+          cta_button: ~
+          cta_button_info: ~
+          button_type:
+            default: ~
+            button: ~
+            none: ~
+          button_content: ~
+          click_me: ~
         footer:
           footer_title: ~
           footer_style: ~
@@ -720,6 +754,10 @@ th-TH:
           cta_enabled: ~
           cta_text: ~
           cta_url: ~
+          text_placeholder: ~
+          url_placeholder: ~
+        background_selector:
+          title: ~
         background_image_overlay:
           background_image: ~
           background_image_info: ~
@@ -781,20 +819,22 @@ th-TH:
           column_header: ~
           column_title: ~
           column_icon_info: ~
+          column_icon_info_link: ~
           column_icon: ~
           column_paragraph: ~
           column_button: ~
           column_button_text: ~
           column_button_url: ~
         listings:
+          listings_to_feature: ~
           you_need_to_add_the_listing_ids: ~
         video:
           text: ~
-          youtube_video_id: ~
           autoplay: ~
           autoplay_no: ~
           autoplay_muted: ~
           info: ~
+          youtube_video_id_info: ~
     custom_fields:
       edit:
         edit_listing_field: "แก้ไขข้อมูลรายการ '%{field_name}'"
@@ -1108,12 +1148,15 @@ th-TH:
       request: ต้องการ
       inquiry: ประกาศ
       share_for_free: แบ่งปันฟรี
+      event_w_online_payment: ~
+      event_wo_online_payment: ~
       default_action_button_labels:
         sell: ซื้อ
         rent: เช่า
         request: เสนอ
         offer: คำขอ
         inquiry: ติดต่อ
+        book: ~
     community_transactions:
       show:
         transaction_for: ~
@@ -1123,11 +1166,17 @@ th-TH:
         waiting_for_fulfill_and_complete: ~
         buyer: ~
         provider: ~
+        delivery: ~
+        shipping_to: ~
         buyer_pays: ~
         marketplace_collects: ~
         buyer_service_fee_label: ~
         service_fee_label: ~
         provider_receives: ~
+        admin_info_text: ~
+        manage_reviews: ~
+        you_should_investigate: ~
+        learn_more: ~
   common:
     edit_page: แก้ไขหน้านี้
     default_community_slogan: ตลาดชุมชน
@@ -1221,7 +1270,7 @@ th-TH:
       stripe-fee_label: ~
     confirm:
       confirm_description: "หากได้รับสินค้าหรือบริการแล้ว กรุณากดยืนยันว่าได้รับสินค้าหรือบริการเป็นที่เรียบร้อย หลังจากนั้นคุณจะสามารถเขียนรีวิวผู้ขายได้"
-      cancel_description: "หากคุณไม่ได้รับหรือไม่พอใจในสินค้า/บริการ คุณสามารถทำเครื่องหมาย 'โต้แย้ง' ได้ และสามารถให้ข้อเสนอแนะไปยังบุคคลอื่น และอธิบายถึงสิ่งที่เกิดขึ้น"
+      cancel_description_team: ~
       cancel_payed_description: "หากคำขอของคุณได้รับการยอมรับแล้ว แต่คุณเปลี่ยนใจ คุณยังสามารถยกเลิกคำขอ ก่อนที่จะชำระเงินได้"
       canceling_payed_transaction: ยกเลิกการทำรายการ
       confirm: ยืนยันว่าได้รับสินค้าหรือบริการแล้ว
@@ -1270,6 +1319,10 @@ th-TH:
         held_payment: ~
         held_payment_wo_sum: ~
         confirmed_request: ~
+      canceled_the_order: ~
+      marked_as_refunded: ~
+      dismissed_the_cancellation: ~
+      payment_has_now_been_transferred: ~
     new:
       message: ข้อความ
       message_to: "ข้อความถึง %{author_name}"
@@ -1344,6 +1397,18 @@ th-TH:
           verify: "กำลังรอให้คุณตรวจสอบบัญชี PayPal ของคุณ"
       stripe:
         waiting_confirmation_from_requester: ~
+      order_canceled: ~
+      waiting_for_marketplace_review: ~
+      marketplace_notified: ~
+      contact_them: ~
+      refunded: ~
+      dismissed: ~
+      order_refunded: ~
+      you_should_receive_refund_soon: ~
+      issue_with_the_refund: ~
+      do_you_disagree: ~
+      contact_the_marketpalce_team: ~
+      order_cancellation_dismissed: ~
     status_link:
       accept_offer: ยอมรับข้อเสนอ
       accept_request: ตอบรับออเดอร์
@@ -1355,6 +1420,8 @@ th-TH:
       reject_preauthorized_request: ไม่ใช่ตอนนี้
       confirm: ยืนยันว่าได้รับสินค้าหรือบริการแล้ว
       cancel: โต้แย้ง
+      mark_as_refunded: ~
+      dismiss: ~
   feedback:
     feedback_subject: ~
     feedback_body: ~
@@ -1400,11 +1467,17 @@ th-TH:
       if_will_not_happen_you_should_cancel: "หากคุณคิดว่าการสั่งซื้อนี้จะไม่สมบูรณ์ด้วยเหตุผลใด ๆ ก็ตาม คุณสามารถ%{cancel_it_link}ได้"
       cancel_it_link_text: ยกเลิก
       automatic_confirmation: "หากคุณไม่ได้ยืนยันหรือยกเลิกคำสั่งซื้อภายใน %{days_to_automatic_confirmation} วันหลังจากที่คำขอได้รับการยอมรับ เราจะทำเครื่องหมายให้ว่าเสร็จสมบูรณ์โดยอัตโนมัติ"
+    confirm_reminder_v2:
+      headline: ~
+      you_have_not_yet_confirmed_or_canceled_request: ~
     payment_settings_reminder:
       remember_to_add_payment_details: อย่าลืมที่จะเพิ่มรายละเอียดการชำระเงินของคุณในการรับเงิน
       you_have_added_listing_with_payment: "คุณได้เพิ่มรายการ %{listing_link} กับการชำระเงิน ทั้งนี้ คุณยังไม่ได้เพิ่มรายละเอียดการชำระเงินของคุณ คุณต้องมีเพิ่มข้อมูลการชำระเงินเพื่อที่จะรับเงิน"
       please_go_to_payment_settings: "กรุณาไปที่ %{payment_settings_link} และกรอกข้อมูลการชำระเงินที่จำเป็น"
       payment_settings_link: การตั้งค่าการชำระเงิน
+    payment_settings_reminder_v2:
+      fill_payout_details: ~
+      you_have_added_listing_with_payment: ~
     transaction_confirmed:
       here_is_a_message_from: "นี่คือข้อความจาก%{other_party_given_name}:"
       request_marked_as_confirmed: "การสั่งซื้อเสร็จสมบูรณ์ - อย่าลืมที่จะให้ความคิดเห็น"
@@ -1415,12 +1488,25 @@ th-TH:
       give_feedback_to: "ให้ความคิดเห็นแก่%{other_party_given_name}"
       stripe:
         has_marked_request_as_confirmed: "%{other_party_full_name} ได้ทำเครื่องหมายการสั่งซื้อเกี่ยวกับ%{request}เสร็จสมบูรณ์แล้ว การชำระเงินได้ถูกปล่อยเข้าธนาคารคุณแล้ว ขณะนี้คุณสามารถให้ความคิดเห็นไปยัง%{other_party_given_name}ได้"
+      team_title: ~
+    transaction_confirmed_v2:
+      headline_confirmed: ~
+      headline_canceled: ~
+      stripe:
+        has_marked_request_as_confirmed: ~
+      can_give_feedback: ~
+      team_title: ~
     transaction_automatically_confirmed:
       subject: "การสั่งซื้อเสร็จสมบูรณ์โดยอัตโนมัติ - อย่าลืมที่จะให้ความคิดเห็น"
       we_have_marked_request_as_confirmed: "เราได้ทำเครื่องหมายในการสั่งซื้อ '%{request}' เสร็จแล้ว การสั่งซื้อเสร็จสมบูรณ์โดยอัตโนมัติเนื่องจากผ่านมาแล้ว %{days_passed} วันนับตั้งแต่คำขอได้รับการยอมรับ"
+    transaction_automatically_confirmed_v2:
+      we_have_marked_request_as_confirmed: ~
+      order_automatically_confirmed: ~
     booking_transaction_automatically_confirmed:
       subject: "การสั่งซื้อเสร็จสมบูรณ์โดยอัตโนมัติ - อย่าลืมที่จะให้ความคิดเห็น"
       we_have_marked_request_as_confirmed: "เราได้ทำเครื่องหมายในการสั่งซื้อ '%{request}' เสร็จแล้ว การสั่งซื้อเสร็จสมบูรณ์โดยอัตโนมัติเนื่องจาก เวลาผ่านมาแล้วหนึ่งวัน นับตั้งแต่คำขอได้รับการยอมรับ"
+    booking_transaction_automatically_confirmed_v2:
+      order_automatically_confirmed: ~
     automatically_confirmed_footer:
       giving_feedback_is_good_idea: "ขณะนี้คุณสามารถให้ข้อเสนอแนะไปยัง %{other_party_given_name} การให้ข้อเสนอแนะมักเป็นสิ่งที่ดี หากทุกอย่างเป็นไปด้วยดี คุณควรช่วยให้คนอื่นรู้ว่า %{other_party_given_name} สามารถเชื่อถือได้ หากมีปัญหาใด ๆ ก็การดีที่จะพูดถึง ปัญหาเหล่านั้นเช่นกัน"
       give_feedback_to: "ให้ความคิดเห็นแก่%{other_party_given_name}"
@@ -1430,8 +1516,13 @@ th-TH:
       need_to_confirm: "ในการเข้าร่วม %{service_name} กรุณายืนยันที่อยู่อีเมล์ของคุณ โดยคลิกที่ปุ่มด้านล่าง"
       confirmation_link_text: ยืนยันที่อยู่ของฉัน
       or_paste_link: "หรือคุณสามารถคัดลอกลิงค์ต่อไปนี้ ไปที่แถบที่อยู่ของเบราว์เซอร์ของคุณ:"
+    confirmation_instructions_v2:
+      headline: ~
+      need_to_confirm: ~
+      confirmation_link_text: ~
     common:
       hey: "สวัสดี %{name},"
+      hi: ~
       kassi_team: "ทีมงาน %{service_name}"
       thanks: "ขอบคุณ,"
       dont_want_to_receive_these_emails: ไม่ต้องการรับอีเมล์เหล่านี้?
@@ -1443,6 +1534,7 @@ th-TH:
       unsubscribe_from_these_emails: ยกเลิกการรับอีเมล์เหล่านี้
       unsubscribe_from_invitation_emails_info: ~
       unsubscribe_from_invitation_emails: ~
+      here_is_your_receipt: ~
     conversation_status_changed:
       has_accepted_your_offer: "%{accepter} ได้ยอมรับข้อเสนอ %{listing} ของคุณแล้ว"
       has_accepted_your_request: "%{accepter} ได้ตอบรับออเดอร์ %{listing} ของคุณแล้ว"
@@ -1456,12 +1548,19 @@ th-TH:
       you_can_now_pay_to: "ขณะนี้คุณสามารถชำระเงินจำนวนที่ร้องขอไปยัง%{payment_receiver}ได้แล้ว"
       pay_now: ชำระเงินเดี๋ยวนี้
       remember_to_confirm: "เมื่อการสั่งซื้อสมบูรณ์แล้ว อย่าลืมทำเครื่องหมายว่าเสร็จสมบูรณ์ หากการสั่งซื้อไม่สมบูรณ์ คุณมีเวลา %{days_to_automatic_confirmation} วันที่จะยกเลิก มิฉะนั้นการสั่งซื้อก็จะถูกทำเครื่องหมายให้เสร็จสมบูรณ์โดยอัตโนมัติ"
+    conversation_status_changed_v2:
+      has_accepted_your_request: ~
+      has_accepted_your_request_text: ~
+      has_rejected_your_request: ~
+      has_rejected_your_request_text: ~
     invitation_to_kassi:
       hi: สวัสดี!
       you_have_been_invited_to_kassi: "%{inviter} ได้เชิญคุณเข้าร่วม %{service_name}"
       here_is_a_message_from: "นี่คือข้อความส่วนตัวจาก %{inviter}:"
       join_now: เข้าร่วมเดี๋ยวนี้
       invitation_code: "รหัสเชิญ:%{code}"
+    invitation_to_kassi_v2:
+      headline: ~
     new_comment:
       has_commented_your_listing_in_kassi: "%{author} ได้ให้ความเห็นในรายการ '%{listing}' ของคุณ"
       view_comment: ดูความเห็น
@@ -1472,6 +1571,9 @@ th-TH:
       view_message: ดูข้อความ
       has_sent_you_a_message_in_kassi: "%{sender} ได้ส่งข้อความถึงคุณใน %{service_name}"
       you_have_a_new_message: "ข้อความใหม่ใน %{service_name} จาก %{sender_name}"
+    new_message_v2:
+      headline: ~
+      reply: ~
     new_payment:
       new_payment: คุณได้รับการชำระเงินใหม่
       price_per_unit_type: "ราคาต่อ: %{unit_type}"
@@ -1493,6 +1595,10 @@ th-TH:
       you_have_received_new_payment: ~
       stripe:
         you_have_received_new_payment: ~
+    payment_receipt_to_seller_v2:
+      headline: ~
+      main_text_stripe: ~
+      price_breakdown: ~
     payment_receipt_to_payer:
       receipt_of_payment: ~
       you_have_made_new_payment: ~
@@ -1508,6 +1614,9 @@ th-TH:
       stripe_gateway_fee: ~
       paypal_gateway_fee: ~
       money_will_be_transferred: ~
+    payment_receipt_to_payer_v2:
+      headline: ~
+      you_have_made_new_payment: ~
     paypal_new_payment:
       paypal_gateway_fee: "ค่าธรรมเนียมของ PayPal"
       shipping_total: จัดส่ง
@@ -1537,6 +1646,8 @@ th-TH:
       has_given_you_feedback_in_kassi: "%{name} ได้ให้ข้อเสนอแนะแก่คุณใน %{service_name}"
       you_can_give_feedback_to: "คุณยังไม่ได้ให้ข้อเสนอแนะแก่ %{name}"
       view_feedback: ดูความคิดเห็น
+    new_testimonial_v2:
+      headline: ~
     new_update_to_listing:
       listing_you_follow_has_been_updated: รายการที่คุณติดตามได้รับการปรับปรุงใหม่
       has_updated_listing_you_follow_in_kassi: "%{author} ได้ทำการอัพเดทรายการ '%{listing}' ที่คุณติดตามใน %{service_name}"
@@ -1552,6 +1663,8 @@ th-TH:
       reduce_email_footer_text: "มีอีเมล์มากเกินไป? %{settings_link} หรือ %{unsubscribe_link}"
       settings_link_text: แก้ไขการตั้งค่าอีเมล์ของคุณที่นี่
       unsubscribe_link_text: ยกเลิกการเป็นสมาชิก
+    community_updates_v2:
+      headline: ~
     newsletter:
       hi: "สวัสดี %{name},"
       newest_offers: "สิ่งที่ผู้คนในขณะนี้เสนอให้กับคนอื่น ๆ"
@@ -1563,6 +1676,10 @@ th-TH:
     testimonial_reminder:
       remember_to_give_feedback_to: "เตือนความจำ: อย่าลืมที่จะให้ข้อเสนอแนะไปยัง %{name}"
       you_have_not_given_feedback_yet: "คุณยังไม่ได้ให้ข้อเสนอแนะไปยัง %{name} เกี่ยวกับ %{event} อย่าลืมให้ข้อเสนอแนะ เกี่ยวกับการที่ %{given_name} ได้ดำเนินการในกรณีดังกล่าว"
+    testimonial_reminder_v2:
+      headline: ~
+      you_have_not_given_feedback_yet: ~
+      leave_feedback: ~
     transaction_preauthorized:
       subject: "%{requester} ได้ยื่นคำขอชำระเงินเพื่อซื้อสินค้าหรือบริการ %{listing_title} ลงขายใน %{service_name}"
       transaction_requested_by_user: "ข่าวดี! %{requester} ได้ยื่นคำขอชำระเงินเพื่อซื้อสินค้าหรือบริการ %{listing_title}"
@@ -1571,11 +1688,16 @@ th-TH:
       if_you_do_accept_stripe: ~
       if_you_do_not_accept: ~
       click_here_to_reply: คลิกที่นี่เพื่อตอบสนองต่อคำขอ
+    transaction_preauthorized_v2:
+      headline: ~
     transaction_preauthorized_reminder:
       subject: "อย่าลืมยอมรับคำขอจาก%{requester}เกี่ยวกับรายการ %{listing_title}"
       remember_to_accept: "อย่าลืมยอมรับคำขอจาก%{requester}เกี่ยวกับรายการ %{listing_title} %{requester}ได้ชำระเงินแก่รายการไปแล้ว คุณต้องยอมรับคำขอเพื่อรับเงิน"
       one_day_left: "หากคุณไม่ยอมรับคำขอภายในหนึ่งวัน คำขอจะถูกปฏิเสธโดยอัตโนมัติ และคุณจะไม่ได้รับเงิน "
       click_here_to_reply: คลิกที่นี่เพื่อตอบสนองต่อคำขอ
+    transaction_preauthorized_reminder_v2:
+      headline: ~
+      remember_to_accept: ~
     welcome_email:
       welcome_email_subject: "ยินดีต้อนรับสู่ %{service_name}!"
       welcome_to_marketplace: "ยินดีต้อนรับสู่ %{service_name} ค่ะ"
@@ -1587,12 +1709,22 @@ th-TH:
       has_posted_a_new_listing: "%{author_name}ได้โพสต์รายการใหม่"
       you_are_receiving_this_because: "คุณได้รับการแจ้งเตือนนี้เพราะคุณกำลังติดตาม %{author_name}"
       view_listing: แสดงรายการ
+    new_listing_by_followed_person_v2:
+      headline: ~
+      has_posted_a_new_listing: ~
+      you_are_receiving_this_because: ~
+      view_listing: ~
+      cant_click: ~
     new_member_notification:
       subject: ~
       new_member_has_joined: ~
       this_is_automatic_message: ~
       person_name: ~
       person_email: ~
+    new_member_notification_v2:
+      headline: ~
+      new_member_has_joined: ~
+      view_profile: ~
     listing_submited_for_review:
       subject: ~
       there_is_a_new_listing_to_review: ~
@@ -1600,11 +1732,11 @@ th-TH:
       this_is_automatic_message: ~
     listing_approved:
       subject: ~
-      listing_has_been_approved: ~
+      listing_has_been_approved: "ข่าวดี! รายการของคุณ %{listing_title}  ได้ถูกตรวจสอบ และ อนุมัติจาก %{community} รายการได้ถูกประกาศแล้วสำเร็จแล้ว"
       view_the_listing: ~
     listing_rejected:
       subject: ~
-      listing_has_been_rejected: ~
+      listing_has_been_rejected: "ต้องขอโทษด้วย ทีมงานของ %{community}  ได้ปฏิเสธ รายการ %{listing_title} หลังจากที่ทำการตรวจพิจรณาแล้ว แต่ คุณสามารถแก้ไข หรือ อัพเดทรายการใหม่ ให้ตรงกับกฏที่ทีมงานได้ตั้งไว้. คุณสามารถติดต่อ สอบถาม %{contact_link} เพื่อเรียนรู้เพิ่มเติม."
       contact_link: ~
       edit_the_listing: ~
     edited_listing_submited_for_review:
@@ -1619,10 +1751,49 @@ th-TH:
       sum: ~
       starter: ~
       provider: ~
+    new_transaction_v2:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
+      view_transaction: ~
+    transaction_cancel_flow:
+      the_order_about: ~
+      you_can_contact_the_marketplace_team: ~
+      you_can_now_give_feedback: ~
+      give_feedback_to: ~
+    transaction_disputed:
+      subject: ~
+      subject_admin: ~
+      order_about: ~
+      the_order_has_been_canceled: ~
+      the_order_between_buyer_and_seller_has_been_canceled: ~
+      the_marketplace_has_been_notified: ~
+      contact_the_marketplace_team: ~
+      you_must_now_decide: ~
+      learn_more_about: ~
+      review_the_transaction: ~
+    transaction_refunded:
+      subject: ~
+      marketplace_team_has_approved_the_cancellation: ~
+      you_should_receive_a_refund_soon: ~
+    transaction_cancellation_dismissed:
+      subject: ~
+      marketplace_team_has_rejected_the_cancellation: ~
+    transaction_commission_charge_failed:
+      subject: ~
+      transaction_about: ~
+      the_commission_of_the_transaction: ~
+      this_usually_means: ~
+      if_you_would_like_to_investigate: ~
+      contact_the_seller: ~
   error_messages:
     booking:
       booking_failed_payment_voided: ~
-      double_booking_payment_voided: ~
+      double_booking_payment_voided: "ต้องขอโทษด้วย วันที่ที่คุณเลือกไว้ ไม่ว่างอีกต่อไป กรุณาเลือกวันที่อื่นๆ และ รายการยังไม่ได้ทำการชาร์จเงิน"
     onboarding:
       server_rendering: "ไม่สามารถโหลดคู่มือเริ่มต้นใช้งาน เราได้รับแจ้งเกี่ยวกับสถานการณ์และเรากำลังแก้ไข"
     listings:
@@ -1650,6 +1821,8 @@ th-TH:
       generic_error: ~
       accept_authorization_error: ~
       reject_authorization_error: ~
+      card_declined: ~
+      expired_card: ~
   error_pages:
     back_to_kassi_front_page: กลับไปหน้าแรก
     error_404:
@@ -1692,6 +1865,9 @@ th-TH:
       section_with_this_id_already_exists: ~
       listing_with_this_id_does_not_exist: ~
       presence: ~
+      username_is_invalid: "Username นี้ใช้ไม่ได้ หรือ ไม่ว่างอีกต่อไป"
+      domain_name_is_invalid: ~
+      only_supported_variables: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: "%{offerer_name} ได้ตกลงที่จะให้ %{requester_name} ยืม เมื่อ%{time_ago}"
@@ -2064,8 +2240,10 @@ th-TH:
       images_are_processing: ~
       automatically_logged_out_please_sign_in: "คุณใช้งานเกินระยะเวลาที่กำหนด โปรดเข้าสู่ระบบอีกครั้งเพื่อดำเนินการต่อ"
       stripe_you_account_balance_is_not_0: ~
+      stripe_balance_for_username_is_not_0: ~
       visit_admin: ~
       visit_admin_link: ~
+      an_error_occurred_when_saving_your_information: ~
     settings:
       account: บัญชี
       notifications: แจ้งเตือน
@@ -2076,6 +2254,8 @@ th-TH:
       payments: การชำระเงิน
       listings: ~
       listings_search_placeholder: ~
+      transactions_search_placeholder: ~
+      transactions: ~
   listings:
     bubble_listing_not_visible:
       listing_not_visible: คุณไม่มีสิทธิที่จะดูรายการนี้
@@ -2189,6 +2369,7 @@ th-TH:
       origin:
         location: ตำแหน่ง
         origin: ที่มา
+        the_exact_location: ~
       send_button:
         save_listing: บันทึกรายการ
         submit_for_review: ~
@@ -2296,6 +2477,7 @@ th-TH:
       month: "จำนวนเดือน:"
       unit: ~
       custom: "ปริมาณ:"
+      person: ~
     quantity_placeholder: ปริมาณ
     please_comment: ข้อคิดเห็น
     reply_link:
@@ -2347,6 +2529,7 @@ th-TH:
       week: สัปดาห์
       month: เดือน
       unit: ~
+      person: ~
     verification_required:
       verification_required: ต้องได้รับการยืนยัน
   listing_conversations:
@@ -2363,6 +2546,7 @@ th-TH:
       night: ~
       nights: ~
       invalid_parameters: ~
+      select_delivery_method: ~
     transaction_agreement_checkbox:
       read_more: แสดง
     stripe_payment:
@@ -2664,8 +2848,8 @@ th-TH:
       given_name: ชื่อ
       first_name_with_initial: (แสดงเฉพาะอักษรตัวแรกให้ผู้ใช้งานคนอื่นเห็น)
       first_name_only: "(ไม่แสดงต่อผู้ใช้อื่น ๆ)"
-      display_name: ~
-      display_name_description: ~
+      display_name: ชื่อที่แสดง
+      display_name_description: ชื่อนี้จะแสดงแทนชื่อจริงและนามสกุลจริงของคุณ
       location_description: "คุณสามารถให้ทั้งที่อยู่ หรือเฉพาะเมือง หรือเฉพาะรหัสไปรษณีย์ของคุณ จะเป็นการดีที่จะเพิ่มประเทศของคุณ ในขณะที่เพิ่มตำแหน่งของคุณ ตัวอย่าง: \"10117 Berlin, Germany\" หรือ \" 2000 Sand Hill Road, CA, USA \""
       profile_picture_description: ~
       phone_number: หมายเลขโทรศัพท์
@@ -2684,6 +2868,8 @@ th-TH:
       editing_profile_of: ~
       format_markdown_link: ~
       format_markdown: ~
+      username: ~
+      username_description: "Username ที่คุณตั้งจะเป็นตัวแทน URL หรือที่อยู่ของเวบ ชื่อนี้จะสามารถใช้ได้แค่ตัวอักษรภาษาอังกฤษและตัวเลขเท่านั้น ถ้าคุณเปลี่ยน username ของคุณ URLหรือที่อยู่เวบของจะเปลี่ยนเป็นอันใหม่ และ URL เก่าจะไม่สามารถเข้าถึงโปรไฟล์คุณได้อีกต่อไป ชื่อ username เก่าจะว่างและเปิดให้บริการต่อผู้อื่น"
     save_information: บันทึกข้อมูล
   shipping_address:
     shipping_address: ที่อยู่ในการจัดส่ง
@@ -2956,6 +3142,7 @@ th-TH:
       cancel: ~
       gender: ~
       phone_number: ~
+      phone_info_text: ~
       address_kana_postal_code: ~
       address_kana_state: ~
       address_kana_city: ~
@@ -2994,14 +3181,19 @@ th-TH:
     form_verification:
       personal_id_number: ~
       document: ~
+      document_back: ~
       send_verification: ~
       need_verification: ~
+      additional_document: ~
+      additional_document_back: ~
+      files_need_to_be: ~
     form_pin:
       social_insurance_number: ~
       social_security_number: ~
       ssn_last_4: ~
       hong_kong_identity_card: ~
       singapore_identity_card: ~
+      mexico_id_number: ~
       messages:
         social_insurance_number: ~
   payment_settings:
@@ -3032,8 +3224,6 @@ th-TH:
         id: ~
         title: ~
         paragraph: ~
-        button_color: ~
-        button_color_hover: ~
         button_title: ~
         button_path: ~
         button_path_string: ~
@@ -3041,7 +3231,6 @@ th-TH:
         background_image_variation: ~
         background_color: ~
         background_color_string: ~
-        icon_color: ~
       landing_page_version/section/listings:
         listing_1_id: ~
         listing_2_id: ~
@@ -3049,3 +3238,20 @@ th-TH:
       landing_page_version/section/video:
         text: ~
         youtube_video_id: ~
+      landing_page_version/section/hero:
+        cta_button_text: ~
+        cta_button_url: ~
+  canada_states:
+    AB: Alberta
+    BC: "British Columbia"
+    MB: Manitoba
+    NB: "New Brunswick"
+    NL: "Newfoundland and Labrador"
+    NS: "Nova Scotia"
+    NT: "Northwest Territories"
+    NU: Nunavut
+    "ON": Ontario
+    PE: "Prince Edward Island"
+    QC: Quebec
+    SK: Saskatchewan
+    YT: "Yukon Territory"

@@ -15,7 +15,7 @@ class Person::PaymentSettingsPresenter
     @person_url = person_url
   end
 
-  delegate :community, :params, :person, :stripe_error, to: :service, prefix: false
+  delegate :community, :params, :person, :person_email, :stripe_error, to: :service, prefix: false
 
   def reload_from_stripe
     @stripe_account = nil
@@ -84,6 +84,45 @@ class Person::PaymentSettingsPresenter
     @seller_needs_verification = need_verification
   end
 
+  def seller_required_items
+    return @seller_required_items if defined?(@seller_required_items)
+
+    requirements = api_seller_account.requirements
+    @seller_required_items = [requirements.try(:currently_due), requirements.try(:past_due), requirements.try(:eventually_due)].compact.flatten.uniq
+  end
+
+  def required_individual_id_number?
+    @required_individual_id_number ||= seller_required_items.include?("individual.id_number")
+  end
+
+  def required_verification_document?
+    @required_verification_document ||= seller_required_items.include?("individual.verification.document")
+  end
+
+  def required_verification_document_back?
+    @required_verification_document_back ||= seller_required_items.include?("individual.verification.document.back")
+  end
+
+  def required_verification_additional_document?
+    @required_verification_additional_document ||= seller_required_items.include?("individual.verification.additional_document")
+  end
+
+  def required_verification_additional_document_back?
+    @required_verification_additional_document_back ||= seller_required_items.include?("individual.verification.additional_document.back")
+  end
+
+  def capabilities_to_check
+    %w[transfers card_payments]
+  end
+
+  def has_inactive_capabilities?
+    capabilities_to_check.any?{|item| api_seller_account.try(:capabilities).try(:[], item) == 'inactive'}
+  end
+
+  def has_pending_capabilities?
+    capabilities_to_check.any?{|item| api_seller_account.try(:capabilities).try(:[], item) == 'pending'}
+  end
+
   def stripe_account_verification
     return @stripe_account_verification if defined?(@stripe_account_verification)
 
@@ -95,6 +134,10 @@ class Person::PaymentSettingsPresenter
         :restricted
       elsif requirements.respond_to?(:current_deadline) && requirements.current_deadline.present?
         :restricted_soon
+      elsif has_inactive_capabilities?
+        :restricted
+      elsif has_pending_capabilities?
+        :pending_verification
       else
         :verified
       end
@@ -117,7 +160,7 @@ class Person::PaymentSettingsPresenter
   end
 
   def stripe_seller_account
-    return @stripe_seller_account if @stripe_seller_account
+    return @stripe_seller_account if defined?(@stripe_seller_account)
 
     @stripe_seller_account = if stripe_account_ready
                                parsed_seller_account
@@ -131,7 +174,7 @@ class Person::PaymentSettingsPresenter
   end
 
   def stripe_account_form
-    @stripe_account_form ||= StripeAccountForm.new(stripe_seller_account)
+    @stripe_account_form ||= StripeAccountForm.new(stripe_seller_account.merge(email: person_email))
   end
 
   def stripe_bank_form

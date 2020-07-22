@@ -44,7 +44,7 @@ module TransactionViewUtils
     (messages + transitions).sort_by { |hash| hash[:created_at] }
   end
 
-  def create_messages_from_actions(transitions, author, starter, payment_sum, payment_gateway, show_sum=true)
+  def create_messages_from_actions(transitions, author, starter, payment_sum, payment_gateway, community, show_sum=true)
     return [] if transitions.blank?
 
     ignored_transitions = [
@@ -69,7 +69,7 @@ module TransactionViewUtils
         ignored_transitions.include? transition[:to_state]
       }
       .map { |(transition, previous_state)|
-        create_message_from_action(transition, previous_state, author, starter, payment_sum, payment_gateway, show_sum)
+        create_message_from_action(transition, previous_state, author, starter, payment_sum, payment_gateway, community, show_sum)
       }
   end
 
@@ -84,19 +84,19 @@ module TransactionViewUtils
     }
   end
 
-  def transition_messages(transaction, conversation, name_display_type)
+  def transition_messages(transaction, conversation, community)
     if transaction.present?
       transitions = transaction.transaction_transitions
       payment_sum = transaction.payment_total
       payment_gateway = transaction.payment_gateway
       show_sum = transaction.buyer_commission <= 0
-      create_messages_from_actions(transitions, transaction.author, transaction.starter, payment_sum, payment_gateway, show_sum)
+      create_messages_from_actions(transitions, transaction.author, transaction.starter, payment_sum, payment_gateway, community, show_sum)
     else
       []
     end
   end
 
-  def create_message_from_action(transition, old_state, author, starter, payment_sum, payment_gateway, show_sum)
+  def create_message_from_action(transition, old_state, author, starter, payment_sum, payment_gateway, community, show_sum)
     preauthorize_accepted = ->(new_state) { new_state == "paid" && old_state == "preauthorized" }
     post_pay_accepted = ->(new_state) {
       # The condition here is simply "if new_state is paid", since due to migrations from old system there might be
@@ -138,11 +138,29 @@ module TransactionViewUtils
         admin: transition[:metadata] && transition[:metadata]['executed_by_admin'],
         mood: :negative
       }
+    when "disputed"
+      {
+        sender: transition_user(transition, starter),
+        admin: transition[:metadata] && transition[:metadata]['executed_by_admin'],
+        mood: :negative
+      }
     when "confirmed"
       {
         sender: transition_user(transition, starter),
         admin: transition[:metadata] && transition[:metadata]['executed_by_admin'],
         mood: :positive
+      }
+    when "refunded"
+      {
+        sender: transition_user(transition, starter),
+        admin: transition[:metadata] && transition[:metadata]['executed_by_admin'],
+        mood: :positive
+      }
+    when "dismissed"
+      {
+        sender: transition_user(transition, starter),
+        admin: transition[:metadata] && transition[:metadata]['executed_by_admin'],
+        mood: :negative
       }
     else
       raise("Unknown transition to state: #{transition[:to_state]}")
@@ -150,11 +168,11 @@ module TransactionViewUtils
 
     MessageBubble[message.merge(
       created_at: transition[:created_at],
-      content: create_content_from_action(transition[:to_state], old_state, payment_sum, payment_gateway, author, show_sum)
+      content: create_content_from_action(transition[:to_state], old_state, payment_sum, payment_gateway, author, community, show_sum)
     )]
   end
 
-  def create_content_from_action(state, old_state, payment_sum, payment_gateway, author, show_sum)
+  def create_content_from_action(state, old_state, payment_sum, payment_gateway, author, community, show_sum)
     preauthorize_accepted = ->(new_state) { new_state == "paid" && old_state == "preauthorized" }
     post_pay_accepted = ->(new_state) {
       # The condition here is simply "if new_state is paid", since due to migrations from old system there might be
@@ -192,12 +210,22 @@ module TransactionViewUtils
       t("conversations.message.paid", sum: amount)
     when "canceled"
       t("conversations.message.canceled_request")
+    when "disputed"
+      t("conversations.message.canceled_the_order")
     when "confirmed"
       if payment_gateway == :stripe
-        t("conversations.message.stripe.confirmed_request", author_name: author[:display_name])
+        t('conversations.message.stripe.confirmed_request', author_name: PersonViewUtils.person_display_name(author, community))
       else
         t("conversations.message.confirmed_request")
       end
+    when "refunded"
+      t("conversations.message.marked_as_refunded")
+    when "dismissed"
+      payment_transferred = ''
+      if payment_gateway == :stripe
+        payment_transferred = t('conversations.message.payment_has_now_been_transferred', seller: PersonViewUtils.person_display_name(author, community))
+      end
+      "#{t('conversations.message.dismissed_the_cancellation')} #{payment_transferred}"
     else
       raise("Unknown transition to state: #{state}")
     end

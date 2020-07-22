@@ -162,6 +162,7 @@ az-AZ:
         status_resent: ~
         resend_link: ~
         invalid_email_error: ~
+        invalid_email_address: ~
         invalid_email_domain: ~
         invalid_email_domain_read_more_link: ~
         unknown_error: ~
@@ -219,6 +220,7 @@ az-AZ:
         miles: ~
         show_only_nearby: ~
         allow_users_to_add_location: ~
+        fuzzy_location: ~
         listing_preferences: ~
         transaction_preferences: ~
         show_listing_publishing_date: ~
@@ -264,6 +266,10 @@ az-AZ:
         ban_user_confirmation: ~
         unban_user_confirmation: ~
         ban_me_error: ~
+        have_ongoing_transactions: ~
+        only_delete_disabled: ~
+        delete_info1: ~
+        delete_info2: ~
         search: ~
         search_by_name_email: ~
         reset_search: ~
@@ -283,6 +289,7 @@ az-AZ:
         unconfirmed_user: ~
         resend: ~
         cancel: ~
+        confirm: ~
         user_didnt_complete_the_signup_process: ~
         pending_user: ~
       new_layout:
@@ -292,6 +299,7 @@ az-AZ:
         enabled_for_all: ~
         new_topbar: ~
         searchpage: ~
+        new_email_templates: ~
       social_media:
         social_media: ~
         logo: ~
@@ -319,7 +327,6 @@ az-AZ:
         invalid_facebook_connect_secret: ~
         enable_facebook_login: ~
         save: ~
-        add_another_image: ~
         google_connect: ~
         google_instructions_link_text: ~
         google_developers_console: ~
@@ -382,6 +389,10 @@ az-AZ:
         robots_info: ~
         robots_info_link_text: ~
         robots_info_2: ~
+        google_search_console: ~
+        google_search_console_paragraph1: ~
+        google_search_console_these_instructions: ~
+        google_search_console_paragraph2: ~
         save: ~
       analytics:
         analytics: ~
@@ -394,6 +405,10 @@ az-AZ:
         sharetribe_analytics_instructions_link_text: ~
         end_user_analytics: ~
         save: ~
+        google_tag_manager: ~
+        gtm_paragraph_1: ~
+        gtm_paragraph_2: ~
+        learn_how_to_configure_gtm: ~
       logo_link:
         title: ~
         info: ~
@@ -442,10 +457,13 @@ az-AZ:
           confirmed: ~
           paid: ~
           canceled: ~
+          disputed: ~
           preauthorized: ~
           rejected: ~
           payment_intent_requires_action: ~
           payment_intent_action_expired: ~
+          refunded: ~
+          dismissed: ~
         headers:
           conversation: ~
           listing: ~
@@ -465,6 +483,7 @@ az-AZ:
           paid: ~
           confirmed: ~
           canceled: ~
+          disputed: ~
           initiated: ~
           pending_ext: ~
           none:
@@ -478,8 +497,11 @@ az-AZ:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
+            refunded: ~
+            dismissed: ~
           stripe:
             free: ~
             pending: ~
@@ -489,11 +511,14 @@ az-AZ:
             paid: ~
             confirmed: ~
             canceled: ~
+            disputed: ~
             initiated: ~
             pending_ext: ~
             payment_intent_requires_action: ~
             payment_intent_action_expired: ~
             payment_intent_failed: ~
+            refunded: ~
+            dismissed: ~
         not_available: ~
       conversations:
         conversations: ~
@@ -632,36 +657,33 @@ az-AZ:
         contact_us: ~
         you_can_now_use_a_custom_domain: ~
         would_you_like_to_change_domain: ~
+        change_your_sharetribe_domain: ~
+        only_letters_numbers_and_hyphens_can_be_used: ~
+        when_you_change_your_sharetribe_domain: ~
+        would_you_like_to_proceed: ~
+        change: ~
       landing_pages:
         landing_pages: ~
         info_1: ~
         info_2: ~
-        info_2_preview_text: ~
-        info_2_details_text: ~
-        info_2_design_text: ~
+        info_2_help_center: ~
         info_3: ~
         info_4: ~
         editor_title: ~
         editor_info: ~
         preview: ~
         set_live: ~
-        headers:
-          section_id: ~
-          section_type: ~
-          version: ~
-          released: ~
-        add_new_version: ~
-        new_version: ~
-        edit_version: ~
         add_new_section: ~
         select_section_type: ~
+        this_version_is_not_released: ~
+        latest_version_released: ~
+        check_it_out: ~
         form:
-          version: ~
           save: ~
+          cancel: ~
         sections:
           identifier: ~
           kind: ~
-          variation: ~
           new: ~
           edit: ~
           remove_section_confirmation: ~
@@ -675,8 +697,6 @@ az-AZ:
           video: ~
           new_section:
             categories: ~
-            footer: ~
-            hero: ~
             info_single_column: ~
             info_multi_column_2: ~
             info_multi_column_3: ~
@@ -693,11 +713,25 @@ az-AZ:
             listings: ~
             locations: ~
             video: ~
+      attachments:
+        delete: ~
+        or_change: ~
     landing_page_versions:
       sections:
+        content:
+          title: ~
         hero:
           hero_title: ~
           hero_description: ~
+          basic_details_tab: ~
+          cta_button: ~
+          cta_button_info: ~
+          button_type:
+            default: ~
+            button: ~
+            none: ~
+          button_content: ~
+          click_me: ~
         footer:
           footer_title: ~
           footer_style: ~
@@ -710,6 +744,10 @@ az-AZ:
           cta_enabled: ~
           cta_text: ~
           cta_url: ~
+          text_placeholder: ~
+          url_placeholder: ~
+        background_selector:
+          title: ~
         background_image_overlay:
           background_image: ~
           background_image_info: ~
@@ -771,20 +809,22 @@ az-AZ:
           column_header: ~
           column_title: ~
           column_icon_info: ~
+          column_icon_info_link: ~
           column_icon: ~
           column_paragraph: ~
           column_button: ~
           column_button_text: ~
           column_button_url: ~
         listings:
+          listings_to_feature: ~
           you_need_to_add_the_listing_ids: ~
         video:
           text: ~
-          youtube_video_id: ~
           autoplay: ~
           autoplay_no: ~
           autoplay_muted: ~
           info: ~
+          youtube_video_id_info: ~
     custom_fields:
       edit:
         edit_listing_field: ~
@@ -1090,12 +1130,15 @@ az-AZ:
       request: ~
       inquiry: ~
       share_for_free: ~
+      event_w_online_payment: ~
+      event_wo_online_payment: ~
       default_action_button_labels:
         sell: ~
         rent: ~
         request: ~
         offer: ~
         inquiry: ~
+        book: ~
     community_transactions:
       show:
         transaction_for: ~
@@ -1105,11 +1148,17 @@ az-AZ:
         waiting_for_fulfill_and_complete: ~
         buyer: ~
         provider: ~
+        delivery: ~
+        shipping_to: ~
         buyer_pays: ~
         marketplace_collects: ~
         buyer_service_fee_label: ~
         service_fee_label: ~
         provider_receives: ~
+        admin_info_text: ~
+        manage_reviews: ~
+        you_should_investigate: ~
+        learn_more: ~
   common:
     edit_page: "Səhifəyə düzəliş et"
     default_community_slogan: "İcma bazarı"
@@ -1201,7 +1250,7 @@ az-AZ:
       stripe-fee_label: ~
     confirm:
       confirm_description: "Sifarişiniz yerinə yetirildiyi təqdirdə, onu qəbul edilmiş şəkildə təsdiqləməlisiniz. Ondan sonra, siz digər tərəfə geribildirim verə bilərsiniz."
-      cancel_description: "Sifarişiniz yerinə yetirilməmişdirsə, onu 'mübahisəli' kimi qeyd edə bilərsiniz. Hələ də digər tərəfə geribilidirim vermək və baş verənləri təsvir edə bilərsiniz."
+      cancel_description_team: ~
       cancel_payed_description: "Əgər sizin istəyinizin qəbul olduğundan sonra siz fikrinizi dəyişmisisinizsə, siz ödənişdən əvvəl istəyinizi ləğv edə bilərsiniz."
       canceling_payed_transaction: "Əməliyyatını ləğv et"
       confirm: "Tamamlanmış kimi qeyd et"
@@ -1250,6 +1299,10 @@ az-AZ:
         held_payment: ~
         held_payment_wo_sum: ~
         confirmed_request: ~
+      canceled_the_order: ~
+      marked_as_refunded: ~
+      dismissed_the_cancellation: ~
+      payment_has_now_been_transferred: ~
     new:
       message: Mesaj
       message_to: ~
@@ -1324,6 +1377,18 @@ az-AZ:
           verify: ~
       stripe:
         waiting_confirmation_from_requester: ~
+      order_canceled: ~
+      waiting_for_marketplace_review: ~
+      marketplace_notified: ~
+      contact_them: ~
+      refunded: ~
+      dismissed: ~
+      order_refunded: ~
+      you_should_receive_refund_soon: ~
+      issue_with_the_refund: ~
+      do_you_disagree: ~
+      contact_the_marketpalce_team: ~
+      order_cancellation_dismissed: ~
     status_link:
       accept_offer: "Təklifi qəbul et"
       accept_request: "İstəyi qəbul et"
@@ -1335,9 +1400,11 @@ az-AZ:
       reject_preauthorized_request: ~
       confirm: ~
       cancel: ~
+      mark_as_refunded: ~
+      dismiss: ~
   feedback:
     feedback_subject: ~
-    feedback_body: "%{author_name_and_email} %{service_name} -dan aşağıdakı geribildirim göndərmişdir"
+    feedback_body: ~
     unlogged_user: ~
     anonymous_user: ~
   community_memberships:
@@ -1380,11 +1447,17 @@ az-AZ:
       if_will_not_happen_you_should_cancel: "Bu sifarişin bəzi səbəblərdən tamamlanmayacağını düşünürsünüzsə, %{cancel_it_link} vurun."
       cancel_it_link_text: "ləğv etmək"
       automatic_confirmation: "İstək qəbul edildikdən sonra %{days_to_automatic_confirmation} gün ərzində sifariş təsdiq və ya ləğv etmədiyiniz təqdirdə, biz onu avtomatik olaraq başa çatdıracağıq."
+    confirm_reminder_v2:
+      headline: ~
+      you_have_not_yet_confirmed_or_canceled_request: ~
     payment_settings_reminder:
       remember_to_add_payment_details: ~
       you_have_added_listing_with_payment: ~
       please_go_to_payment_settings: ~
       payment_settings_link: ~
+    payment_settings_reminder_v2:
+      fill_payout_details: ~
+      you_have_added_listing_with_payment: ~
     transaction_confirmed:
       here_is_a_message_from: "%{other_party_given_name} -dan mesaj:"
       request_marked_as_confirmed: "Sifariş tamamlandı. Geribildirim verməyinizi unutmayın"
@@ -1395,12 +1468,25 @@ az-AZ:
       give_feedback_to: "%{other_party_given_name} -a geribildirim ver"
       stripe:
         has_marked_request_as_confirmed: ~
+      team_title: ~
+    transaction_confirmed_v2:
+      headline_confirmed: ~
+      headline_canceled: ~
+      stripe:
+        has_marked_request_as_confirmed: ~
+      can_give_feedback: ~
+      team_title: ~
     transaction_automatically_confirmed:
       subject: ~
       we_have_marked_request_as_confirmed: "'%{request}' haqqında sifarişi tamamlanmış kimi qeyd etdik. Sifarişiniz avtomatik olaraq başa çatdı, çünki sifariş müddəti başa çatdıqdan %{days_passed}  gün keçdi."
+    transaction_automatically_confirmed_v2:
+      we_have_marked_request_as_confirmed: ~
+      order_automatically_confirmed: ~
     booking_transaction_automatically_confirmed:
       subject: "Sifariş avtomatik olaraq tamamlandı - geribildirim verməyinizi unutmayın"
       we_have_marked_request_as_confirmed: "'%{request}' haqqında sifarişi tamamlanmış kimi qeyd etdik. İstəyiniz avtomatik olaraq başa çatdı, çünki sifariş müddəti başa çatdıqdan bir gün keçdi."
+    booking_transaction_automatically_confirmed_v2:
+      order_automatically_confirmed: ~
     automatically_confirmed_footer:
       giving_feedback_is_good_idea: ~
       give_feedback_to: "%{other_party_given_name} -a geribildirim ver"
@@ -1410,8 +1496,13 @@ az-AZ:
       need_to_confirm: "%{service_name} saytına qoşulmaq üçün aşağıdakı düyməni basıb e-poçt ünvanınızı təsdiqləyə bilərsiniz."
       confirmation_link_text: "E-poçt ünvanımı təsdiqlə"
       or_paste_link: "Yaxud aşağıdakı linki kopyalayıb brauzerinizin ünvan çubuğuna ata bilərsiniz:"
+    confirmation_instructions_v2:
+      headline: ~
+      need_to_confirm: ~
+      confirmation_link_text: ~
     common:
       hey: "Salam %{name},"
+      hi: ~
       kassi_team: "%{service_name} komandası"
       thanks: "Təşəkkürlər,"
       dont_want_to_receive_these_emails: "Belə məktublar almaq istəmirsiniz?"
@@ -1423,6 +1514,7 @@ az-AZ:
       unsubscribe_from_these_emails: "Bu məktublara abunəliyi ləğv et"
       unsubscribe_from_invitation_emails_info: "%{service_name} üzvünün sizi qoşulmağa dəvət etdiyinə görə bu məktubu almısınız."
       unsubscribe_from_invitation_emails: "%{service_name} qoşulmaq üçün dəvət məktublarına abunəliyin ləğv olunması"
+      here_is_your_receipt: ~
     conversation_status_changed:
       has_accepted_your_offer: "%{accepter} sizin %{listing} təklifinizi qəbul etdi."
       has_accepted_your_request: "%{accepter} sizin %{listing} istəyinizi qəbul etdi."
@@ -1436,12 +1528,19 @@ az-AZ:
       you_can_now_pay_to: ~
       pay_now: "İndi ödə"
       remember_to_confirm: "Sifariş yerinə yetirildikdə, onu tamamlanmiş kimi qeyd edin. Sifariş yerinə yetirilmədikdə, onu ləğv etmək üçün %{days_to_automatic_confirmation} gün var. Əks halda sifariş avtomatik olaraq tamamlanmış kimi qeyd olunacaq."
+    conversation_status_changed_v2:
+      has_accepted_your_request: ~
+      has_accepted_your_request_text: ~
+      has_rejected_your_request: ~
+      has_rejected_your_request_text: ~
     invitation_to_kassi:
       hi: Salam!
       you_have_been_invited_to_kassi: "%{inviter} sizi %{service_name} -a dəvət etmişdir."
       here_is_a_message_from: "%{inviter} -dan şəxsi mesaj:"
       join_now: "İndi qoşul"
       invitation_code: "Dəvət kodu: %{code}"
+    invitation_to_kassi_v2:
+      headline: ~
     new_comment:
       has_commented_your_listing_in_kassi: "%{author} sizin %{listing} elanınıza şərh etdi."
       view_comment: "Şərhə bax"
@@ -1452,6 +1551,9 @@ az-AZ:
       view_message: "Mesaja bax"
       has_sent_you_a_message_in_kassi: "%{sender} sizə %{service_name}-da mesaj göndərib."
       you_have_a_new_message: "%{service_name}-da %{sender_name}-dan yeni mesaj var"
+    new_message_v2:
+      headline: ~
+      reply: ~
     new_payment:
       new_payment: ~
       price_per_unit_type: "%{unit_type} üçün qiymət"
@@ -1473,6 +1575,10 @@ az-AZ:
       you_have_received_new_payment: ~
       stripe:
         you_have_received_new_payment: ~
+    payment_receipt_to_seller_v2:
+      headline: ~
+      main_text_stripe: ~
+      price_breakdown: ~
     payment_receipt_to_payer:
       receipt_of_payment: ~
       you_have_made_new_payment: ~
@@ -1488,6 +1594,9 @@ az-AZ:
       stripe_gateway_fee: ~
       paypal_gateway_fee: ~
       money_will_be_transferred: ~
+    payment_receipt_to_payer_v2:
+      headline: ~
+      you_have_made_new_payment: ~
     paypal_new_payment:
       paypal_gateway_fee: ~
       shipping_total: ~
@@ -1517,6 +1626,8 @@ az-AZ:
       has_given_you_feedback_in_kassi: "%{name} sizə %{service_name}-də geribildirim verdi"
       you_can_give_feedback_to: "Siz hələ %{name}-a geribildirim vermədiniz."
       view_feedback: "Geribildirimə bax"
+    new_testimonial_v2:
+      headline: ~
     new_update_to_listing:
       listing_you_follow_has_been_updated: "İzlədiyiniz elan yeniləndi"
       has_updated_listing_you_follow_in_kassi: "%{author} %{service_name} -da izlədiyiniz %{listing} elanını yeniləmişdir."
@@ -1532,6 +1643,8 @@ az-AZ:
       reduce_email_footer_text: "Həddindən artıq məktublar gəlir? %{settings_link} və ya %{unsubscribe_link}."
       settings_link_text: "E-poçt ayarlarınız burada düzəldin"
       unsubscribe_link_text: "abunəlikdən çıx"
+    community_updates_v2:
+      headline: ~
     newsletter:
       hi: "Salam %{name}!"
       newest_offers: "İndiki təkliflər"
@@ -1543,6 +1656,10 @@ az-AZ:
     testimonial_reminder:
       remember_to_give_feedback_to: "Xatırlatma: %{name}-a geribildirim verməyi unutmayın"
       you_have_not_given_feedback_yet: "Siz %{name} -a %{event} barədə gerbibildirim hələ də verməmisiniz. Tədbirdə %{given_name} necə yerinə yetirildiyi barədə fikir verməyi unutmayın"
+    testimonial_reminder_v2:
+      headline: ~
+      you_have_not_given_feedback_yet: ~
+      leave_feedback: ~
     transaction_preauthorized:
       subject: ~
       transaction_requested_by_user: ~
@@ -1551,11 +1668,16 @@ az-AZ:
       if_you_do_accept_stripe: ~
       if_you_do_not_accept: ~
       click_here_to_reply: ~
+    transaction_preauthorized_v2:
+      headline: ~
     transaction_preauthorized_reminder:
       subject: ~
       remember_to_accept: ~
       one_day_left: ~
       click_here_to_reply: ~
+    transaction_preauthorized_reminder_v2:
+      headline: ~
+      remember_to_accept: ~
     welcome_email:
       welcome_email_subject: "%{service_name} -a xoş gəlmişsiniz"
       welcome_to_marketplace: "%{service_name} -a xoş gəlmişsiniz! Bizimlə birlikdə olduğunuza görə çox şadıq!"
@@ -1567,12 +1689,22 @@ az-AZ:
       has_posted_a_new_listing: "%{author_name} yeni elan vermişdir:"
       you_are_receiving_this_because: "Siz %{author_name} istifadəçini izlədiyinizə görə bu bildirişi almısınız."
       view_listing: "Elana bax"
+    new_listing_by_followed_person_v2:
+      headline: ~
+      has_posted_a_new_listing: ~
+      you_are_receiving_this_because: ~
+      view_listing: ~
+      cant_click: ~
     new_member_notification:
       subject: ~
       new_member_has_joined: ~
       this_is_automatic_message: ~
       person_name: "Ad:"
       person_email: "E-poçt:"
+    new_member_notification_v2:
+      headline: ~
+      new_member_has_joined: ~
+      view_profile: ~
     listing_submited_for_review:
       subject: ~
       there_is_a_new_listing_to_review: ~
@@ -1599,6 +1731,45 @@ az-AZ:
       sum: ~
       starter: ~
       provider: ~
+    new_transaction_v2:
+      subject: ~
+      there_is_a_new_transaction: ~
+      a_new_transaction: ~
+      listing: ~
+      sum: ~
+      starter: ~
+      provider: ~
+      view_transaction: ~
+    transaction_cancel_flow:
+      the_order_about: ~
+      you_can_contact_the_marketplace_team: ~
+      you_can_now_give_feedback: ~
+      give_feedback_to: ~
+    transaction_disputed:
+      subject: ~
+      subject_admin: ~
+      order_about: ~
+      the_order_has_been_canceled: ~
+      the_order_between_buyer_and_seller_has_been_canceled: ~
+      the_marketplace_has_been_notified: ~
+      contact_the_marketplace_team: ~
+      you_must_now_decide: ~
+      learn_more_about: ~
+      review_the_transaction: ~
+    transaction_refunded:
+      subject: ~
+      marketplace_team_has_approved_the_cancellation: ~
+      you_should_receive_a_refund_soon: ~
+    transaction_cancellation_dismissed:
+      subject: ~
+      marketplace_team_has_rejected_the_cancellation: ~
+    transaction_commission_charge_failed:
+      subject: ~
+      transaction_about: ~
+      the_commission_of_the_transaction: ~
+      this_usually_means: ~
+      if_you_would_like_to_investigate: ~
+      contact_the_seller: ~
   error_messages:
     booking:
       booking_failed_payment_voided: ~
@@ -1630,6 +1801,8 @@ az-AZ:
       generic_error: ~
       accept_authorization_error: ~
       reject_authorization_error: ~
+      card_declined: ~
+      expired_card: ~
   error_pages:
     back_to_kassi_front_page: "Baş səhifəyə qayıt"
     error_404:
@@ -1672,6 +1845,9 @@ az-AZ:
       section_with_this_id_already_exists: ~
       listing_with_this_id_does_not_exist: ~
       presence: ~
+      username_is_invalid: ~
+      domain_name_is_invalid: ~
+      only_supported_variables: ~
   event_feed_events:
     accept:
       has_accepted_lend_item: ~
@@ -2047,8 +2223,10 @@ az-AZ:
         other: "Saytımız %{count} qəqiqəyə offline rejiminə gedir."
       automatically_logged_out_please_sign_in: "Siz avtomatik olaraq çıxmısınız. Zəhmət olmasa yenidən daxil edin."
       stripe_you_account_balance_is_not_0: ~
+      stripe_balance_for_username_is_not_0: ~
       visit_admin: ~
       visit_admin_link: ~
+      an_error_occurred_when_saving_your_information: ~
     settings:
       account: Hesab
       notifications: Bildirişlər
@@ -2059,6 +2237,8 @@ az-AZ:
       payments: Ödənişlər
       listings: ~
       listings_search_placeholder: ~
+      transactions_search_placeholder: ~
+      transactions: ~
   listings:
     bubble_listing_not_visible:
       listing_not_visible: ~
@@ -2172,6 +2352,7 @@ az-AZ:
       origin:
         location: Yeri
         origin: ~
+        the_exact_location: ~
       send_button:
         save_listing: "Elanı yerləşdir"
         submit_for_review: ~
@@ -2279,6 +2460,7 @@ az-AZ:
       month: ~
       unit: "Miqdarı:"
       custom: ~
+      person: ~
     quantity_placeholder: ~
     please_comment: "Şərh ver"
     reply_link:
@@ -2330,6 +2512,7 @@ az-AZ:
       week: həftə
       month: ay
       unit: ədəd
+      person: ~
     verification_required:
       verification_required: "Doğrulama tələb olunur"
   listing_conversations:
@@ -2346,6 +2529,7 @@ az-AZ:
       night: ~
       nights: ~
       invalid_parameters: ~
+      select_delivery_method: ~
     transaction_agreement_checkbox:
       read_more: ~
     stripe_payment:
@@ -2667,6 +2851,8 @@ az-AZ:
       editing_profile_of: ~
       format_markdown_link: ~
       format_markdown: ~
+      username: ~
+      username_description: ~
     save_information: "Məlumatı yadda saxla"
   shipping_address:
     shipping_address: "Çatdırılma ünvanı"
@@ -2764,7 +2950,7 @@ az-AZ:
       december: Dek.
     today: "Bu gün"
     clear: Sil
-    format: dd.mm.yyyy
+    format: dd/mm/yyyy
   time:
     formats:
       short: "%b %e, %Y saat %H:%M"
@@ -2897,18 +3083,12 @@ az-AZ:
     next_label: "Sonrakı &#8594;"
     page_gap: "&hellip;"
     page_entries_info:
-      single_page:
-        zero: "%{model} tapılmadı"
-        other: "%{count} %{model} göstətilir"
-      single_page_html:
-        zero: "%{model} tapılmadı"
-        other: "<b>&nbsp;%{count}</b> %{model} göstərilir"
       multi_page: "%{count}-dan %{from} - %{to} %{model} göstərilir"
       multi_page_html: "<b>%{count}-dan</b> <b>%{from}&nbsp;-&nbsp;%{to}</b> %{model} göstərilir"
     person:
       community_members_entries_info:
         multi_page: ~
-        multi_page_html: ~
+        multi_page_html: "Отображение%{model}<b>%{from}&nbsp;-&nbsp;%{to}}</b> из <b>%{accepted_count}</b> принятых%{accepted_model} и %{other_count}  других %{other_model}"
   stripe_accounts:
     admin_account_not_connected: ~
     contact_admin_link_text: "%{service_name} komandasına müraciət edin"
@@ -2958,6 +3138,7 @@ az-AZ:
       cancel: ~
       gender: ~
       phone_number: ~
+      phone_info_text: ~
       address_kana_postal_code: ~
       address_kana_state: ~
       address_kana_city: ~
@@ -2996,14 +3177,19 @@ az-AZ:
     form_verification:
       personal_id_number: ~
       document: ~
+      document_back: ~
       send_verification: ~
       need_verification: ~
+      additional_document: ~
+      additional_document_back: ~
+      files_need_to_be: ~
     form_pin:
       social_insurance_number: ~
       social_security_number: ~
       ssn_last_4: ~
       hong_kong_identity_card: ~
       singapore_identity_card: ~
+      mexico_id_number: ~
       messages:
         social_insurance_number: ~
   payment_settings:
@@ -3034,8 +3220,6 @@ az-AZ:
         id: ~
         title: ~
         paragraph: ~
-        button_color: ~
-        button_color_hover: ~
         button_title: ~
         button_path: ~
         button_path_string: ~
@@ -3043,7 +3227,6 @@ az-AZ:
         background_image_variation: ~
         background_color: ~
         background_color_string: ~
-        icon_color: ~
       landing_page_version/section/listings:
         listing_1_id: ~
         listing_2_id: ~
@@ -3051,3 +3234,20 @@ az-AZ:
       landing_page_version/section/video:
         text: ~
         youtube_video_id: ~
+      landing_page_version/section/hero:
+        cta_button_text: ~
+        cta_button_url: ~
+  canada_states:
+    AB: Alberta
+    BC: "British Columbia"
+    MB: Manitoba
+    NB: "New Brunswick"
+    NL: "Newfoundland and Labrador"
+    NS: "Nova Scotia"
+    NT: "Northwest Territories"
+    NU: Nunavut
+    "ON": Ontario
+    PE: "Prince Edward Island"
+    QC: Quebec
+    SK: Saskatchewan
+    YT: "Yukon Territory"
